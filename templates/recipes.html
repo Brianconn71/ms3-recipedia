@@ -1,8 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h2>hi</h2>
-    
+    <h2>Search for a recipe from our Database!</h2>
+
+    <div class="search">
+        <input type="search" name="search" id="search" placeholder="Search for a recipe" autofocus>
+
+    </div>
+
     {% for recipe in recipes %}
         {{ recipe.recipe_name }}<br>
         {{ recipe.date  }}<br>
