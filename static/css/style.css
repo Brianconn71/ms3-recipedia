@@ -69,6 +69,9 @@ body{
 .latest-recipes{
     height: 20vh
 }
+.recipe-card{
+    box-shadow: 0 100px 80px rgba(0, 0, 0, 0.521);
+}
 
 /* Nav bar and logo */
 .recipedia-logo{
