@@ -78,6 +78,7 @@ body{
     font-weight: 400;
     color: var(--text-white)
 }
+/* got inspiration for the hover style here https://css-tricks.com/having-fun-with-link-hover-effects/ */
 .recipedia-logo:hover{
     color: transparent;
     -webkit-text-stroke: 1px var(--text-white);
