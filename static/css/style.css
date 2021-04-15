@@ -15,16 +15,16 @@
 }
 
 body{
-    height: 100vh;
+    height: 100%;
     overflow-x: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     /* Got help adding a background overlay shadow to darken the background image here https://stackoverflow.com/questions/36679649/how-to-add-a-color-overlay-to-a-background-image */
-    background: url("/static/imgs/background-img.jpg");
-    background-size:cover;
-    box-shadow:inset 0 0 0 2000px rgba(0, 0, 0, 0.4);
+    background: url("/static/imgs/background-img.jpg") center center no-repeat;
+    background-size: cover;
+    box-shadow: inset 0 0 0 100vw rgba(0, 0, 0, 0.4);
 }
 
 /* search container section */
