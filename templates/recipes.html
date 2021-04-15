@@ -1,13 +1,38 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <section class="search-container">
+    <section class="search-container container-sm">
         <h2 class="search-heading">Search for a recipe from our Database!</h2>
-        <div class="search">
-            <input type="search" name="search" id="search" class="searchbox" placeholder="Search for a recipe" autofocus>
+        <div class="search-bar-and-btn">
+                <input type="search" name="search" id="search" class="searchbox" placeholder="Search for a recipe" autofocus>
+            <div class="search-btn">
+                <button type="button" class="btn btn-primary">Search</button>
+            </div>
         </div>
-        <div class="search-btn">
-            <button type="button" class="btn btn-primary">Search</button>
+    </section>
+    <section class="latest-recipes">
+        <div class="row">
+            <div class="col-4">
+                <div class="card">
+                    <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                        <img
+                        src="https://mdbootstrap.com/img/new/standard/nature/111.jpg"
+                        class="img-fluid"
+                        />
+                        <a href="#!">
+                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                        Some quick example text to build on the card title and make up the bulk of the
+                        card's content.
+                        </p>
+                        <a href="#!" class="btn btn-primary">Button</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
