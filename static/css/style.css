@@ -22,9 +22,13 @@ body{
     align-items: center;
     flex-direction: column;
     /* Got help adding a background overlay shadow to darken the background image here https://stackoverflow.com/questions/36679649/how-to-add-a-color-overlay-to-a-background-image */
-    background: url("/static/imgs/background-img.jpg") center center no-repeat;
+    background:  linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/static/imgs/background-img.jpg") center center no-repeat;
     background-size: cover;
-    box-shadow: inset 0 0 0 100vw rgba(0, 0, 0, 0.4);
+}
+/* menu icon */
+.menu-icon{
+    color: var(--text-white);
+    font-size: 1.5rem;
 }
 
 /* search container section */
@@ -47,18 +51,27 @@ body{
 .searchbox{
     background: #f7f7f7;
     outline: none;
+    border-color: transparent;
     border-radius: 20px;
     font-family: 'Oxygen', sans-serif;
     font-size: 1.2rem;
-    text-transform: capitalize;
     padding: 0.3rem 0.5rem;
     width: 25rem;
 }
 .searchbox::placeholder{
-    color: #000;
+    color: rgba(0, 0, 0, 0.4);
 }
 .search-btn{
-    display: inline-block;
+    display: block;
+    margin-left: 0.8rem;
+}
+.search-btn-primary{
+    background-color: var(--button-color);
+    border-radius: 30px;
+}
+.search-btn-primary:hover{
+    background-color: var(--button-color);
+    filter: brightness(110%)
 }
 .search-bar-and-btn{
     display: flex;
@@ -80,6 +93,9 @@ body{
     font-family: 'Ubuntu', sans-serif;
     font-weight: 400;
     color: var(--text-white)
+}
+.text-shadow{
+    text-shadow: 2px 2px 2px rgba(0,0,0, 0.9);
 }
 /* got inspiration for the hover style here https://css-tricks.com/having-fun-with-link-hover-effects/ */
 .recipedia-logo:hover{

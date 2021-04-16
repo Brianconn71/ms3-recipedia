@@ -2,26 +2,26 @@
 {% block content %}
 
     <section class="search-container container-sm">
-        <h2 class="search-heading">Search for a recipe from our Database!</h2>
+        <h2 class="search-heading text-shadow">Search for a recipe from our Database</h2>
         <div class="search-bar-and-btn">
-                <input type="search" name="search" id="search" class="searchbox" placeholder="Search for a recipe" autofocus>
+                <input type="search" name="search" id="search" class="searchbox form-control-lg shadow-2-strong" placeholder="Search for a recipe" autofocus>
             <div class="search-btn">
-                <button type="button" class="btn btn-primary">Search</button>
+                <button type="button" class="btn btn-primary search-btn-primary"><i class="fas fa-search"></i></button>
             </div>
         </div>
     </section>
     <section class="latest-recipes">
             <div class="row">
-                <div class="col-6">
+                <div class="col-4">
         {% for recipe in recipes %}
-                    <div class="card recipe-card">
+                    <div class="card w-100 recipe-card">
                         <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                             <img
                             src="{{recipe.img_url}}"
                             class="img-fluid"
                             />
                             <a href="#!">
-                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.1)"></div>
                             </a>
                         </div>
                         <div class="card-body">
