@@ -25,41 +25,51 @@ integrity="sha512-HpwtJdZJE6hhDbz0Hf4vKLGuaQFRS09b7YKAofRKx1+UZV7Y1ORUPs2Ud+N8g9
         <!-- header taken with help from material bootstrap -->
     <nav class="navbar fixed-top navbar-expand-lg text-shadow">
         <div class="container-fluid">
-            <a class="navbar-brand recipedia-logo" href="#">Recipedia</a>
-            <button
-            class="navbar-toggler"
-            type="button"
-            data-mdb-toggle="collapse"
-            data-mdb-target="#navbarTogglerDemo02"
-            aria-controls="navbarTogglerDemo02"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-            >
-            <i class="fas fa-bars menu-icon text-shadow"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                    <a class="nav-link menu-items active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link menu-items" href="#">Add a recipe</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link menu-items" href="#">Login</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link menu-items" href="#">Register</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link menu-items" href="#">Recipedia Utensils</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"
-                        >Disabled</a
-                    >
-                    </li>
-                </ul>
+            <div class="logo-container">
+                <a class="navbar-brand recipedia-logo" href="#">Recipedia</a>
+            </div>
+                <button
+                class="navbar-toggler"
+                type="button"
+                data-mdb-toggle="collapse"
+                data-mdb-target="#navbarTogglerDemo02"
+                aria-controls="navbarTogglerDemo02"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+                >
+                <i class="fas fa-bars menu-icon text-shadow"></i>
+                </button>
+                <div class="menu-items-container collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                        <a class="nav-link menu-items active" aria-current="page" href="{{ url_for('get_recipes')}}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link menu-items" href="#">Add a recipe</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link menu-items" href="#">Manage Categories</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link menu-items" href="#">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link menu-items" href="#">Login</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link menu-items" href="#">Logout</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link menu-items" href="#">Register</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link menu-items" href="#">Recipedia Utensils</a>
+                        </li>
+                        <!-- <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"
+                        >Disabled</a>
+                        </li> -->
+                    </ul>
             </div>
         </div>
     </nav>
