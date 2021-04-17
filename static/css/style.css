@@ -97,6 +97,13 @@ body{
 .text-shadow{
     text-shadow: 2px 2px 2px rgba(0,0,0, 0.9);
 }
+.menu-items{
+    color: var(--text-white)
+}
+.menu-items:hover{
+    color: var(--text-white);
+    filter: brightness(70%);
+}
 /* got inspiration for the hover style here https://css-tricks.com/having-fun-with-link-hover-effects/ */
 .recipedia-logo:hover{
     color: transparent;
