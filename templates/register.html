@@ -2,28 +2,30 @@
 {% block content %}
 
     <!-- <h3 class="">Register as a new user with Recipedia</h3> -->
-
-    <div class="row">
-        <form class="col-md-8">
-            <div class="card card-size shadow-4-strong">
-                <div class="card-body">
-                    <div class="form-outline">
-                        <div class="row">
-                            <div class="form-outline mb-4">
-                                <input type="text" id="username" name="username" class="form-control" />
-                                <label class="form-label" for="username">Username</label>
+    <section class="container register-container">
+        <h3 class="">Register as a new user with Recipedia</h3>
+        <div class="row">
+            <form class="col-8">
+                <div class="card card-size shadow-4-strong">
+                    <div class="card-body">
+                        <div class="form-outline">
+                            <div class="row">
+                                <div class="form-outline mb-4">
+                                    <input type="text" id="username" name="username" class="form-control" />
+                                    <label class="form-label" for="username">Username</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-outline mb-4">
+                                    <input type="password" id="password" name="password" class="form-control" />
+                                    <label class="form-label" for="password">Password</label>
+                                </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="form-outline mb-4">
-                                <input type="password" id="password" name="password" class="form-control" />
-                                <label class="form-label" for="password">Password</label>
-                            </div>
-                        </div>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
-            </div>
-        </form>
-    </div>
+            </form>
+        </div>
+    </section>
 {% endblock %}
