@@ -116,3 +116,13 @@ body{
     color: transparent;
     -webkit-text-stroke: 1px var(--text-white);
 }
+
+/* User registration */
+.card-size{
+    width: 18rem;
+}
+.icon-size{
+    line-height: 1;
+    color: var(--button-color);
+    font-size: 2rem;
+}
