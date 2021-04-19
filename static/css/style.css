@@ -134,7 +134,6 @@ body{
     height: 100vh;
 }
 .card-design{
-    width: 18rem;
     background-color: var(--pale-green);
     color: var(--text-white);
     border-radius: 20px;
