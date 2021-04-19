@@ -3,21 +3,25 @@
 
     <!-- <h3 class="">Register as a new user with Recipedia</h3> -->
     <section class="container register-container">
-        <h2 class="search-heading text-shadow">Register as a new user with Recipedia</h2>
+        <div class="row center-placement">
+            <div class="col-8">
+                <h2 class="search-heading text-shadow">Register as a new user with Recipedia</h2>
+            </div>
+        </div>
         <div class="row w-100 d-flex justify-content-center">
-            <form class="col-8" method="POST" action="{{ url_for('register') }}"> 
+            <form class="col-8" method="POST" action="{{ url_for('register') }}">
                 <div class="card card-design shadow-4-strong">
                     <div class="card-body ">
                         <div class="form-outline">
                             <div class="row inputs">
-                                <div class="form-outline mb-4">
-                                    <input type="text" id="username" name="username" class="form-control form-input" />
-                                    <label class="form-label" for="username">Username</label>
+                                <div class="form-outline mb-3">
+                                    <input type="text" id="username" name="username" class="form-control form-control-lg" />
+                                    <label class="form-label" for="username" >Username</label>
                                 </div>
                             </div>
                             <div class="row inputs">
                                 <div class="form-outline mb-4">
-                                    <input type="password" id="password" name="password" class="form-control form-input" />
+                                    <input type="password" id="password" name="password" class="form-control form-control-lg" />
                                     <label class="form-label input-label" for="password">Password</label>
                                 </div>
                             </div>

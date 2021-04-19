@@ -124,6 +124,7 @@ body{
     font-size: 2rem;
 }
 .inputs{
+    display: flex;
     margin: 1rem 1.2rem;
 }
 .register-container{
@@ -138,12 +139,9 @@ body{
     color: var(--text-white);
     border-radius: 20px;
 }
-.form-input{
-    color: var(--text-white);
+.form-outline .form-control~.form-label{
+    color: var(--button-color);
     background-color: transparent;
-}
-.input-label{
-    color: var(--text-white)
 }
 .center-placement{
     display: flex;
