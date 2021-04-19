@@ -118,13 +118,13 @@ body{
 }
 
 /* User registration */
-.card-size{
-    width: 18rem;
-}
 .icon-size{
     line-height: 1;
     color: var(--button-color);
     font-size: 2rem;
+}
+.inputs{
+    margin: 1rem 1.2rem;
 }
 .register-container{
     display: flex;
@@ -132,4 +132,32 @@ body{
     align-items: center;
     flex-direction: column;
     height: 100vh;
+}
+.card-design{
+    width: 18rem;
+    background-color: var(--pale-green);
+    color: var(--text-white);
+    border-radius: 20px;
+}
+.form-input{
+    color: var(--text-white);
+    background-color: transparent;
+}
+.input-label{
+    color: var(--text-white)
+}
+.center-placement{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.submit-btn{
+    background-color: var(--button-color);
+    color: var(--text-white);
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+}
+.submit-btn:hover{
+    background-color: var(--button-color);
+    filter: brightness(110%);
 }
