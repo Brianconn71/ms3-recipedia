@@ -11,8 +11,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/static/imgs/favicon_io_recipedia/favicon-16x16.png">
 <link rel="manifest" href="static/imgs/favion_io_recipedia/site.webmanifest">
 <!-- links to external stylesheets and font awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.4.0/mdb.min.css"
-integrity="sha512-HpwtJdZJE6hhDbz0Hf4vKLGuaQFRS09b7YKAofRKx1+UZV7Y1ORUPs2Ud+N8g92P9p+OOXioISI32OUXb56Qag==" crossorigin="anonymous" type="text/css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
 <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
 {% block head %}
@@ -23,7 +22,26 @@ integrity="sha512-HpwtJdZJE6hhDbz0Hf4vKLGuaQFRS09b7YKAofRKx1+UZV7Y1ORUPs2Ud+N8g9
 
     <header>
         <!-- header taken with help from material bootstrap -->
-    <nav class="navbar fixed-top navbar-expand-lg text-shadow">
+        <nav class="nav-extended text-shadow light-blue darken-1">
+            <div class="nav-wrapper">
+                <a href="#!" class="brand-logo">Logo</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="sass.html">Sass</a></li>
+                    <li><a href="badges.html">Components</a></li>
+                    <li><a href="collapsible.html">Javascript</a></li>
+                    <li><a href="mobile.html">Mobile</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="sass.html">Sass</a></li>
+            <li><a href="badges.html">Components</a></li>
+            <li><a href="collapsible.html">Javascript</a></li>
+            <li><a href="mobile.html">Mobile</a></li>
+        </ul>
+    <!-- <nav class="navbar fixed-top navbar-expand-lg text-shadow">
         <div class="container-fluid">
             <div class="logo-container">
                 <a class="navbar-brand recipedia-logo" href="#">Recipedia</a>
@@ -65,14 +83,14 @@ integrity="sha512-HpwtJdZJE6hhDbz0Hf4vKLGuaQFRS09b7YKAofRKx1+UZV7Y1ORUPs2Ud+N8g9
                         <li class="nav-item">
                         <a class="nav-link menu-items" href="#">Recipedia Utensils</a>
                         </li>
-                        <!-- <li class="nav-item">
+                         <li class="nav-item">
                         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"
                         >Disabled</a>
                         </li> -->
-                    </ul>
+                    <!-- </ul>
             </div>
         </div>
-    </nav>
+    </nav> --> 
     </header>
 
     <section>
@@ -95,7 +113,7 @@ integrity="sha512-HpwtJdZJE6hhDbz0Hf4vKLGuaQFRS09b7YKAofRKx1+UZV7Y1ORUPs2Ud+N8g9
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 {% block scripts %}
 {% endblock %}
