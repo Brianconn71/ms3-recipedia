@@ -31,6 +31,26 @@ body{
     font-size: 1.5rem;
 }
 
+/* text color */
+.recipedia-text{
+    color: var(--text-white);
+    text-shadow: 2px 2px 2px rgba(0,0,0, 0.6);
+}
+.center-text{
+    text-align: center;
+}
+p{
+    font-size: 1rem;
+}
+.flash-msg-text{
+    color: var(--text-white)
+}
+h5{
+    font-size: 1.3rem;
+}
+p, h5{
+    color: var(--button-color);
+}
 /* search container section */
 .search-container{
     height: 80vh;
@@ -46,7 +66,8 @@ body{
     font-size: 2.5rem;
     text-align: center;
     text-transform: capitalize;
-    padding: 2rem 1rem;
+    padding: 1rem;
+    margin: 1.3rem;
 }
 .searchbox{
     background: #f7f7f7;
@@ -98,9 +119,6 @@ body{
     color: var(--text-white);
     padding-left: 1rem;
 }
-.shadow-text{
-    text-shadow: 2px 2px 2px rgba(0,0,0, 0.6);
-}
 .menu-items{
     color: var(--text-white);
     background-color: transparent;
@@ -127,13 +145,9 @@ body{
 
 /* User registration */
 .icon-size{
-    line-height: 1;
+    line-height: 1.5;
     color: var(--button-color);
     font-size: 2rem;
-}
-.inputs{
-    display: flex;
-    margin: 1rem 1.2rem;
 }
 .register-container{
     display: flex;
@@ -141,15 +155,6 @@ body{
     align-items: center;
     flex-direction: column;
     height: 100vh;
-}
-.card-design{
-    background-color: var(--pale-green);
-    color: var(--text-white);
-    border-radius: 20px;
-}
-.form-outline .form-control~.form-label{
-    color: var(--button-color);
-    background-color: transparent;
 }
 .center-placement{
     display: flex;
@@ -172,6 +177,12 @@ body{
     margin-right: 0.8rem;
 }
 .register-user{
-    background-color: red;
+    background-color: var(--pale-green);
     width: 100%;
+    border-radius: 30px;
+}
+form input[type="text"]{
+    color: var(--button-color);
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
 }
