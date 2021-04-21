@@ -17,10 +17,10 @@
 body{
     height: 100%;
     overflow-x: hidden;
-    display: flex;
-    justify-content: center;
+    /* display: flex; */
+    /* justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction: column; */
     /* Got help adding a background overlay shadow to darken the background image here https://stackoverflow.com/questions/36679649/how-to-add-a-color-overlay-to-a-background-image */
     background:  linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/static/imgs/background-img.jpg") center center no-repeat;
     background-size: cover;
@@ -88,7 +88,6 @@ body{
 
 /* Nav bar and logo */
 .nav-design{
-    width: 100vw;
     background-color: transparent;
 }
 .nav-wrapper .recipedia-logo{
@@ -96,17 +95,22 @@ body{
     white-space: nowrap;
     font-family: 'Ubuntu', sans-serif;
     font-weight: 400;
-    color: var(--text-white)
+    color: var(--text-white);
+    padding-left: 1rem;
 }
 .shadow-text{
     text-shadow: 2px 2px 2px rgba(0,0,0, 0.6);
 }
 .menu-items{
-    color: var(--text-white)
+    color: var(--text-white);
+    background-color: transparent;
+    transition: background-color .4s ease-in-out;
 }
 .menu-items:hover{
     color: var(--text-white);
-    filter: brightness(70%);
+    filter: brightness(110%);
+    background-color: rgba(0,0,0,0.2);
+    transition: background-color .4s ease-in-out
 }
 .logo-container{
     width: 50%;
@@ -166,4 +170,8 @@ body{
 .submit-icon{
     color: var(--text-white);
     margin-right: 0.8rem;
+}
+.register-user{
+    background-color: red;
+    width: 100%;
 }

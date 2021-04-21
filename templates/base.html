@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="Description" content="Enter your description here"/>
 <!-- Favicon -->
@@ -24,13 +24,13 @@
         <!-- header taken with help from material bootstrap -->
         <nav class="nav-extended shadow-text nav-design">
             <div class="nav-wrapper">
-                <a href="#!" class="recipedia-logo brand-logo">Recipedia</a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars menu-icon shadow-text"></i></a>
+                <a href="{{ url_for('get_recipes')}}" class="recipedia-logo brand-logo">Recipedia</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars menu-icon shadow-text"></i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="{{ url_for('get_recipes')}}">Home</a></li>
-                    <li><a href="badges.html">Components</a></li>
-                    <li><a href="collapsible.html">Javascript</a></li>
-                    <li><a href="{{ url_for('register')}}">Register</a></li>
+                    <li><a href="{{ url_for('get_recipes')}}" class="menu-items shadow-text">Home</a></li>
+                    <li><a href="badges.html" class="menu-items shadow-text">Components</a></li>
+                    <li><a href="collapsible.html" class="menu-items shadow-text">Javascript</a></li>
+                    <li><a href="{{ url_for('register')}}" class="menu-items shadow-text">Register</a></li>
                 </ul>
             </div>
         </nav>
