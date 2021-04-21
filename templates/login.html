@@ -5,14 +5,14 @@
     <section class="container register-container">
         <div class="row center-placement">
             <div class="col-8">
-                <h2 class="search-heading recipedia-text">Register as a new user with Recipedia</h2>
+                <h2 class="search-heading recipedia-text">Login to add and save recipes</h2>
             </div>
         </div>
         <div class="row register-user z-depth-5">
             <form class="col s8" method="POST" action="{{ url_for('register') }}">
                 <div class="row center-placement">
                     <div class="input-field col s8">
-                    <i class="fas fa-user icon-size prefix"></i>
+                    <i class="fas fa-user-cog icon-size prefix"></i>
                     <input type="text" id="username" name="username" class="validate" minlength="3" maxlength="20" pattern="^[a-zA-Z0-9]{3,20}$" required />
                     <label for="username">Username</label>
                     <span class="helper-text" data-error="Please enter your a unique username" data-success="You're Username is unique!"></span>
@@ -27,12 +27,12 @@
                     </div>
                 </div>
                 <div class="row center-placement">
-                    <button type="submit" class="col s6 btn btn-primary submit-btn"><i class="fas fa-user-plus submit-icon"></i>Register</button>
+                    <button type="submit" class="col s6 btn btn-primary submit-btn"><i class="fas fa-user-plus submit-icon"></i>Log in</button>
                 </div>
                 <div class="row center-placement">
                     <div class="col s6">
-                        <p class="center-text">Already Registered?</p><br>
-                        <h5 class="center-text">Click <a href="{{ url_for('login') }}">HERE</a> to Log in to your account</h5>
+                        <p class="center-text">New here?</p><br>
+                        <h5 class="center-text">Click <a href="{{ url_for('register') }}">HERE</a> to register an account</h5>
                     </div>
                 </div>
             </form>
