@@ -60,6 +60,9 @@ h5{
 p, h5{
     color: var(--button-color);
 }
+.capitalize{
+    text-transform: capitalize;
+}
 /* search container section */
 .search-container{
     height: 80vh;
