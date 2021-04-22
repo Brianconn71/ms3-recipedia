@@ -25,6 +25,10 @@ body{
     background:  linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/static/imgs/background-img.jpg") center center no-repeat;
     background-size: cover;
 }
+/* buttons */
+button{
+    cursor: pointer;
+}
 /* menu icon */
 .menu-icon{
     color: var(--text-white);
