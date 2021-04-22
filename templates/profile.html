@@ -10,6 +10,14 @@
                 </div>
             </div>
         </div>
-        
+    </section>
+    <section>
+        {% for recipe in recipes %}
+            {% if recipe.up_vote == "True" %}
+                <div>{{ recipe.difficulty }}</div>
+            {% else %}
+                <div>erfghflhfglhdsg</div>
+            {% endif %}
+        {% endfor %}
     </section>
 {% endblock %}

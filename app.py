@@ -5,6 +5,7 @@ from flask import (
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
+from flask_paginate import Pagination
 if os.path.exists("env.py"):
     import env
 
@@ -84,9 +85,11 @@ def profile(username):
     # get the session users username
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
+    recipes = mongo.db.recipes.find()
 
     if session["user"]:
-        return render_template("profile.html", username=username)
+        return render_template(
+            "profile.html", username=username, recipes=recipes)
 
     return redirect(url_for("login"))
 
@@ -97,6 +100,7 @@ def logout():
     flash("You have been logged out.")
     session.pop("user")
     return redirect(url_for("login"))
+
 
 
 if __name__ == "__main__":
