@@ -230,3 +230,10 @@ form input[type="text"]{
 .copyright-text{
     font-family: 'Oxygen', sans-serif;
 }
+/* profile page */
+.user-profile{
+    height: 50vh;
+}
+.user-recipe-section{
+    height: 50vh;
+}

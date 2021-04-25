@@ -102,6 +102,11 @@ def logout():
     return redirect(url_for("login"))
 
 
+@app.route("/add_recipe", methods=["POST", "GET"])
+def add_recipe():
+    return render_template("add_recipe.html")
+
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
