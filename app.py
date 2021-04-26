@@ -104,7 +104,10 @@ def logout():
 
 @app.route("/add_recipe", methods=["POST", "GET"])
 def add_recipe():
-    return render_template("add_recipe.html")
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    categories = mongo.db.categories.find()
+    return render_template("add_recipe.html", username=username,categories=categories)
 
 
 
