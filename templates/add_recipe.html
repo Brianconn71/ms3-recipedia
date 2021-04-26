@@ -3,55 +3,68 @@
 
     <h3 class="recipedia-text shadow-text center-align">Add a recipe to our database</h3>
 
-    <div class="row">
-        <form class="col s12" method="POST" action="">
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-pen prefix shadow-text recipedia-text"></i>
-                    <input id="recipe_name" name="recipe_name" minlength="3" maxlength="60"
-                    type="text" class="validate">
-                    <label for="recipe_name">Recipe Name</label>
+    <section class="container add-recipe-container">
+        <div class="row">
+            <form class="col s12" method="POST" action="">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-pen prefix shadow-text recipedia-text"></i>
+                        <input id="recipe_name" name="recipe_name" minlength="3" maxlength="60"
+                        type="text" class="validate" required>
+                        <label for="recipe_name">Recipe Name</label>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-user prefix shadow-text recipedia-text"></i>
-                    <input id="created_by" value="{{ username }}" name="created_by" type="text"
-                    minlength="3" maxlength="20" class="validate">
-                    <label for="created_by">Created By</label>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-user prefix shadow-text recipedia-text"></i>
+                        <input id="created_by" value="{{ username }}" name="created_by" type="text"
+                        minlength="3" maxlength="20" class="validate" required>
+                        <label for="created_by">Created By</label>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s6">
-                    <i class="far fa-calendar-alt prefix shadow-text recipedia-text"></i>
-                    <input id="date" name="date" type="text"
-                    minlength="3" maxlength="20" class="validate">
-                    <label for="date">Date Created</label>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <i class="far fa-calendar-alt prefix shadow-text recipedia-text"></i>
+                        <input name="date" id="date" type="text" class="datepicker validate" required>
+                        <label for="date">Date Created</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="fas fa-user prefix shadow-text recipedia-text"></i>
+                        <select name="category" id="category" required>
+                            <option value="" disabled selected>Choose a Category</option>
+                            {% for category in categories %}
+                                <option value="{{ category.category_name.capitalize() }}">{{ category.category_name.capitalize() }}</option>
+                            {% endfor %}
+                        </select>
+                        <label for="category">Category</label>
+                    </div>
                 </div>
-                <div class="input-field col s6">
-                    <i class="fas fa-user prefix shadow-text recipedia-text"></i>
-                    <select name="category" id="category">
-                        <option value="" disabled selected>Choose a Category</option>
-                        {% for category in categories %}
-                            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
-                        {% endfor %}
-                    </select>
-                    <label for="category">Category</label>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <i class="fas fa-clock prefix shadow-text recipedia-text"></i>
+                        <input id="cook_time" name="cook_time" type="text" class="validate" required>
+                        <label for="cook_time">Difficulty</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="far fa-clock prefix shadow-text recipedia-text"></i>
+                        <input id="servings" name="servings" type="number" class="validate" required>
+                        <label for="prep_time">Servings</label>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s6">
-                    <i class="fas fa-clock prefix shadow-text recipedia-text"></i>
-                    <input id="cook_time" name="cook_time" type="number" class="validate">
-                    <label for="cook_time">Cooking time (mins)</label>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <i class="fas fa-clock prefix shadow-text recipedia-text"></i>
+                        <input id="cook_time" name="cook_time" type="number" class="validate" required>
+                        <label for="cook_time">Cooking time (mins)</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="far fa-clock prefix shadow-text recipedia-text"></i>
+                        <input id="prep_time" name="prep_time" type="number" class="validate" required>
+                        <label for="prep_time">Preparation Time (mins)</label>
+                    </div>
                 </div>
-                <div class="input-field col s6">
-                    <i class="far fa-clock prefix shadow-text recipedia-text"></i>
-                    <input id="prep_time" name="prep_time" type="number" class="validate">
-                    <label for="prep_time">Preparation Time (mins)</label>
-                </div>
-            </div>
-        </form>
-    </div>
+            </form>
+        </div>
+    </section>
 
 {% endblock %}

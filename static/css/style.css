@@ -237,3 +237,15 @@ form input[type="text"]{
 .user-recipe-section{
     height: 50vh;
 }
+/* add recipe page */
+.add-recipe-container{
+    height: 80vh;
+    background-color: rgba(0,0,0, 0.5)
+}
+
+/* Wanted to dicale the next and prev number spinners on form, found a solution here https://css-tricks.com/snippets/css/turn-off-number-input-spinners/ */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}

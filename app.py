@@ -106,8 +106,10 @@ def logout():
 def add_recipe():
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    categories = mongo.db.categories.find()
-    return render_template("add_recipe.html", username=username,categories=categories)
+    categories = mongo.db.categories.find().sort(
+        "category_name")
+    return render_template("add_recipe.html", username=username,
+                           categories=categories)
 
 
 
