@@ -5,15 +5,20 @@ from flask import (
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
+from werkzeug.utils import secure_filename
 from flask_paginate import Pagination
 if os.path.exists("env.py"):
     import env
+
+UPLOAD_FOLDER = '/workspace/ms3-recipedia/static/imgs/uploads'
+ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
 
 # create an instance of flask
 app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
@@ -107,7 +112,46 @@ def add_recipe():
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     categories = mongo.db.categories.find().sort(
-        "category_name")
+        "category_name",1)
+    if request.method == 'POST':
+        # check if the post request has the file part
+        if 'file' not in request.files:
+            flash('No file part')
+            return redirect(request.url)
+        file = request.files['file']
+        # if user does not select file, browser also
+        # submit a empty part without filename
+        if file.filename == '':
+            flash('No selected file')
+            return redirect(request.url)
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        steps = request.form.getlist("steps")
+        step_list = []
+        for step in steps:
+            step_list.append(step)
+        ingredients = request.form.getlist("ingredients")
+        ingredients_list = []
+        for ingredient in ingredients:
+            ingredients_list.append(ingredient)
+        recipes = {
+            "recipe_name": request.form.get("recipe_name"),
+            "created_by": session["user"],
+            "date": request.form.get("date"),
+            "category": request.form.get("category"),
+            "difficulty": request.form.get("difficulty"),
+            "prep_time": request.form.get("recipe_name"),
+            "servings": request.form.get("servings"),
+            "cook_time": request.form.get("cook_time"),
+            "img_upload": request.form.get("img_upload"),
+            "steps": request.form.get("steps"),
+            "ingredients": ingredients_list,
+            "steps": step_list
+        }
+        mongo.db.recipes.insert_one(recipes)
+        flash("Thanks")
+        return redirect(url_for("get_recipes"))
     return render_template("add_recipe.html", username=username,
                            categories=categories)
 
