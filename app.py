@@ -160,11 +160,11 @@ def add_recipe():
         flash("Thanks")
         return redirect(url_for("add_recipe"))
     return render_template("add_recipe.html", username=username,
-                           categories=categories, filename=filename)
+                           categories=categories)
 
 
-@app.route('/uploads/<filename>')
-def send_file(filename):
+@app.route('/display/<filename>')
+def display_image(filename):
     # print('display_image filename: ' + filename)
     # return redirect(url_for('static', filename='imgs/' + filename), code=301)
     return send_from_directory(app.config['UPLOAD_FOLDER'],
