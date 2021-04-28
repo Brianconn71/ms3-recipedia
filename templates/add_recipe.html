@@ -42,7 +42,12 @@
                 <div class="row">
                     <div class="input-field col s6">
                         <i class="fas fa-exclamation prefix shadow-text recipedia-text"></i>
-                        <input id="difficulty" name="difficulty" type="text" class="validate" required>
+                        <select name="difficulty" id="difficulty" required>
+                            <option value="" disabled selected>Choose a Difficulty</option>
+                            <option value="easy">Easy</option>
+                            <option value="medium">Medium</option>
+                            <option value="difficult">Difficult</option>
+                        </select>
                         <label for="difficulty">Difficulty</label>
                     </div>
                     <div class="input-field col s6">
@@ -69,7 +74,7 @@
                         <input id="ingredients" name="ingredients" minlength="2" maxlength="60"
                         type="text" class="validate" required>
                         <label for="ingredients">Ingredient 1:</label>
-                        <a type="button" class="btn green add_ingredient"></a>
+                        <a type="button" class="btn green add_ingredient"><i class="far fa-plus-square"></i>Add Ingredient</a>
                     </div>
                 </div>
                 <div class="row ingred_list">
