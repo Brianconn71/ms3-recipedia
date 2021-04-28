@@ -10,8 +10,14 @@ from flask_paginate import Pagination
 if os.path.exists("env.py"):
     import env
 
-UPLOAD_FOLDER = '/workspace/ms3-recipedia/static/imgs/uploads'
+UPLOAD_FOLDER = '/workspace/ms3-recipedia/static/imgs/'
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
+
+
+def allowed_file(filename):
+    return '.' in filename and filename.rsplit(
+        '.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
 
 # create an instance of flask
 app = Flask(__name__)
@@ -112,21 +118,22 @@ def add_recipe():
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     categories = mongo.db.categories.find().sort(
-        "category_name",1)
+        "category_name", 1)
     if request.method == 'POST':
         # check if the post request has the file part
-        if 'file' not in request.files:
+        if 'img_upload' not in request.files:
             flash('No file part')
-            return redirect(request.url)
-        file = request.files['file']
+            return redirect(url_for('add_recipe'))
+        img_upload = request.files['img_upload']
         # if user does not select file, browser also
         # submit a empty part without filename
-        if file.filename == '':
+        if img_upload.filename == '':
             flash('No selected file')
-            return redirect(request.url)
-        if file and allowed_file(file.filename):
-            filename = secure_filename(file.filename)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            return redirect(url_for('add_recipe'))
+        if img_upload and allowed_file(img_upload.filename):
+            filename = secure_filename(img_upload.filename)
+            path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+            img_upload.save(path)
         steps = request.form.getlist("steps")
         step_list = []
         for step in steps:
@@ -151,10 +158,17 @@ def add_recipe():
         }
         mongo.db.recipes.insert_one(recipes)
         flash("Thanks")
-        return redirect(url_for("get_recipes"))
+        return redirect(url_for("add_recipe"))
     return render_template("add_recipe.html", username=username,
-                           categories=categories)
+                           categories=categories, filename=filename)
 
+
+@app.route('/uploads/<filename>')
+def send_file(filename):
+    # print('display_image filename: ' + filename)
+    # return redirect(url_for('static', filename='imgs/' + filename), code=301)
+    return send_from_directory(app.config['UPLOAD_FOLDER'],
+                               filename, as_attachment=True)
 
 
 if __name__ == "__main__":
