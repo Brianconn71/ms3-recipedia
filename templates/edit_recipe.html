@@ -33,7 +33,11 @@
                         <select name="category" id="category" required>
                             <option value="" disabled selected>Choose a Category</option>
                             {% for category in categories %}
-                                <option value="{{ category.category_name.capitalize() }}">{{ category.category_name.capitalize() }}</option>
+                                {% if category.category_name == recipes.category_name %}
+                                    <option value="{{ category.category_name.capitalize() }}">{{ category.category_name.capitalize() }}</option>
+                                {% else %}
+                                    <option value="{{ category.category_name.capitalize() }}">{{ category.category_name.capitalize() }}</option>
+                                {% endif %}
                             {% endfor %}
                         </select>
                         <label for="category">Category</label>
