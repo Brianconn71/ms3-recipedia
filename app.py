@@ -5,18 +5,9 @@ from flask import (
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
-from werkzeug.utils import secure_filename
 from flask_paginate import Pagination
 if os.path.exists("env.py"):
     import env
-
-UPLOAD_FOLDER = '/workspace/ms3-recipedia/static/imgs/'
-ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
-
-
-def allowed_file(filename):
-    return '.' in filename and filename.rsplit(
-        '.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
 # create an instance of flask
@@ -24,7 +15,6 @@ app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
@@ -143,7 +133,7 @@ def add_recipe():
         }
         mongo.db.recipes.insert_one(recipes)
         flash("Your recipe has been added to the database")
-        return redirect(url_for("add_recipe"))
+        return redirect(url_for("get_recipes"))
     return render_template("add_recipe.html", username=username,
                            categories=categories)
 
