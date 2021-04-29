@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h3 class="recipedia-text shadow-text center-align">Edit a recipe in our database</h3>
+
+    <section class="container add-recipe-container">
+        <div class="row">
+            <form class="col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id)}}">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-pen prefix shadow-text recipedia-text"></i>
+                        <input id="recipe_name" name="recipe_name" minlength="3" maxlength="60"
+                        type="text" class="validate" required>
+                        <label for="recipe_name">Recipe Name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- Wanted to automatically add the session users username to the created by field and not allow it to be changed or tampered with, a solution I found here: https://stackoverflow.com/questions/24597057/make-html-form-data-unchangeable-but-still-able-to-post#24597080 -->
+                    <div class="input-field col s12">
+                        <i class="fas fa-user prefix shadow-text recipedia-text"></i>
+                        <input id="created_by" value="{{ username }}" name="created_by" type="text" readonly required>
+                        <label for="created_by">Created By</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <i class="far fa-calendar-alt prefix shadow-text recipedia-text"></i>
+                        <input name="date" id="date" type="text" class="datepicker validate" required>
+                        <label for="date">Date Created</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="fas fa-stream prefix shadow-text recipedia-text"></i>
+                        <select name="category" id="category" required>
+                            <option value="" disabled selected>Choose a Category</option>
+                            {% for category in categories %}
+                                <option value="{{ category.category_name.capitalize() }}">{{ category.category_name.capitalize() }}</option>
+                            {% endfor %}
+                        </select>
+                        <label for="category">Category</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <i class="fas fa-exclamation prefix shadow-text recipedia-text"></i>
+                        <select name="difficulty" id="difficulty" required>
+                            <option value="" disabled selected>Choose a Difficulty</option>
+                            <option value="easy">Easy</option>
+                            <option value="medium">Medium</option>
+                            <option value="difficult">Difficult</option>
+                        </select>
+                        <label for="difficulty">Difficulty</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="fas fa-calculator prefix shadow-text recipedia-text"></i>
+                        <input id="servings" name="servings" type="number" class="validate" required>
+                        <label for="servings">Servings</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <i class="fas fa-clock prefix shadow-text recipedia-text"></i>
+                        <input id="cook_time" name="cook_time" type="number" class="validate" required>
+                        <label for="cook_time">Cooking time (mins)</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="far fa-clock prefix shadow-text recipedia-text"></i>
+                        <input id="prep_time" name="prep_time" type="number" class="validate" required>
+                        <label for="prep_time">Preparation Time (mins)</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-clipboard-list prefix shadow-text recipedia-text"></i>
+                        <input id="ingredients" name="ingredients" minlength="2" maxlength="60"
+                        type="text" class="validate" required>
+                        <label for="ingredients">Ingredient 1:</label>
+                        <a type="button" class="btn green add_ingredient"><i class="far fa-plus-square"></i>Add Ingredient</a>
+                    </div>
+                </div>
+                <div class="row ingred_list">
+    
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-list-ol prefix shadow-text recipedia-text"></i>
+                        <input id="steps" name="steps" minlength="3" maxlength="200"
+                        type="text" class="validate" required>
+                        <label for="steps">Step 1:</label>
+                        <a type="button" class="btn green add_step"><i class="far fa-plus-square"></i>Add Step</a>
+                    </div>
+                </div>
+                <div class="row step_list">
+    
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-images prefix shadow-text recipedia-text"></i>
+                        <input id="img_upload" name="img_upload" type="text" class="validate" required>
+                        <label for="img_upload">Enter Image Url</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 center-align">
+                        <button class="btn-large waves-effect waves-light submit-btn" type="submit">Edit Recipe
+                        <i class="far fa-edit right"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+{% endblock %}

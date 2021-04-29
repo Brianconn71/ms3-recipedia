@@ -107,8 +107,6 @@ def logout():
 def add_recipe():
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    categories = mongo.db.categories.find().sort(
-        "category_name", 1)
     if request.method == 'POST':
         steps = request.form.getlist("steps")
         step_list = []
@@ -134,8 +132,19 @@ def add_recipe():
         mongo.db.recipes.insert_one(recipes)
         flash("Your recipe has been added to the database")
         return redirect(url_for("get_recipes"))
+    categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_recipe.html", username=username,
                            categories=categories)
+
+
+@app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
+def edit_recipe(recipe_id):
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("edit_recipe.html",
+                        recipe=recipe,
+                        categories=categories)
 
 
 if __name__ == "__main__":
