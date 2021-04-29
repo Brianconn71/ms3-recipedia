@@ -134,11 +134,10 @@ def add_recipe():
             "date": request.form.get("date"),
             "category": request.form.get("category"),
             "difficulty": request.form.get("difficulty"),
-            "prep_time": request.form.get("recipe_name"),
+            "prep_time": request.form.get("prep_time"),
             "servings": request.form.get("servings"),
             "cook_time": request.form.get("cook_time"),
             "img_upload": request.form.get("img_upload"),
-            "steps": request.form.get("steps"),
             "ingredients": ingredients_list,
             "steps": step_list
         }

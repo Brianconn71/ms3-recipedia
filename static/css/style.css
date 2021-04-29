@@ -32,6 +32,9 @@ main {
 button{
     cursor: pointer;
 }
+.submit-btn{
+    background-color: var(--button-color)
+}
 /* menu icon */
 .menu-icon{
     color: var(--text-white);
