@@ -34,10 +34,9 @@
                             <option value="" disabled>Choose a Category</option>
                             {% for category in categories %}
                                 {% if category.category_name == recipe.category %}
-                                <!-- automatically bind selected category to edit recipe page -->
-                                    <option value="{{ category.category_name }}" selected>{{category.category_name }}</option>
+                                    <option value="{{ category.category_name.capitalize() }} " selected>{{ category.category_name.capitalize() }}</option>
                                 {% else %}
-                                    <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                                    <option value="{{ category.category_name.capitalize() }} ">{{ category.category_name.capitalize() }}</option>
                                 {% endif %}
                             {% endfor %}
                         </select>
@@ -49,9 +48,19 @@
                         <i class="fas fa-exclamation prefix shadow-text recipedia-text"></i>
                         <select name="difficulty" id="difficulty" required>
                             <option value="" disabled selected>Choose a Difficulty</option>
-                            <option value="easy">Easy</option>
-                            <option value="medium">Medium</option>
-                            <option value="difficult">Difficult</option>
+                            {% if recipe.difficulty == "easy" %}
+                                <option value="easy" selected>Easy</option>
+                                <option value="medium">Medium</option>
+                                <option value="difficult">Difficult</option>
+                            {% elif recipe.difficulty == "medium" %}
+                                <option value="easy">Easy</option>
+                                <option value="medium" selected>Medium</option>
+                                <option value="difficult">Difficult</option>
+                            {% elif recipe.difficulty == "difficult" %}
+                                <option value="easy">Easy</option>
+                                <option value="medium">Medium</option>
+                                <option value="difficult" selected>Difficult</option>
+                            {% endif %}
                         </select>
                         <label for="difficulty">Difficulty</label>
                     </div>
@@ -73,30 +82,36 @@
                         <label for="prep_time">Preparation Time (mins)</label>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="fas fa-clipboard-list prefix shadow-text recipedia-text"></i>
-                        <input id="ingredients" name="ingredients" minlength="2" maxlength="60"
-                        type="text" class="validate" required>
-                        <label for="ingredients">Ingredient 1:</label>
-                        <a type="button" class="btn green add_ingredient"><i class="far fa-plus-square"></i>Add Ingredient</a>
+                <!-- Jinja loop list method used -->
+                {% for ing in recipe.ingredients|list %}
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fas fa-clipboard-list prefix shadow-text recipedia-text"></i>
+                            <input id="ingredients" name="ingredients" minlength="2" maxlength="60"
+                            type="text" value="{{ ing }}" class="validate" required>
+                            <!-- got help with numbering my ingredients in the loop here: https://stackoverflow.com/questions/20233721/how-do-you-index-on-a-jinja-template -->
+                            <label for="ingredients">Ingredient {{loop.index}}:</label>
+                            <a type="button" class="btn green add_ingredient"><i class="far fa-plus-square"></i></a>
+                        </div>
                     </div>
-                </div>
-                <div class="row ingred_list">
-    
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="fas fa-list-ol prefix shadow-text recipedia-text"></i>
-                        <input id="steps" name="steps" minlength="3" maxlength="200"
-                        type="text" class="validate" required>
-                        <label for="steps">Step 1:</label>
-                        <a type="button" class="btn green add_step"><i class="far fa-plus-square"></i>Add Step</a>
+                    <div class="row ingred_list">
+        
                     </div>
-                </div>
-                <div class="row step_list">
-    
-                </div>
+                {% endfor %}
+                {% for add_steps in recipe.steps%}
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fas fa-list-ol prefix shadow-text recipedia-text"></i>
+                            <input id="steps" name="steps" minlength="3" maxlength="200"
+                            type="text" value="{{ add_steps }}" class="validate" required>
+                            <label for="steps">Step {{ loop.index }}:</label>
+                            <a type="button" class="btn green add_step"><i class="far fa-plus-square"></i></a>
+                        </div>
+                    </div>
+                    <div class="row step_list">
+        
+                    </div>
+                {% endfor %}
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-images prefix shadow-text recipedia-text"></i>
