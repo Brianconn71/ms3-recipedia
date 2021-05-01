@@ -41,7 +41,9 @@
                         <div class="card-action">
                         <a href="#">This is a link</a>
                         <small>Created by: {{ recipe.created_by  }}</small>
-                        <a href="{{ url_for('edit_recipe', recipe_id=recipe._id )}}" class="waves-effect waves-light btn-small blue"><i class="far fa-edit right"></i>Edit</a>
+                        {% if session.user|lower == recipe.created_by|lower%}
+                            <a href="{{ url_for('edit_recipe', recipe_id=recipe._id )}}" class="waves-effect waves-light btn-small blue"><i class="far fa-edit right"></i>Edit</a>
+                        {% endif %}
                         </div>
                     </div>
                 {% endfor%}
