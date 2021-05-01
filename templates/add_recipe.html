@@ -8,6 +8,18 @@
             <form class="col s12" method="POST" action="{{ url_for('add_recipe')}}" enctype="multipart/form-data">
                 <div class="row">
                     <div class="input-field col s12">
+                        <i class="fas fa-stream prefix shadow-text recipedia-text"></i>
+                        <select name="category" id="category" required>
+                            <option value="" disabled selected>Choose a Category</option>
+                            {% for category in categories %}
+                                <option value="{{ category.category_name.capitalize() }}">{{ category.category_name.capitalize() }}</option>
+                            {% endfor %}
+                        </select>
+                        <label for="category">Category</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
                         <i class="fas fa-pen prefix shadow-text recipedia-text"></i>
                         <input id="recipe_name" name="recipe_name" minlength="3" maxlength="60"
                         type="text" class="validate" required>
@@ -23,20 +35,10 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="input-field col s6">
+                    <div class="input-field col s12">
                         <i class="far fa-calendar-alt prefix shadow-text recipedia-text"></i>
                         <input name="date" id="date" type="text" class="datepicker validate" required>
                         <label for="date">Date Created</label>
-                    </div>
-                    <div class="input-field col s6">
-                        <i class="fas fa-stream prefix shadow-text recipedia-text"></i>
-                        <select name="category" id="category" required>
-                            <option value="" disabled selected>Choose a Category</option>
-                            {% for category in categories %}
-                                <option value="{{ category.category_name.capitalize() }}">{{ category.category_name.capitalize() }}</option>
-                            {% endfor %}
-                        </select>
-                        <label for="category">Category</label>
                     </div>
                 </div>
                 <div class="row">
@@ -95,7 +97,7 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-images prefix shadow-text recipedia-text"></i>
-                        <input id="img_upload" name="img_upload" type="text" class="validate" required>
+                        <input id="img_upload" name="img_upload" type="url" class="validate" required>
                         <label for="img_upload">Enter Image Url</label>
                     </div>
                 </div>
