@@ -13,6 +13,7 @@ $(document).ready(function(){
         },
         autoClose: true,
     });
+    $('.modal').modal();
 
     
     validateMaterializeSelect();
