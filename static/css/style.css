@@ -264,6 +264,7 @@ form input[type="text"]{
     color: var(--text-white);
     font-family: 'Oxygen', sans-serif;
     font-size: 1.2rem;
+    height: 100%;
 }
 
 /* Full recipe page */
@@ -302,6 +303,14 @@ ul>li.list-decoration{
     text-align: center;
     font-weight: bold;
     text-transform: capitalize;
+}
+.recipe-img{
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+.recipe-btns{
+    width: 100%;
+    text-align: center;
 }
 
 /* Wanted to hide the next and prev number spinners on form, found a solution here https://css-tricks.com/snippets/css/turn-off-number-input-spinners/ */
