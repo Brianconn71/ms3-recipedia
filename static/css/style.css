@@ -35,6 +35,10 @@ button{
 .submit-btn{
     background-color: var(--button-color)
 }
+.icons{
+    color: var(--button-color);
+    margin-right: 0.5rem;
+}
 /* menu icon */
 .menu-icon{
     color: var(--text-white);
@@ -56,6 +60,14 @@ p{
     color: var(--text-white);
     font-family: 'Ubuntu', sans-serif;
     font-size: 1.8rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-family: 'Ubuntu', sans-serif;
 }
 h5{
     font-size: 1.3rem;
@@ -251,7 +263,45 @@ form input[type="text"]{
     background-color: var(--darkest-green);
     color: var(--text-white);
     font-family: 'Oxygen', sans-serif;
-    font-size: 1.2rem;;
+    font-size: 1.2rem;
+}
+
+/* Full recipe page */
+.recipe-info{
+    padding: 2rem 0.3rem;
+    margin-bottom: 1rem;
+}
+.recipe-important-info{
+    margin-right: 0.5rem;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 1rem;
+}
+.recipe-content{
+    font-family: 'Oxygen', sans-serif;
+    font-size: 1.6rem;
+    padding: 2rem 0.8rem;
+}
+.recipe-ingredients{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.list-spacing{
+    padding: 1rem 0.2rem;
+}
+.underline-text{
+    text-decoration: underline;
+}
+ul>li.list-decoration{
+    list-style-type: decimal;
+    margin-left: 0.8rem;
+}
+.card .recipe-title{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 2rem;
+    color: var(--text-white);
+    text-align: center;
+    font-weight: bold;
+    text-transform: capitalize;
 }
 
 /* Wanted to hide the next and prev number spinners on form, found a solution here https://css-tricks.com/snippets/css/turn-off-number-input-spinners/ */
