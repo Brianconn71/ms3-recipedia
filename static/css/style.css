@@ -307,6 +307,7 @@ ul>li.list-decoration{
 .recipe-img{
     object-fit: cover;
     object-position: 50% 50%;
+    filter: brightness(60%);
 }
 .recipe-btns{
     width: 100%;

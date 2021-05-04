@@ -14,12 +14,6 @@
                 </form>
             </div>
         </div>
-        <!-- <div class="search-bar-and-btn">
-                <input type="search" name="search" id="search" class="searchbox form-control-lg shadow-2-strong" placeholder="Search for a recipe" autofocus>
-            <div class="search-btn">
-                <button type="button" class="btn btn-primary search-btn-primary"><i class="fas fa-search"></i></button>
-            </div>
-        </div> -->
     </section>
 
     <section class="latest-recipes">
@@ -60,14 +54,11 @@
                             </div>
                         </div>
                     {% endfor%}
+                    
+    {% if recipes|length >= 1 %}
+        {{ pagination.links }}
+    {% endif %} 
             </div>
         </div>
     </section>
-
-    <!-- {% for recipe in recipes %}
-        {{ recipe.recipe_name }}<br>
-        {{ recipe.date  }}<br>
-        {{ recipe.created_by  }}<br>
-    {% endfor %} -->
-
 {% endblock %}
