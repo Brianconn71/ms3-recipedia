@@ -50,7 +50,7 @@
             {% if session.user %}
                 <li><a href="{{ url_for('add_recipe') }}">Add a recipe</a></li>
                 {% if session.user|lower == 'admin'|lower %}
-                    <li><a href="{{ url_for('get_categories')}}" class="menu-items recipedia-text">Manage Categories</a></li>
+                    <li><a href="{{ url_for('get_categories')}}">Manage Categories</a></li>
                 {% endif %}
                 <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                 <li><a href="{{ url_for('logout') }}">Logout</a></li>

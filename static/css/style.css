@@ -266,6 +266,12 @@ form input[type="text"]{
     font-size: 1.2rem;
     height: 100%;
 }
+.card-btns{
+    padding: 0.8rem 0.6rem;
+}
+#delete-btn{
+    margin-right: 0.6rem;
+}
 
 /* Full recipe page */
 .recipe-info{

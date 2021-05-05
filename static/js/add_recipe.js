@@ -27,7 +27,7 @@ $(".add_step").click(function(e){
         $(".step_list").append(`
         <div class="input-field col s12">
         <i class="fas fa-list-ol prefix shadow-text recipedia-text"></i>
-        <input id="steps${step}" name="steps" minlength="3" maxlength="200" type="text" class="validate" required>
+        <input id="steps${step}" name="steps" minlength="3" maxlength="500" type="text" class="validate" required>
         <label for="steps${step}">Step ${step}:</label>
         <a type="button" class="btn red remove_step"><i class="far fa-minus-square"></i>Remove</a></div>`)
     }
