@@ -187,7 +187,7 @@ def edit_recipe(recipe_id):
 
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
-    mongo.db.recipes.delete_one({"_id": ObjectId(recipe_id)})
+    mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe has been deleted successfully")
     return redirect(url_for("get_recipes"))
 
@@ -217,6 +217,28 @@ def add_category():
         return redirect(url_for("get_categories"))
 
     return render_template("add_category.html")
+
+
+@app.route("/edit_category/<category_id>", methods=["GET", "POST"])
+def edit_category(category_id):
+    if request.method == "POST":
+        submit_category = {
+            "category_name": request.form.get("category_name")
+        }
+        mongo.db.categories.update(
+            {"_id": ObjectId(category_id)}, submit_category)
+        flash("Categroy updated successfully")
+        return redirect(url_for("get_categories"))
+
+    category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
+    return render_template("edit_category.html", category=category)
+
+
+@app.route("/delete_category/<category_id>")
+def delete_category(category_id):
+    mongo.db.categories.remove({"_id": ObjectId(category_id)})
+    flash("Category has been deleted successfully")
+    return redirect(url_for("get_categories"))
 
 
 if __name__ == "__main__":
