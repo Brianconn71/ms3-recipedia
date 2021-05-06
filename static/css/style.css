@@ -126,6 +126,11 @@ p, h5{
     justify-content: center;
     align-items: center;
 }
+.control-btns{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 /* Latest Recipes */
 .latest-recipes{
     height: 40vh;
@@ -335,4 +340,16 @@ input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button { 
   -webkit-appearance: none; 
   margin: 0; 
+}
+/* Had to use !important as it was the only way I could override materialize settings */
+input[type=text]{
+    color: var(--text-white) !important;
+}
+
+/* the below is used to change the autocomplete color of inputs taken from here: https://dev.to/atndesign/a-trick-to-change-the-autocomplete-background-color-21ll */
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px #1b1b1b inset !important;
+    -webkit-text-fill-color: white !important;
 }
