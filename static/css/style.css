@@ -319,6 +319,16 @@ ul>li.list-decoration{
     width: 100%;
     text-align: center;
 }
+/* Modal content */
+.modal .delete-confirmation{
+    background-color: var(--darker-green);
+    color: var(--text-white);
+    font-family: 'Ubuntu', sans-serif;
+}
+.modal .delete-confirmation-msg{
+    color: var(--text-white);
+    font-family: 'Oxygen', sans-serif;
+}
 
 /* Wanted to hide the next and prev number spinners on form, found a solution here https://css-tricks.com/snippets/css/turn-off-number-input-spinners/ */
 input[type=number]::-webkit-inner-spin-button, 
