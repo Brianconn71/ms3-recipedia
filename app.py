@@ -40,6 +40,28 @@ def get_recipes():
                             pagination=pagination)
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    search = request.form.get("search")
+    page, per_page, offset = get_page_args(
+        page_parameter='page', per_page_parameter='per_page',
+        offset_parameter='offset')
+    per_page = 6
+    offset = (page - 1) * 6
+    total = mongo.db.recipes.find({"$text": {"$search": search}}).count()
+    recipes = list(mongo.db.recipes.find({"$text": {"$search": search}}))
+    recipes_paginated = recipes[offset: offset + per_page]
+    pagination = Pagination(page=page, per_page=per_page,
+                            total=total, css_framework='materializecss')
+    if len(recipes) <= 0:
+        flash(f"No recipes of {search} were found!")
+    else:
+        flash(f"Your search for {search} returned {len(recipes)} result(s)!")
+    return render_template("recipes.html", recipes=recipes_paginated,
+                            page=page, per_page=per_page,
+                            pagination=pagination)
+
+
 # used minin project walkthrough for user authentication
 @app.route("/register", methods=["GET", "POST"])
 def register():

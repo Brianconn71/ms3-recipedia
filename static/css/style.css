@@ -80,7 +80,7 @@ p, h5{
 }
 /* search container section */
 .search-container{
-    height: 80vh;
+    height: 60vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -128,7 +128,7 @@ p, h5{
 }
 /* Latest Recipes */
 .latest-recipes{
-    height: 20vh;
+    height: 40vh;
 }
 .recipe-card{
     box-shadow: 0 100px 80px rgba(0, 0, 0, 0.521);
