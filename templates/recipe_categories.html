@@ -3,6 +3,13 @@
 
     <h3 class="center-align recipedia-text shadow-text">Add/Remove/Edit the recipe categories</h3>
 
+    <div class="row">
+        <div class="col s12 center-align">
+            <a href="{{ url_for('add_category')}}" class="btn-large yellow">
+                add Category <i class="fas fa-plus-alt right"></i>
+            </a>
+        </div>
+    </div>
      <div class="row">
          {% for category in categories %}
             <div class="col s12 m4">
