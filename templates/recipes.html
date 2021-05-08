@@ -4,9 +4,10 @@
     <section class="container search-container">
         <h2 class="search-heading recipedia-text">Search for a recipe from our Database</h2>
         <div class="row z-depth-5">
+            <div class="col s12 w-100">
             <form action="{{ url_for('search')}}" method="POST" class="col s12">
                 <div class="row center-align">
-                    <div class="col s12 input-field">
+                    <div class="col s12 w-100 input-field">
                         <i class="fas fa-search recipedia-text shadow-text prefix"></i>
                         <input type="text" id="search" name="search" minlength="3" class="validate" required>
                         <label for="search" id="search-label">Search Recipedia</label>
@@ -14,11 +15,12 @@
                     <div class="col s12 control-btns">
                         <a href="{{ url_for('get_recipes')}}" class="red btn">reset</a>
                         <button type="submit" class="btn blue">
-                            <i class="fas fa-search"></i>Search
+                            <i class="fas fa-search submit-icon"></i>Search
                         </button>
                     </div>
                 </div>
             </form>
+            </div>
         </div>
     </section>
 

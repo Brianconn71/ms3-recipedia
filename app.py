@@ -263,6 +263,13 @@ def delete_category(category_id):
     return redirect(url_for("get_categories"))
 
 
+@app.route("/get_products")
+def get_products():
+    products = list(
+        mongo.db.products.find().sort("product_name", 1))
+    return render_template("products.html", products=products)
+
+
 """
     all error handler functions were found and guidance
     got from here:

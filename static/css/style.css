@@ -130,7 +130,7 @@ p, h5{
 .control-btns{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 #search-label{
     color: var(--text-white)
