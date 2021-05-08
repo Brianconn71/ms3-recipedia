@@ -55,6 +55,7 @@ button{
 }
 p{
     font-size: 1rem;
+    font-family: 'Oxygen', sans-serif;
 }
 .flash-msg-text{
     color: var(--text-white);
@@ -334,6 +335,9 @@ ul>li.list-decoration{
     color: var(--text-white);
     font-family: 'Oxygen', sans-serif;
 }
+
+/* error pages */
+.error-text
 
 /* Wanted to hide the next and prev number spinners on form, found a solution here https://css-tricks.com/snippets/css/turn-off-number-input-spinners/ */
 input[type=number]::-webkit-inner-spin-button, 

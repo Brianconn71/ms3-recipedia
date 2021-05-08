@@ -263,6 +263,28 @@ def delete_category(category_id):
     return redirect(url_for("get_categories"))
 
 
+"""
+    all error handler functions were found and guidance
+    got from here:
+    https://www.askpython.com/python-modules/flask/flask-error-handling
+"""
+
+
+@app.errorhandler(403)
+def forbidden_error(error):
+    return render_template('403.html'), 403
+
+
+@app.errorhandler(404)
+def not_found_error(error):
+    return render_template('404.html'), 404
+
+
+@app.errorhandler(403)
+def internal_server_error(error):
+    return render_template('500.html'), 500
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
