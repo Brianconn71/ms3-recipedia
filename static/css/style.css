@@ -132,6 +132,9 @@ p, h5{
     align-items: center;
     justify-content: center;
 }
+#search-label{
+    color: var(--text-white)
+}
 /* Latest Recipes */
 .latest-recipes{
     height: 40vh;
