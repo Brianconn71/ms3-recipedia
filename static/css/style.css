@@ -328,6 +328,11 @@ ul>li.list-decoration{
     width: 100%;
     text-align: center;
 }
+
+/* products page */
+.product-description{
+    color: var(--text-white)
+}
 /* Modal content */
 .modal .delete-confirmation{
     background-color: var(--darker-green);
