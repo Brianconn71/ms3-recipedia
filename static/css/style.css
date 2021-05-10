@@ -6,6 +6,7 @@
     --darker-green: #a2b29f;
     --darkest-green: #798777;
     --button-color: #7B6668;
+    --gold-rating: #ffd700;
 }
 
 *{
@@ -78,6 +79,12 @@ p, h5{
 }
 .capitalize{
     text-transform: capitalize;
+}
+.truncate-text{
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 /* search container section */
 .search-container{
@@ -333,6 +340,24 @@ ul>li.list-decoration{
 .product-description{
     color: var(--text-white)
 }
+#product-title{
+    padding: 0.8rem 0;
+}
+.see-product-btn{
+    margin: 1rem 0;
+}
+.thumb-up{
+    color: var(--text-white);
+}
+.icon-spacing{
+    margin-right: 0.3rem;
+    color: var(--gold-rating);
+}
+/* targeting the first "thumb up", answer found here: https://stackoverflow.com/questions/2717480/css-selector-for-first-element-with-class */
+.icon-spacing:nth-of-type(1)
+{
+    margin-left: 0.5rem;
+} 
 /* Modal content */
 .modal .delete-confirmation{
     background-color: var(--darker-green);
