@@ -263,6 +263,13 @@ def delete_category(category_id):
     return redirect(url_for("get_categories"))
 
 
+@app.route("/full_product/<product_id>")
+def full_product(product_id):
+    product = mongo.db.products.find_one(
+        {"_id": ObjectId(product_id)})
+    return render_template("full_product.html", product=product)
+
+
 @app.route("/get_products")
 def get_products():
     products = list(
