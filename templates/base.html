@@ -33,6 +33,7 @@
                         <li><a href="{{ url_for('add_recipe') }}" class="menu-items recipedia-text">Add a recipe</a></li>
                         {% if session.user|lower == 'admin'|lower %}
                             <li><a href="{{ url_for('get_categories')}}" class="menu-items recipedia-text">Manage Categories</a></li>
+                            <li><a href="{{ url_for('add_product') }}" class="menu-items recipedia-text">Add a product</a></li>
                         {% endif %}
                         <li><a href="{{ url_for('profile', username=session['user']) }}" class="menu-items recipedia-text">Profile</a></li>
                         <li><a href="{{ url_for('logout') }}" class="menu-items recipedia-text">Logout</a></li>
@@ -53,6 +54,7 @@
                 <li><a href="{{ url_for('add_recipe') }}">Add a recipe</a></li>
                 {% if session.user|lower == 'admin'|lower %}
                     <li><a href="{{ url_for('get_categories')}}">Manage Categories</a></li>
+                    <li><a href="{{ url_for('add_product') }}">Add a product</a></li>
                 {% endif %}
                 <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                 <li><a href="{{ url_for('logout') }}">Logout</a></li>
@@ -61,56 +63,6 @@
                 <li><a href="{{ url_for('register')}}">Register</a></li>
             {% endif %}
         </ul>
-    <!-- <nav class="navbar fixed-top navbar-expand-lg text-shadow">
-        <div class="container-fluid">
-            <div class="logo-container">
-                <a class="navbar-brand recipedia-logo" href="#">Recipedia</a>
-            </div>
-                <button
-                class="navbar-toggler"
-                type="button"
-                data-mdb-toggle="collapse"
-                data-mdb-target="#navbarTogglerDemo02"
-                aria-controls="navbarTogglerDemo02"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-                >
-                <i class="fas fa-bars menu-icon text-shadow"></i>
-                </button>
-                <div class="menu-items-container collapse navbar-collapse" id="navbarTogglerDemo02">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                        <a class="nav-link menu-items active" aria-current="page" href="{{ url_for('get_recipes')}}">Home</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link menu-items" href="#">Add a recipe</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link menu-items" href="#">Manage Categories</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link menu-items" href="#">Profile</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link menu-items" href="#">Login</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link menu-items" href="#">Logout</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link menu-items" href="{{ url_for('register')}}">Register</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link menu-items" href="#">Recipedia Utensils</a>
-                        </li>
-                         <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"
-                        >Disabled</a>
-                        </li> -->
-                    <!-- </ul>
-            </div>
-        </div>
-    </nav> --> 
     </header>
 
     <section>

@@ -270,6 +270,22 @@ def get_products():
     return render_template("products.html", products=products)
 
 
+@app.route("/add_product", methods=["GET", "POST"])
+def add_product():
+    if request.method == "POST":
+        product = {
+            "product_name": request.form.get("product_name"),
+            "product_description": request.form.get("product_description"),
+            "product_img": request.form.get("product_img"),
+            "user_rating": request.form.get("user_rating")
+        }
+        mongo.db.products.insert_one(product)
+        flash("New product has been added")
+        return redirect(url_for("get_products"))
+
+    return render_template("add_product.html")
+
+
 """
     all error handler functions were found and guidance
     got from here:

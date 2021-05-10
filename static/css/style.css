@@ -258,6 +258,14 @@ form input[type="text"]{
     color: #1DA1F2;
     transition: color .3s ease-in-out;
 }
+.buy-now-icon{
+    padding: 1rem 0;
+    font-size: 1.5rem;
+}
+#amazon:hover{
+    color: #FF9900;
+    transition: color .3s ease-in-out;
+}
 .copyright-text{
     font-family: 'Oxygen', sans-serif;
 }
@@ -352,6 +360,13 @@ ul>li.list-decoration{
 .icon-spacing{
     margin-right: 0.3rem;
     color: var(--gold-rating);
+}
+.buy-now-head{
+    color: var(--text-white);
+    font-family: 'Ubuntu', sans-serif;
+}
+.buy-now-text{
+    padding: 1rem 0;
 }
 /* targeting the first "thumb up", answer found here: https://stackoverflow.com/questions/2717480/css-selector-for-first-element-with-class */
 .icon-spacing:nth-of-type(1)
