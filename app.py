@@ -140,8 +140,9 @@ def login():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # get the session users username
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
+    # username = mongo.db.users.find_one(
+    #     {"username": session["user"]})["username"]
+    username = session.get("user").lower()
     recipes = mongo.db.recipes.find()
 
     if username is not None:
