@@ -26,15 +26,20 @@
             </div>
             <div class="col s12 recipe-links">
                 <div class="recipe-links">
-                <a href="{{ url_for('category_search', id='Breakfast')}}" class="waves-effect waves-light btn">Breakfast</a>
-                <a href="{{ url_for('category_search', id='Lunch')}}" class="waves-effect waves-light btn">Lunch</a>
-                <a href="{{ url_for('category_search', id='Dinner')}}" class="waves-effect waves-light btn">Dinner</a>
-                <a href="{{ url_for('category_search', id='Desserts')}}" class="waves-effect waves-light btn">Desserts</a>
-                <a href="{{ url_for('category_search', id='Beverage')}}" class="waves-effect waves-light btn">Beverage</a>
-                <a href="{{ url_for('category_search', id='Vegetarian')}}" class="waves-effect waves-light btn">Vegetarian</a>
-                <a href="{{ url_for('category_search', id='Vegan')}}" class="waves-effect waves-light btn">Vegan</a>
-                <a href="{{ url_for('category_search', id='Gluten-free')}}" class="waves-effect waves-light btn">Gluten Free</a>
-                <a href="{{ url_for('category_search', id='Smoothie')}}" class="waves-effect waves-light btn">Smoothie</a>
+                <a href="{{ url_for('category_search', id='Breakfast')}}" class="waves-effect waves-light btn recipe-link-btn">Breakfast</a>
+                <a href="{{ url_for('category_search', id='Lunch')}}" class="waves-effect waves-light btn recipe-link-btn">Lunch</a>
+                <a href="{{ url_for('category_search', id='Dinner')}}" class="waves-effect waves-light btn recipe-link-btn">Dinner</a>
+                <a href="{{ url_for('category_search', id='Desserts')}}" class="waves-effect waves-light btn recipe-link-btn">Desserts</a>
+                <a href="{{ url_for('category_search', id='Beverage')}}" class="waves-effect waves-light btn recipe-link-btn">Beverage</a>
+                <a href="{{ url_for('category_search', id='Vegetarian')}}" class="waves-effect waves-light btn recipe-link-btn">Vegetarian</a>
+                <a href="{{ url_for('category_search', id='Vegan')}}" class="waves-effect waves-light btn recipe-link-btn">Vegan</a>
+                <a href="{{ url_for('category_search', id='Gluten-free')}}" class="waves-effect waves-light btn recipe-link-btn">Gluten Free</a>
+                <a href="{{ url_for('category_search', id='Smoothie')}}" class="waves-effect waves-light btn recipe-link-btn">Smoothie</a>
+                </div>
+                <div class="col s12 center-align">
+                    <h6 class="recipedia-text shadow-text">Want to add a recipe to our database?</h6>
+                    <p class="recipedia-text shadow-text"><a href="{{ url_for('login') }}">Login</a> here to add your recipe</p>
+                    <p class="recipedia-text shadow-text">Don't have an account? Create one <a href="{{ url_for('register') }}">here</a></p>
                 </div>
             </div>
         </div>
@@ -48,7 +53,7 @@
                             <div class="card-image">
                             <img src="{{ recipe.img_upload }}" class="recipe-img">
                             <span class="card-title recipe-title recipedia-text shadow-text">{{recipe.recipe_name}}</span>
-                            <a type="submit" name="save_recipe" class="btn-floating halfway-fab waves-effect waves-light red"><i class="far fa-save"></i></a>
+                            <a type="submit" name="save_recipe" class="btn-floating halfway-fab waves-effect waves-light red" id="save_recipe"><i class="far fa-save"></i></a>
                             </div>
                             <div class="card-content hoverable">
                             <h4 class="recipedia-text shadow-text center-align underline-text">Ingredients:</h4>

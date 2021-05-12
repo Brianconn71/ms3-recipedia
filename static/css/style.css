@@ -77,6 +77,9 @@ h5{
 p, h5{
     color: var(--button-color);
 }
+p{
+    font-family: 'Oxygen', sans-serif;
+}
 .capitalize{
     text-transform: capitalize;
 }
@@ -88,7 +91,7 @@ p, h5{
 }
 /* search container section */
 .search-container{
-    height: 60vh;
+    height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -144,6 +147,12 @@ p, h5{
 }
 .col>.recipe-links{
     padding: 1rem 0;
+    text-align: center;
+}
+.col>.recipe-links>.recipe-link-btn{
+    color: var(--text-white);
+    background-color: var(--button-color);
+    margin: 0.3rem;
 }
 /* Latest Recipes */
 .latest-recipes{
@@ -405,6 +414,6 @@ input[type=text]{
 input:-webkit-autofill,
 textarea:-webkit-autofill,
 select:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 1000px #1b1b1b inset !important;
+    -webkit-box-shadow: 0 0 0 1000px var(--pale-green) inset !important;
     -webkit-text-fill-color: white !important;
 }
