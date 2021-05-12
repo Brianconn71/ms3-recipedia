@@ -15,7 +15,7 @@ $(document).ready(function(){
     });
     $('.modal').modal();
 
-    
+    // took the below form validation from the walkthrough project
     validateMaterializeSelect();
     function validateMaterializeSelect() {
         let classValid = { "border-bottom": "1px solid #4caf50", "box-shadow": "0 1px 0 0 #4caf50" };

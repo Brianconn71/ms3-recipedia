@@ -142,6 +142,9 @@ p, h5{
 #search-label{
     color: var(--text-white)
 }
+.col>.recipe-links{
+    padding: 1rem 0;
+}
 /* Latest Recipes */
 .latest-recipes{
     height: 40vh;

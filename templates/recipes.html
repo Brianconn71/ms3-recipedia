@@ -22,6 +22,10 @@
             </form>
             </div>
             <div class="col s12">
+                <h5 class="recipedia-text shadow-text center-align">Filter recipes in our database by clicking the buttons below!</h5>
+            </div>
+            <div class="col s12 recipe-links">
+                <div class="recipe-links">
                 <a href="{{ url_for('category_search', id='Breakfast')}}" class="waves-effect waves-light btn">Breakfast</a>
                 <a href="{{ url_for('category_search', id='Lunch')}}" class="waves-effect waves-light btn">Lunch</a>
                 <a href="{{ url_for('category_search', id='Dinner')}}" class="waves-effect waves-light btn">Dinner</a>
@@ -30,7 +34,8 @@
                 <a href="{{ url_for('category_search', id='Vegetarian')}}" class="waves-effect waves-light btn">Vegetarian</a>
                 <a href="{{ url_for('category_search', id='Vegan')}}" class="waves-effect waves-light btn">Vegan</a>
                 <a href="{{ url_for('category_search', id='Gluten-free')}}" class="waves-effect waves-light btn">Gluten Free</a>
-                <a href="{{ url_for('category_search', id='Smoothie')}}"class="waves-effect waves-light btn">Smoothie</a>
+                <a href="{{ url_for('category_search', id='Smoothie')}}" class="waves-effect waves-light btn">Smoothie</a>
+                </div>
             </div>
         </div>
     </section>
