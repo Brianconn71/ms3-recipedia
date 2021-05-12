@@ -36,8 +36,9 @@ def get_recipes():
     pagination = Pagination(page=page, per_page=per_page,
                             total=total, css_framework='materializecss')
     return render_template("recipes.html", recipes=recipes_paginated,
-                            page=page, per_page=per_page,
-                            pagination=pagination)
+                           page=page,
+                           per_page=per_page,
+                           pagination=pagination)
 
 
 @app.route("/search", methods=["GET", "POST"])

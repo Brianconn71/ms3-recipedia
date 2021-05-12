@@ -21,9 +21,18 @@
                 </div>
             </form>
             </div>
+            <div class="col s12">
+                <a href="{{ url_for('category_search', id='Breakfast')}}" class="waves-effect waves-light btn">Breakfast</a>
+                <a href="{{ url_for('category_search', id='Lunch')}}" class="waves-effect waves-light btn">Lunch</a>
+                <a href="{{ url_for('category_search', id='Dinner')}}" class="waves-effect waves-light btn">Dinner</a>
+                <a href="{{ url_for('category_search', id='Desserts')}}" class="waves-effect waves-light btn">Desserts</a>
+                <a href="{{ url_for('category_search', id='Beverage')}}" class="waves-effect waves-light btn">Beverage</a>
+                <a href="{{ url_for('category_search', id='Vegetarian')}}" class="waves-effect waves-light btn">Vegetarian</a>
+                <a href="{{ url_for('category_search', id='Vegan')}}" class="waves-effect waves-light btn">Vegan</a>
+                <a href="{{ url_for('category_search', id='Gluten-free')}}" class="waves-effect waves-light btn">Gluten Free</a>
+                <a href="{{ url_for('category_search', id='Smoothie')}}"class="waves-effect waves-light btn">Smoothie</a>
+            </div>
         </div>
-        <a href="{{ url_for('category_search', id='Lunch')}}">Lunch</a>
-        <a href="{{ url_for('category_search', id='Vegan')}}">Vegan</a>
     </section>
 
     <section class="latest-recipes">
