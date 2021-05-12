@@ -7,6 +7,7 @@
     --darkest-green: #798777;
     --button-color: #7B6668;
     --gold-rating: #ffd700;
+    --bright-green: #AADB1E;
 }
 
 *{
@@ -58,6 +59,9 @@ p{
     font-size: 1rem;
     font-family: 'Oxygen', sans-serif;
 }
+.link-color{
+    color: var(--bright-green)
+}
 .flash-msg-text{
     color: var(--text-white);
     font-family: 'Ubuntu', sans-serif;
@@ -76,9 +80,6 @@ h5{
 }
 p, h5{
     color: var(--button-color);
-}
-p{
-    font-family: 'Oxygen', sans-serif;
 }
 .capitalize{
     text-transform: capitalize;
@@ -153,6 +154,9 @@ p{
     color: var(--text-white);
     background-color: var(--button-color);
     margin: 0.3rem;
+}
+.col>.users-signin{
+    padding: 1rem 0;
 }
 /* Latest Recipes */
 .latest-recipes{
@@ -379,6 +383,11 @@ ul>li.list-decoration{
 }
 .buy-now-text{
     padding: 1rem 0;
+}
+.product-text{
+    padding: 1rem 0;
+    font-size: 1.2rem;
+    font-family: 'Oxygen', sans-serif;
 }
 /* targeting the first "thumb up", answer found here: https://stackoverflow.com/questions/2717480/css-selector-for-first-element-with-class */
 .icon-spacing:nth-of-type(1)
