@@ -358,6 +358,13 @@ def edit_product(product_id):
     return render_template("edit_products.html", product=product)
 
 
+@app.route("/delete_product/<product_id>")
+def delete_product(product_id):
+    mongo.db.products.remove({"_id": ObjectId(product_id)})
+    flash("Product has been deleted successfully")
+    return redirect(url_for("get_products"))
+
+
 """
     all error handler functions were found and guidance
     got from here:

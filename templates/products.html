@@ -56,7 +56,7 @@
                 </div>
                 <div class="modal-footer">
                     <a href="#" class="waves-effect waves-green btn-flat red"> Cancel <i class="far fa-window-close right"></i></a>
-                    <a href="#" class="modal-close waves-effect waves-green btn-flat">Confirm</a>
+                    <a href="{{ url_for('delete_product', product_id=product._id )}}" class="modal-close waves-effect waves-green btn-flat">Confirm</a>
                 </div>
             </div>
         {% endfor %}
