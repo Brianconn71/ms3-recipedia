@@ -43,7 +43,7 @@
                         <div class="control-btns">
                             {% if session.user|lower == session.user|lower == 'admin'|lower %}
                                 <a href="#modal1" class="waves-effect waves-light btn-small modal-trigger modal-trigger red" id="delete-btn"><i class="far fa-trash-alt right"></i>Delete</a>
-                                <a href="#" class="waves-effect waves-light btn-small blue" id="edit-btn"><i class="far fa-edit right"></i>Edit</a>
+                                <a href="{{ url_for('edit_product', product_id = product._id)}}" class="waves-effect waves-light btn-small blue" id="edit-btn"><i class="far fa-edit right"></i>Edit</a>
                             {% endif %}
                         </div>
                     </div>

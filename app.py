@@ -340,6 +340,24 @@ def add_product():
     return render_template("add_product.html")
 
 
+@app.route("/edit_product/<product_id>", methods=["GET", "POST"])
+def edit_product(product_id):
+    if request.method == "POST":
+        update_product = {
+            "product_name": request.form.get("product_name"),
+            "product_description": request.form.get("product_description"),
+            "product_img": request.form.get("product_img"),
+            "user_rating": request.form.get("user_rating")
+        }
+        mongo.db.products.update(
+            {"_id": ObjectId(product_id)}, update_product)
+        flash("Product updated successfully")
+        return redirect(url_for("get_products"))
+
+    product = mongo.db.products.find_one({"_id": ObjectId(product_id)})
+    return render_template("edit_products.html", product=product)
+
+
 """
     all error handler functions were found and guidance
     got from here:
