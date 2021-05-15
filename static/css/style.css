@@ -366,6 +366,8 @@ ul>li.list-decoration{
 }
 #product-title{
     padding: 0.8rem 0;
+    font-weight: bold;
+    text-transform: capitalize;
 }
 .see-product-btn{
     margin: 1rem 0;
@@ -418,11 +420,14 @@ input[type=number]::-webkit-outer-spin-button {
 input[type=text]{
     color: var(--text-white) !important;
 }
+input[type=url]{
+    color: var(--text-white) !important;
+}
 
 /* the below is used to change the autocomplete color of inputs taken from here: https://dev.to/atndesign/a-trick-to-change-the-autocomplete-background-color-21ll */
 input:-webkit-autofill,
 textarea:-webkit-autofill,
 select:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 1000px var(--pale-green) inset !important;
-    -webkit-text-fill-color: white !important;
+    -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+    -webkit-text-fill-color: var(--text-white) !important;
 }
