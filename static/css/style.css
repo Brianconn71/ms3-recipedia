@@ -423,7 +423,9 @@ input[type=text]{
 input[type=url]{
     color: var(--text-white) !important;
 }
-
+input[type=number]{
+    color: var(--text-white) !important;
+}
 /* the below is used to change the autocomplete color of inputs taken from here: https://dev.to/atndesign/a-trick-to-change-the-autocomplete-background-color-21ll */
 input:-webkit-autofill,
 textarea:-webkit-autofill,
