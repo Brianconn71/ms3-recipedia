@@ -51,7 +51,7 @@
                     {% for recipe in recipes %}
                         <div class="card recipedia-cards hoverable">
                             <div class="card-image">
-                            <img src="{{ recipe.img_upload }}" class="recipe-img">
+                            <img src="{{ recipe.img_upload }}" class="recipe-img" alt="an image of {{recipe.recipe_name}}">
                             <span class="card-title recipe-title recipedia-text shadow-text">{{recipe.recipe_name}}</span>
                             <form id="add-to-save-list">
                             <a class="btn-floating halfway-fab waves-effect waves-light red" title="Save recipe to your profile" id="save-recipe"><i class="far fa-save"></i></a>
