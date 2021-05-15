@@ -10,13 +10,9 @@
                     <div class="input-field col s12">
                         <i class="fas fa-stream prefix shadow-text recipedia-text"></i>
                         <select name="category" id="category" required>
-                            <option value="" disabled selected>Choose a Category</option>
+                            <option value="{{recipe.category}}" selected>{{recipe.category}}</option>
                             {% for category in categories %}
-                                {% if category.category_name == recipe.category %}
-                                    <option value="{{ category.category_name.capitalize() }}">{{ category.category_name.capitalize() }}</option>
-                                {% else %}
-                                    <option value="{{ category.category_name.capitalize() }} ">{{ category.category_name.capitalize() }}</option>
-                                {% endif %}
+                                <option value="{{ category.category_name.capitalize() }}">{{ category.category_name.capitalize() }}</option>
                             {% endfor %}
                         </select>
                         <label for="category">Category</label>
