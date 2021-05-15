@@ -88,6 +88,7 @@
                             <!-- got help with numbering my ingredients in the loop here: https://stackoverflow.com/questions/20233721/how-do-you-index-on-a-jinja-template -->
                             <label for="ingredients">Ingredient {{loop.index}}:</label>
                             <a type="button" class="btn green add_ingredient"><i class="far fa-plus-square"></i></a>
+                            <a type="button" class="btn red remove_ingredient"><i class="far fa-minus-square"></i></a>
                         </div>
                     </div>
                     <div class="row ingred_list">
@@ -102,6 +103,7 @@
                             type="text" value="{{ add_steps }}" class="validate" required>
                             <label for="steps">Step {{ loop.index }}:</label>
                             <a type="button" class="btn green add_step"><i class="far fa-plus-square"></i></a>
+                            <a type="button" class="btn red remove_step"><i class="far fa-minus-square"></i></a>
                         </div>
                     </div>
                     <div class="row step_list">
