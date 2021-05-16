@@ -365,6 +365,28 @@ def delete_product(product_id):
     return redirect(url_for("get_products"))
 
 
+# below function filters the products based on rating
+@app.route("/rating_search/<id>")
+def rating_search(id):
+    rating = list(mongo.db.products.find().sort("user_rating", -1))
+    page, per_page, offset = get_page_args(
+        page_parameter='page', per_page_parameter='per_page',
+        offset_parameter='offset')
+    per_page = 1
+    offset = (page - 1) * 1
+    total = mongo.db.products.find().count()
+    ratings_paginated = rating[offset: offset + per_page]
+    pagination = Pagination(page=page, per_page=per_page,
+                            total=total, css_framework='materializecss')
+    if len(rating) <= 0:
+        flash(f"No products of rating {id} were found!")
+    else:
+        flash(f"Your search for a rating of {id} returned {len(rating)} result(s)!")
+    return render_template("products.html", rating=ratings_paginated,
+                           page=page, per_page=per_page,
+                           pagination=pagination)
+
+
 """
     all error handler functions were found and guidance
     got from here:

@@ -7,6 +7,17 @@
         <div class="col s12 center-align">
             <h3 class="center-align recipedia-text shadow-text">Check out our recommended cooking utensils below!</h3>
         </div>
+        <div class="col s12">
+                <h5 class="recipedia-text shadow-text center-align">Filter recipes in our database by clicking the buttons below!</h5>
+            </div>
+            <div class="col s12 recipe-links">
+                <div class="recipe-links">
+                <a href="{{ url_for('rating_search', id='1')}}" class="waves-effect waves-light btn recipe-link-btn">1</a>
+                <a href="{{ url_for('rating_search', id='2')}}" class="waves-effect waves-light btn recipe-link-btn">2</a>
+                <a href="{{ url_for('rating_search', id='3')}}" class="waves-effect waves-light btn recipe-link-btn">'3'</a>
+                <a href="{{ url_for('rating_search', id='4')}}" class="waves-effect waves-light btn recipe-link-btn">4</a>
+                <a href="{{ url_for('rating_search', id='5')}}" class="waves-effect waves-light btn recipe-link-btn">5</a>
+            </div>
     </div>
      <div class="row">
          {% for product in products %}
@@ -61,6 +72,7 @@
                 </div>
             </div>
         {% endfor %}
+        
     </div>
 
 {% endblock %}
