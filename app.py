@@ -370,21 +370,21 @@ def delete_product(product_id):
 # below function filters the products based on rating
 @app.route("/product_search/<id>")
 def product_search(id):
-    rating = list(mongo.db.products.find().sort("user_rating", -1))
+    products = list(mongo.db.products.find({"product_type": id}))
     page, per_page, offset = get_page_args(
         page_parameter='page', per_page_parameter='per_page',
         offset_parameter='offset')
-    per_page = 1
-    offset = (page - 1) * 1
-    total = mongo.db.products.find().count()
-    ratings_paginated = rating[offset: offset + per_page]
+    per_page = 5
+    offset = (page - 1) * 5
+    total = len(products)
+    products_paginated = products[offset: offset + per_page]
     pagination = Pagination(page=page, per_page=per_page,
                             total=total, css_framework='materializecss')
-    if len(rating) <= 0:
+    if len(products) <= 0:
         flash(f"No products of rating {id} were found!")
     else:
-        flash(f"Your search for a rating of {id} returned {len(rating)} result(s)!")
-    return render_template("products.html", rating=ratings_paginated,
+        flash(f"Your search for a rating of {id} returned {len(products)} result(s)!")
+    return render_template("products.html", products=products_paginated,
                            page=page, per_page=per_page,
                            pagination=pagination)
 
