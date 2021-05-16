@@ -329,6 +329,7 @@ def add_product():
     if request.method == "POST":
         product = {
             "product_name": request.form.get("product_name"),
+            "product_type": request.form.get("product_type"),
             "product_description": request.form.get("product_description"),
             "product_img": request.form.get("product_img"),
             "user_rating": request.form.get("user_rating")
@@ -345,6 +346,7 @@ def edit_product(product_id):
     if request.method == "POST":
         update_product = {
             "product_name": request.form.get("product_name"),
+            "product_type": request.form.get("product_type"),
             "product_description": request.form.get("product_description"),
             "product_img": request.form.get("product_img"),
             "user_rating": request.form.get("user_rating")
@@ -366,8 +368,8 @@ def delete_product(product_id):
 
 
 # below function filters the products based on rating
-@app.route("/rating_search/<id>")
-def rating_search(id):
+@app.route("/product_search/<id>")
+def product_search(id):
     rating = list(mongo.db.products.find().sort("user_rating", -1))
     page, per_page, offset = get_page_args(
         page_parameter='page', per_page_parameter='per_page',

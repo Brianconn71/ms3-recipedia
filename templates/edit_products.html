@@ -16,6 +16,19 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
+                        <i class="fas fa-clipboard-list prefix shadow-text recipedia-text"></i>
+                         <select name="product_type" id="product_type" required>
+                            <option value="{{ product.product_type }}" selected>{{ product.product_type }}</option>
+                            <option value="knife">Knives</option>
+                            <option value="pan">Pots & Pans</option>
+                            <option value="baking">Baking</option>
+                            <option value="utensils">Utensils</option>
+                        </select>
+                        <label for="product_type">Product Type</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
                         <i class="fas fa-stream prefix shadow-text recipedia-text"></i>
                         <input id="product_description" name="product_description" minlength="3" maxlength="500"
                         type="text" class="validate" value="{{ product.product_description }}" required>

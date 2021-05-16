@@ -11,7 +11,7 @@ $(".add_ingredient").click(function(e){
         <i class="fas fa-clipboard-list prefix shadow-text recipedia-text"></i>
         <input id="ingredients${ingred}" name="ingredients" minlength="2" maxlength="60" type="text" class="validate" required>
         <label for="ingredients${ingred}">Ingredient ${ingred}:</label>
-        <a type="button" class="btn red remove_ingredient"><i class="far fa-minus-square"></i>Remove</a></div>`)
+        <a type="button" class="btn red remove_ingredient"><i class="far fa-minus-square submit-icon"></i>Remove</a></div>`)
     }
 })
 
@@ -29,7 +29,7 @@ $(".add_step").click(function(e){
         <i class="fas fa-list-ol prefix shadow-text recipedia-text"></i>
         <input id="steps${step}" name="steps" minlength="3" maxlength="500" type="text" class="validate" required>
         <label for="steps${step}">Step ${step}:</label>
-        <a type="button" class="btn red remove_step"><i class="far fa-minus-square"></i>Remove</a></div>`)
+        <a type="button" class="btn red remove_step"><i class="far fa-minus-square submit-icon"></i>Remove</a></div>`)
     }
 })
 
