@@ -30,12 +30,6 @@
                                                     </div>
                                                     <div class="card-content  hoverable">
                                                         <h4 class="recipedia-text shadow-text center-align underline-text">Ingredients:</h4>
-                                                        <!-- displays all ingredients in a list format -->
-                                                            {% for ing in recipe.ingredients %}
-                                                                <ul>
-                                                                    <li class="recipedia-text shadow-text list-spacing">{{ ing }}</li>
-                                                                </ul> 
-                                                            {% endfor %}
                                                     </div>
                                                     <div class="card-action">
                                                         <a href="{{ url_for('full_recipe', recipe_id=recipe._id)}}" class="btn btn-large green">See Full Recipe</a>

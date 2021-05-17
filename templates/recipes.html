@@ -62,7 +62,8 @@
                             </div>
                             <div class="card-content hoverable">
                             <h4 class="recipedia-text shadow-text center-align underline-text">Ingredients:</h4>
-                            {% for ing in recipe.ingredients %}
+                            <!-- list slicing with jinja found here: https://stackoverflow.com/questions/31301627/how-to-slice-a-sorted-list-in-jinja -->
+                            {% for ing in recipe.ingredients[:3] %}
                                 <ul>
                                     <li class="recipedia-text shadow-text list-spacing">{{ ing }}</li>
                                 </ul> 
