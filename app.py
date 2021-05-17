@@ -144,10 +144,11 @@ def profile(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     recipes = mongo.db.recipes.find()
+    user = mongo.db.users.find_one({"username": session['user']})
 
     if session['user']:
         return render_template(
-            "profile.html", username=username, recipes=recipes)
+            "profile.html", username=username, recipes=recipes, user=user)
     else:
         return render_template('403.html')
 

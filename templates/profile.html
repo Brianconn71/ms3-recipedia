@@ -14,11 +14,15 @@
             <div class="col s12 center-text">
                 <h3 class="recipedia-text shadow-text">Your Recipes</h3>
                         <div class="row">
-                            {% if session.user %}
-                                {% for recipe in saved_recipes %}
-                                <h1>h1</h1>
-                                {% endfor %}
-                            {% endif %}
+                                
+                                    
+                                    {% for save in user.saved_recipes %}
+                                        {% for recipe in recipes %}
+                                            {% if user.saved_recipe == recipe._id %}
+                                                <h1>{{recipe.recipe_name}}</h1>
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% endfor %}
                         </div>
                     </div>
     </div>
