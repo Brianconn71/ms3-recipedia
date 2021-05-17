@@ -141,13 +141,11 @@ def login():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # get the session users username
-    # username = mongo.db.users.find_one(
-    #     {"username": session["user"]})["username"]
-    username = session["user"].lower()
-    # username = session.get("user").lower()
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
     recipes = mongo.db.recipes.find()
 
-    if username is not None:
+    if session['user']:
         return render_template(
             "profile.html", username=username, recipes=recipes)
     else:
@@ -366,6 +364,24 @@ def product_search(id):
     return render_template("products.html", products=products_paginated,
                            page=page, per_page=per_page,
                            pagination=pagination)
+
+
+@app.route("/save_recipe/<recipe_id>", methods=["GET", "POST"])
+def save_recipe(recipe_id):
+    mongo.db.users.find_one_and_update(
+        {"username": session["user"].lower()},
+        {"$push": {"saved_recipes": ObjectId(recipe_id)}})
+    flash("Recipe saved to your profile!")
+    return redirect(url_for("get_recipes"))
+
+
+# @app.route("/remove_bookmark/<joke_id>", methods=["GET", "POST"])
+# def remove_bookmark(joke_id):
+#     mongo.db.users.find_one_and_update(
+#         {"username": session["user"].lower()},
+#         {"$pull": {"users_bookmark": ObjectId(joke_id)}})
+#     flash("Bookmark is Removed!")
+#     return redirect(url_for("get_jokes"))
 
 
 """
