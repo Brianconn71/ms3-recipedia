@@ -16,12 +16,8 @@
                         <div class="row">
                                 
                                     
-                                    {% for save in user.saved_recipes %}
-                                        {% for recipe in recipes %}
-                                            {% if user.saved_recipe == recipe._id %}
-                                                <h1>{{recipe.recipe_name}}</h1>
-                                            {% endif %}
-                                        {% endfor %}
+                                    {% for save in saved_recipes %}
+                                        <p>{{ save }}</p>
                                     {% endfor %}
                         </div>
                     </div>

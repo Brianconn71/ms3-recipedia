@@ -143,12 +143,19 @@ def profile(username):
     # get the session users username
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
+    saved_recipes = mongo.db.users.find_one(
+        {"username": session["user"]})["saved_recipes"]
     recipes = mongo.db.recipes.find()
-    user = mongo.db.users.find_one({"username": session['user']})
+
+    recipes_saved = []
+    recipe = []
 
     if session['user']:
+        for rec in saved_recipes:
+            recipe = mongo.db.recipes.find_one({'_id': ObjectId(rec)})
+            recipes_saved.append(recipe)
         return render_template(
-            "profile.html", username=username, recipes=recipes, user=user)
+            "profile.html", username=username, recipes=recipes)
     else:
         return render_template('403.html')
 
