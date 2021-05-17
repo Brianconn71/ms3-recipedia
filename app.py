@@ -240,27 +240,6 @@ def delete_recipe(recipe_id):
     return redirect(url_for("get_recipes"))
 
 
-# @app.route("/save_recipe/<recipe_id>", methods=["GET", "POST"])
-# def save_recipe(recipe_id):
-#     if request.method == 'POST':
-#         is_saved = "on" if request.form.getlist("saved") else "off"
-#         saved_list = []
-#         for saved in saved_list:
-#             saved_list.append(saved)
-#         saved_recipes = {
-#             "saved_recipes": saved_list,
-#         }
-#         mongo.db.users.update(
-#                                 {"_id": ObjectId(recipe_id)}, saved_recipes)
-#         flash("Your recipe has been successfully updated")
-
-#     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-
-#     categories = mongo.db.categories.find().sort("category_name", 1)
-#     return render_template("edit_recipe.html", recipe=recipe,
-#                            categories=categories)
-
-
 @app.route("/get_categories")
 def get_categories():
     categories = list(
@@ -381,9 +360,9 @@ def product_search(id):
     pagination = Pagination(page=page, per_page=per_page,
                             total=total, css_framework='materializecss')
     if len(products) <= 0:
-        flash(f"No products of rating {id} were found!")
+        flash(f"No product type of {id} were found in our database!")
     else:
-        flash(f"Your search for a rating of {id} returned {len(products)} result(s)!")
+        flash(f"Your search for a product type of {id} returned {len(products)} result(s)!")
     return render_template("products.html", products=products_paginated,
                            page=page, per_page=per_page,
                            pagination=pagination)

@@ -44,6 +44,9 @@
             </div>
         </div>
     </section>
+    <div id="saved-recipe">
+
+    </div>
 
     <section class="latest-recipes">
             <div class="row center-text">
@@ -70,7 +73,7 @@
                                 <div class="card-btns">
                                 {% if session.user|lower == recipe.created_by|lower or session.user|lower == 'admin'|lower %}
                                    <a class="waves-effect waves-light btn-small modal-trigger modal-trigger red" id="delete-btn" data-toggle="modal" data-target="#deleteRecipe{{ loop.index }}"><i class="far fa-trash-alt right"></i>Delete</a>
-                                    <a href="{{ url_for('edit_recipe', recipe_id=recipe._id )}}" class="waves-effect waves-light btn-small blue"id="edit-btn"><i class="far fa-edit right"></i>Edit</a>
+                                    <a href="{{ url_for('edit_recipe', recipe_id=recipe._id )}}" class="waves-effect waves-light btn-small blue" id="edit-btn"><i class="far fa-edit right"></i>Edit</a>
                                 {% endif %}
                                 </div>
                                 <small><em>Created by: {{ recipe.created_by  }}</em></small>

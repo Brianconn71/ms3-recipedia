@@ -407,15 +407,17 @@ ul>li.list-decoration{
     font-family: 'Oxygen', sans-serif;
 }
 
-/* error pages */
-.error-text
-
-/* Wanted to hide the next and prev number spinners on form, found a solution here https://css-tricks.com/snippets/css/turn-off-number-input-spinners/ */
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+/* pagination */
+.pagination li a{
+    color: var(--text-white)
 }
+.pagination li.active{
+    background-color: var(--darkest-green);
+}
+.pagination ul{
+    box-shadow: 0 100px 80px rgba(0, 0, 0, 0.521);
+}
+
 /* Had to use !important as it was the only way I could override materialize settings */
 input[type=text]{
     color: var(--text-white) !important;
@@ -425,6 +427,13 @@ input[type=url]{
 }
 input[type=number]{
     color: var(--text-white) !important;
+}
+
+/* Wanted to hide the next and prev number spinners on form, found a solution here https://css-tricks.com/snippets/css/turn-off-number-input-spinners/ */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }
 /* the below is used to change the autocomplete color of inputs taken from here: https://dev.to/atndesign/a-trick-to-change-the-autocomplete-background-color-21ll */
 input:-webkit-autofill,
