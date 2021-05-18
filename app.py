@@ -120,7 +120,7 @@ def login():
         if existing_user:
             # check hashed password
             if check_password_hash(
-                existing_user['password'], request.form.get('password')):
+                 existing_user['password'], request.form.get('password')):
                     session['user'] = request.form.get("username").lower()
                     flash("Welcome, {}".format(
                         request.form.get("username")))
@@ -153,15 +153,23 @@ def profile(username):
     # get the session users username
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    recipes = mongo.db.recipes.find()
+    recipes = list(mongo.db.recipes.find({"created_by": session['user']}))
+    page, per_page, offset = get_page_args(
+        page_parameter='page', per_page_parameter='per_page',
+        offset_parameter='offset')
+    per_page = 6
+    offset = (page - 1) * 6
+    total = len(recipes)
+    recipes_paginated = recipes[offset: offset + per_page]
+    pagination = Pagination(page=page, per_page=per_page,
+                            total=total, css_framework='materializecss')
     recipes_saved = []
     recipe = []
     """
-        Spent a long time stuck on this as not every user will have a saved recipe,
-        the best way that I could get around the issues that kept arrising was to use
-        try and except with a key error, 
-        its not very elegant but it does the job,
-        additional info found here:
+        Spent a long time stuck on this as not every user
+        will have a saved recipe, the best way that I could get around the
+        issues that kept arrising was to use try and except with a key error,
+        its not very elegant but it does the job, additional info found here:
         https://stackoverflow.com/questions/45155991/try-except-error-exception-keyerror
     """
     if session['user']:
@@ -178,15 +186,16 @@ def profile(username):
                         result.append(i)
                 return render_template(
                     "profile.html", username=username,
-                    recipes=recipes, result=result)
+                    recipes=recipes_paginated, result=result,
+                    page=page, per_page=per_page,
+                    pagination=pagination)
         except KeyError:
             return render_template(
                 "profile.html", username=username,
-                recipes=recipes)
+                recipes=recipes_paginated, page=page,
+                per_page=per_page, pagination=pagination)
     else:
         return render_template('403.html')
-
-    return redirect(url_for("login"))
 
 
 @app.route("/logout")
