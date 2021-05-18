@@ -137,25 +137,52 @@ def login():
 
     return render_template("login.html")
 
+"""
+    The below function displays a users profile
+    with the recipes they have created along with
+    recipes they have saved to there profile,
+    I got help from many different Slack sources and from my mentor
+    in making the below function along with help
+    removing duplicates from a list here:
+    https://www.geeksforgeeks.org/python-ways-to-remove-duplicates-from-list/
+"""
+
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # get the session users username
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    saved_recipes = mongo.db.users.find_one(
-        {"username": session["user"]})["saved_recipes"]
     recipes = mongo.db.recipes.find()
-
     recipes_saved = []
     recipe = []
-
+    """
+        Spent a long time stuck on this as not every user will have a saved recipe,
+        the best way that I could get around the issues that kept arrising was to use
+        try and except with a key error, 
+        its not very elegant but it does the job,
+        additional info found here:
+        https://stackoverflow.com/questions/45155991/try-except-error-exception-keyerror
+    """
     if session['user']:
-        for rec in saved_recipes:
-            recipe = mongo.db.recipes.find_one({'_id': ObjectId(rec)})
-            recipes_saved.append(recipe)
-        return render_template(
-            "profile.html", username=username, recipes=recipes)
+        try:
+            saved_recipes = mongo.db.users.find_one(
+                {"username": session["user"]})["saved_recipes"]
+            if saved_recipes:
+                for rec in saved_recipes:
+                    recipe = mongo.db.recipes.find_one({'_id': ObjectId(rec)})
+                    recipes_saved.append(recipe)
+                result = []
+                for i in recipes_saved:
+                    if i not in result:
+                        result.append(i)
+                return render_template(
+                    "profile.html", username=username,
+                    recipes=recipes, result=result)
+        except KeyError:
+            return render_template(
+                "profile.html", username=username,
+                recipes=recipes)
     else:
         return render_template('403.html')
 

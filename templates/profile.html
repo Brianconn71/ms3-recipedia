@@ -10,18 +10,48 @@
                 </div>
             </div>
     </section>
+    {% if result %}
     <div class="row">
             <div class="col s12 center-text">
-                <h3 class="recipedia-text shadow-text">Your Recipes</h3>
+                <h3 class="recipedia-text shadow-text">Your Saved Recipes</h3>
                         <div class="row">
-                                
-                                    
-                                    {% for save in saved_recipes %}
-                                        <p>{{ save }}</p>
-                                    {% endfor %}
+                            {% for save in result %}
+                                <div class="col s12 m6">
+                                                <div class="card recipedia-cards hoverable">
+                                                    <div class="card-image">
+                                                        <img src="{{ save.img_upload }}" class="recipe-img" alt="an image of {{save.recipe_name}}">
+                                                        <span class="card-title recipe-title recipedia-text shadow-text">{{save.recipe_name}}</span>
+                                                    </div>
+                                                    <div class="card-content  hoverable">
+                                                        <h4 class="recipedia-text shadow-text center-align underline-text">Ingredients:</h4>
+                                                    </div>
+                                                    <div class="card-action">
+                                                        <a href="{{ url_for('full_recipe', recipe_id=save._id)}}" class="btn btn-large green">See Full Recipe</a>
+                                                        <div class="card-btns">
+                                                    <!-- buttons to allow user to edit or delete there recipes -->
+                                                            <a href="#modal1" class="waves-effect waves-light btn-small modal-trigger modal-trigger red" id="delete-btn"><i class="far fa-trash-alt right"></i>Delete</a>
+                                                            <a href="{{ url_for('edit_recipe', recipe_id=save._id )}}" class="waves-effect waves-light btn-small blue"id="edit-btn"><i class="far fa-edit right"></i>Edit</a>
+                                                        </div>
+                                                        <small><em>Created by: {{ save.created_by  }}</em></small>
+                                                    </div>
+                                                </div>
+                                                <!-- modal for defensive programming, delete confirmation before recipe is deleted -->
+                                                <div id="modal1" class="modal">
+                                                    <div class="modal-content delete-confirmation">
+                                                        <h4>Confirm Delete</h4>
+                                                        <p>Are you sure you want to delete this recipe?</p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <a href="{{ url_for('profile', username=session['user'])}}" class="waves-effect waves-green btn-flat red"> Cancel <i class="far fa-window-close right"></i></a>
+                                                        <a href="{{ url_for('delete_recipe', recipe_id=save._id )}}" class="modal-close waves-effect waves-green btn-flat">Confirm</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                            {% endfor %}
                         </div>
                     </div>
     </div>
+    {% endif %}
     <!-- Section to show the user the recipes that they have added to the database -->
     <section class="container user-recipe-section">
         <div class="row">
@@ -64,7 +94,7 @@
                                             </div>
                                         {% endif %}
                                     {% else %}
-                                            <h3>You have nothing</h3>
+                                        <h3>You have no recipes in our database!</h3>
                                     {% endfor %}
                                 </div>
                             </div>
