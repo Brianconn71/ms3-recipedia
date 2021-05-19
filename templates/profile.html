@@ -103,7 +103,8 @@
                                             </div>
                                         {% endif %}
                                     {% else %}
-                                        <h3>You have no recipes in our database!</h3>
+                                        <h4 class="recipedia-text shadow-text">You have no recipes in our database!</h4>
+                                        <p class="recipedia-text shadow-text">To add a recipe to our database, <a href="{{ url_for('add_recipe') }}" class="underline-text link-color">Click here</a></p>
                                     {% endfor %}
                                 </div>
                             </div>

@@ -176,7 +176,7 @@ def profile(username):
         try:
             saved_recipes = mongo.db.users.find_one(
                 {"username": session["user"]})["saved_recipes"]
-            if saved_recipes:
+            if saved_recipes is not None:
                 for rec in saved_recipes:
                     recipe = mongo.db.recipes.find_one({'_id': ObjectId(rec)})
                     recipes_saved.append(recipe)
@@ -189,6 +189,11 @@ def profile(username):
                     recipes=recipes_paginated, result=result,
                     page=page, per_page=per_page,
                     pagination=pagination)
+            else:
+                return render_template(
+                    "profile.html", username=username,
+                    recipes=recipes_paginated, page=page,
+                    per_page=per_page, pagination=pagination)
         except KeyError:
             return render_template(
                 "profile.html", username=username,
