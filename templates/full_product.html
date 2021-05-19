@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <div class="row">
-        <div class="col s12">
+    <div class="row row-padding">
+        <div class="col s10 offset-s1">
             <div class="card recipedia-cards">
                 <div class="card-image">
-                    <img src="{{product.product_img}}" class="recipe-img" alt="an image of {{product.product_name}}">
+                    <img src="{{product.product_img}}" class="recipe-img full-img" alt="an image of {{product.product_name}}">
                     <span class="card-title recipe-title recipedia-text shadow-text">{{product.product_name}}</span>
                 </div>
                 <div class="card-content recipe-content">
