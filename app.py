@@ -84,7 +84,7 @@ def category_search(id):
                             pagination=pagination)
 
 
-# used minin project walkthrough for user authentication
+# used CI project walkthrough for user authentication
 @app.route("/register", methods=["GET", "POST"])
 def register():
     # Check if a username exists
@@ -419,13 +419,13 @@ def save_recipe(recipe_id):
     return redirect(url_for("get_recipes"))
 
 
-# @app.route("/remove_bookmark/<joke_id>", methods=["GET", "POST"])
-# def remove_bookmark(joke_id):
-#     mongo.db.users.find_one_and_update(
-#         {"username": session["user"].lower()},
-#         {"$pull": {"users_bookmark": ObjectId(joke_id)}})
-#     flash("Bookmark is Removed!")
-#     return redirect(url_for("get_jokes"))
+@app.route("/remove_recipe/<recipe_id>", methods=["GET", "POST"])
+def remove_recipe(recipe_id):
+    mongo.db.users.find_one_and_update(
+        {"username": session["user"].lower()},
+        {"$pull": {"saved_recipes": ObjectId(recipe_id)}})
+    flash("Saved recipe has been removed")
+    return redirect(url_for("get_recipes"))
 
 
 """
