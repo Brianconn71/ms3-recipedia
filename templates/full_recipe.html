@@ -7,7 +7,9 @@
                 <div class="card-image">
                     <img src="{{recipe.img_upload}}" class="recipe-img" alt="an image of {{recipe.recipe_name}}">
                     <span class="card-title recipe-title recipedia-text shadow-text">{{recipe.recipe_name}}</span>
-                    <a class="btn-floating halfway-fab waves-effect waves-light red" title="Save recipe to your profile"><i class="far fa-save"></i></a>
+                    {% if session["user"] %}
+                        <a href="{{ url_for('save_recipe', recipe_id=recipe._id )}}" class="btn-floating halfway-fab waves-effect waves-light red" title="Save recipe to your profile"><i class="far fa-save"></i></a>
+                    {% endif %}
                 </div>
                 <div class="recipe-info">
                     <div class="col s6 m3 center-align">
