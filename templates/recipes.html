@@ -13,8 +13,8 @@
                         <label for="search" id="search-label">Search Recipedia</label>
                     </div>
                     <div class="col s12 control-btns">
-                        <a href="{{ url_for('get_recipes')}}" class="red btn">reset</a>
-                        <button type="submit" class="btn blue">
+                        <a href="{{ url_for('get_recipes')}}" class="btn reset-btn">reset</a>
+                        <button type="submit" class="btn submit-btn">
                             <i class="fas fa-search submit-icon"></i>Search
                         </button>
                     </div>
@@ -67,7 +67,7 @@
                             {% endfor %}
                             </div>
                             <div class="card-action card-btns">
-                                <a href="{{ url_for('full_recipe', recipe_id=recipe._id)}}" class="btn btn-large green">See Full Recipe</a>
+                                <a href="{{ url_for('full_recipe', recipe_id=recipe._id)}}" class="btn btn-large full-recipe-btn">See Full Recipe</a>
                                 <div class="card-btns">
                                 {% if session.user|lower == recipe.created_by|lower or session.user|lower == 'admin'|lower %}
                                    <a class="waves-effect waves-light btn-small modal-trigger modal-trigger red" id="delete-btn" data-toggle="modal" data-target="#deleteRecipe{{ loop.index }}"><i class="far fa-trash-alt right"></i>Delete</a>
