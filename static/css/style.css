@@ -8,6 +8,8 @@
     --button-color: #7B6668;
     --gold-rating: #ffd700;
     --bright-green: #AADB1E;
+    --red-color: #ff0000;
+    --orange-color: #de781f;
 }
 
 *{
@@ -30,6 +32,7 @@ body{
 main{
     flex: 1 0 auto;
 }
+/* padding for the rows in full product and full recipe page */
 .row-padding{
     padding-top: 5rem;;
 }
@@ -38,8 +41,22 @@ button{
     cursor: pointer;
 }
 .submit-btn{
-    background-color: var(--button-color)
+    background-color: var(--button-color);
 }
+.save-btn{
+    background-color: transparent;
+}
+.save-btn:hover{
+    background-color: var(--bright-green);
+}
+.unsave-btn{
+    background-color: var(--red-color);
+}
+.unsave-btn:hover{
+    background-color: var(--red-color);
+    filter: brightness(110%);
+}
+/* icons */
 .icons{
     color: var(--button-color);
     margin-right: 0.5rem;
