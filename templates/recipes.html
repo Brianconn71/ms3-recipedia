@@ -38,7 +38,7 @@
                 </div>
                 <div class="col s12 center-align users-signin">
                     <h6 class="recipedia-text shadow-text">Want to add a recipe to our database?</h6>
-                    <p class="recipedia-text shadow-text"><a href="{{ url_for('login') }}" class="underline-text link-color">Login</a> here to add your recipe</p>
+                    <p class="recipedia-text shadow-text"><a href="{{ url_for('login') }}" class="underline-text link-color">Login</a> here to add your recipe to our database and save recipes to your profile</p>
                     <p class="recipedia-text shadow-text">Don't have an account? Create one <a href="{{ url_for('register') }}" class="underline-text link-color">here</a></p>
                 </div>
             </div>
@@ -53,9 +53,9 @@
                             <div class="card-image">
                             <img src="{{ recipe.img_upload }}" class="recipe-img" alt="an image of {{recipe.recipe_name}}">
                             <span class="card-title recipe-title recipedia-text shadow-text">{{recipe.recipe_name}}</span>
-                            <form id="add-to-save-list">
-                            <a href="{{ url_for('save_recipe', recipe_id=recipe._id )}}" class="btn-floating halfway-fab waves-effect waves-light red" title="Save recipe to your profile"><i class="far fa-save"></i></a>
-                            </form>
+                            {% if session["user"] %}
+                                <a href="{{ url_for('save_recipe', recipe_id=recipe._id )}}" class="btn-floating halfway-fab waves-effect waves-light red" title="Save recipe to your profile"><i class="far fa-save"></i></a>
+                            {% endif %}
                             </div>
                             <div class="card-content hoverable">
                             <h4 class="recipedia-text shadow-text center-align underline-text">Ingredients:</h4>
