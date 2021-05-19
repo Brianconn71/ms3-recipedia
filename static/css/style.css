@@ -70,7 +70,7 @@ button{
 .full-recipe-btn:hover{
     background-color: transparent;
     border: 2px solid var(--bright-green);
-    transition: border .4s ease-in-out;
+    transition: background-color .4s ease-in-out;
 }
 /* icons */
 .icons{
