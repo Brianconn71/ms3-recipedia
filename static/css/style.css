@@ -46,6 +46,7 @@ button{
 .reset-btn{
     background-color: var(--red-color);
     font-family: 'Oxygen', sans-serif;
+    font-size: 0.8rem;
 }
 .reset-btn:hover{
     background-color: var(--red-color);
@@ -90,10 +91,12 @@ button{
     color: var(--button-color);
     margin-right: 0.5rem;
 }
-/* menu icon */
 .menu-icon{
     color: var(--text-white);
     font-size: 1.5rem;
+}
+.btn .icons-size{
+    font-size: 0.8rem;
 }
 
 /* text color */
@@ -142,34 +145,20 @@ p, h5{
 }
 /* search container section */
 .search-container{
-    height: 70vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 3rem 0;
 }
 .search-heading{
     color: var(--text-white);
     font-family: 'Ubuntu', sans-serif;
     font-weight: 400;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     text-align: center;
     text-transform: capitalize;
-    padding: 1rem;
-    margin: 1.3rem;
-}
-.searchbox{
-    background: #f7f7f7;
-    outline: none;
-    border-color: transparent;
-    border-radius: 20px;
-    font-family: 'Oxygen', sans-serif;
-    font-size: 1.2rem;
-    padding: 0.3rem 0.5rem;
-    width: 25rem;
-}
-.searchbox::placeholder{
-    color: rgba(0, 0, 0, 0.4);
 }
 .search-btn{
     display: block;
@@ -208,6 +197,9 @@ p, h5{
 .col>.users-signin{
     padding: 1rem 0;
 }
+.login-home-text{
+    margin: 0.8rem 0;
+}
 /* Latest Recipes */
 .latest-recipes{
     height: 40vh;
@@ -222,12 +214,11 @@ p, h5{
     background-color: transparent;
 }
 .nav-wrapper .recipedia-logo{
-    font-size: 2.5rem;
+    font-size: 2rem;
     white-space: nowrap;
     font-family: 'Ubuntu', sans-serif;
     font-weight: 400;
     color: var(--text-white);
-    padding-left: 1rem;
 }
 .menu-items{
     color: var(--text-white);
@@ -274,9 +265,10 @@ p, h5{
 .submit-btn{
     background-color: var(--button-color);
     color: var(--text-white);
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
+    padding: 0 0.8rem;
 }
 .submit-btn:hover{
     background-color: var(--button-color);
@@ -284,7 +276,7 @@ p, h5{
 }
 .submit-icon{
     color: var(--text-white);
-    margin-right: 0.8rem;
+    margin-right: 0.6rem;
 }
 .register-user{
     background-color: var(--pale-green);
@@ -360,7 +352,7 @@ form input[type="text"]{
 .card-btns{
     padding: 0.8rem 0.6rem;
 }
-#delete-btn{
+.delete-btn{
     margin-right: 0.6rem;
 }
 
@@ -475,6 +467,10 @@ ul>li.list-decoration{
 .pagination ul{
     box-shadow: 0 100px 80px rgba(0, 0, 0, 0.521);
 }
+.pagination-page-info{
+    color: var(--text-white);
+    font-family: 'Oxygen', sans-serif;
+}
 
 /* Had to use !important as it was the only way I could override materialize settings */
 input[type=text]{
@@ -500,4 +496,9 @@ select:-webkit-autofill {
     box-shadow: 0 0 0 1000px var(--pale-green) inset !important;
     -webkit-box-shadow: 0 0 0 1000px var(--pale-green) inset !important;
     -webkit-text-fill-color: var(--text-white) !important;
+}
+
+/* Media Queries */
+@media only screen and (min-width: 360px){
+
 }

@@ -343,11 +343,23 @@ def full_product(product_id):
     return render_template("full_product.html", product=product)
 
 
-@app.route("/get_products")
+@app.route("/get_products") 
 def get_products():
     products = list(
         mongo.db.products.find().sort("product_name", 1))
-    return render_template("products.html", products=products)
+    page, per_page, offset = get_page_args(
+        page_parameter='page', per_page_parameter='per_page',
+        offset_parameter='offset')
+    per_page = 6
+    offset = (page - 1) * 6
+    total = mongo.db.products.find().count()
+    products_paginated = products[offset: offset + per_page]
+    pagination = Pagination(page=page, per_page=per_page,
+                            total=total, css_framework='materializecss')
+    return render_template("products.html",
+                           products=products_paginated,
+                           page=page, per_page=per_page,
+                           pagination=pagination)
 
 
 @app.route("/add_product", methods=["GET", "POST"])

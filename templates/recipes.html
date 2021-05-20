@@ -8,14 +8,14 @@
             <form action="{{ url_for('search')}}" method="POST" class="col s12">
                 <div class="row center-align">
                     <div class="col s12 w-100 input-field">
-                        <i class="fas fa-search recipedia-text shadow-text prefix"></i>
+                        <i class="fas fa-search recipedia-text shadow-text icons-size prefix"></i>
                         <input type="text" id="search" name="search" minlength="3" class="validate" required>
                         <label for="search" id="search-label">Search Recipedia</label>
                     </div>
                     <div class="col s12 control-btns">
                         <a href="{{ url_for('get_recipes')}}" class="btn reset-btn">reset</a>
                         <button type="submit" class="btn submit-btn">
-                            <i class="fas fa-search submit-icon"></i>Search
+                            <i class="fas fa-search submit-icon icons-size"></i>Search
                         </button>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                 </div>
                 <div class="col s12 center-align users-signin">
                     <h6 class="recipedia-text shadow-text">Want to add a recipe to our database?</h6>
-                    <p class="recipedia-text shadow-text"><a href="{{ url_for('login') }}" class="underline-text link-color">Login</a> here to add your recipe to our database and save recipes to your profile</p>
+                    <p class="recipedia-text shadow-text login-home-text"><a href="{{ url_for('login') }}" class="underline-text link-color">Login</a> here to add your recipe to our database and save recipes to your profile</p>
                     <p class="recipedia-text shadow-text">Don't have an account? Create one <a href="{{ url_for('register') }}" class="underline-text link-color">here</a></p>
                 </div>
             </div>
@@ -70,7 +70,7 @@
                                 <a href="{{ url_for('full_recipe', recipe_id=recipe._id)}}" class="btn btn-large full-recipe-btn">See Full Recipe</a>
                                 <div class="card-btns">
                                 {% if session.user|lower == recipe.created_by|lower or session.user|lower == 'admin'|lower %}
-                                   <a class="waves-effect waves-light btn-small modal-trigger modal-trigger unsave-btn" id="delete-btn" data-toggle="modal" data-target="#deleteRecipe{{ loop.index }}"><i class="far fa-trash-alt right"></i>Delete</a>
+                                   <a class="waves-effect waves-light btn-small modal-trigger modal-trigger delete-btn unsave-btn" data-toggle="modal" data-target="#deleteRecipe{{ loop.index }}"><i class="far fa-trash-alt right"></i>Delete</a>
                                     <a href="{{ url_for('edit_recipe', recipe_id=recipe._id )}}" class="waves-effect waves-light btn-small edit-btn" id="edit-btn"><i class="far fa-edit right"></i>Edit</a>
                                 {% endif %}
                                 </div>
@@ -91,6 +91,7 @@
                     
     {% if recipes|length >= 1 %}
         {{ pagination.links }}
+        {{ pagination.info }}
     {% endif %} 
             </div>
         </div>

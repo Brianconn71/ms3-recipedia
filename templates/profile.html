@@ -27,26 +27,26 @@
                                                         <h4 class="recipedia-text shadow-text center-align underline-text">Ingredients:</h4>
                                                     </div>
                                                     <div class="card-action">
-                                                        <a href="{{ url_for('full_recipe', recipe_id=save._id)}}" class="btn btn-large green">See Full Recipe</a>
+                                                        <a href="{{ url_for('full_recipe', recipe_id=save._id)}}" class="btn btn-large full-recipe-btn">See Full Recipe</a>
                                                         <div class="card-btns">
                                                     <!-- buttons to allow user to edit or delete there recipes -->
                                                         {% if session.user|lower == save.created_by|lower or session.user|lower == 'admin'|lower %}
-                                                            <a href="#modal1" class="waves-effect waves-light btn-small modal-trigger modal-trigger red" id="delete-btn"><i class="far fa-trash-alt right"></i>Delete</a>
-                                                            <a href="{{ url_for('edit_recipe', recipe_id=save._id )}}" class="waves-effect waves-light btn-small blue"id="edit-btn"><i class="far fa-edit right"></i>Edit</a>
+                                                            <a class="waves-effect waves-light btn-small modal-trigger modal-trigger delete-btn unsave-btn" data-toggle="modal" data-target="#deleteRecipe{{ loop.index }}"><i class="far fa-trash-alt"></i></a>
+                                                            <a href="{{ url_for('edit_recipe', recipe_id=save._id )}}" class="waves-effect waves-light btn-small edit-btn"><i class="far fa-edit"></i></a>
                                                         {% endif %}
                                                         </div>
                                                         <small><em>Created by: {{ save.created_by  }}</em></small>
                                                     </div>
                                                 </div>
                                                 <!-- modal for defensive programming, delete confirmation before recipe is deleted -->
-                                                <div id="modal1" class="modal">
+                                                <div id="#deleteRecipe{{ loop.index }}" class="modal" tabindex="-1" aria-hidden="true">
                                                     <div class="modal-content delete-confirmation">
-                                                        <h4>Confirm Delete</h4>
-                                                        <p>Are you sure you want to delete this recipe?</p>
+                                                        <h4 class="recipedia-text shadow-text">Confirm Delete</h4>
+                                                        <p class="recipedia-text shadow-text delete-confirmation-msg">Are you sure you want to delete this recipe?</p>
                                                     </div>
                                                     <div class="modal-footer delete-confirmation">
-                                                        <a href="{{ url_for('profile', username=session['user'])}}" class="waves-effect waves-green btn-flat red"> Cancel <i class="far fa-window-close right"></i></a>
-                                                        <a href="{{ url_for('delete_recipe', recipe_id=save._id )}}" class="modal-close waves-effect waves-green btn-flat">Confirm</a>
+                                                        <a href="{{ url_for('profile', username=session['user'])}}" class="waves-effect btn-flat recipedia-text unsave-btn"> Cancel <i class="far fa-window-close right"></i></a>
+                                                        <a href="{{ url_for('delete_recipe', recipe_id=save._id )}}" class="modal-close waves-effect btn-flat recipedia-text edit-btn">Confirm<i class="far far fa-check-square right"></i></a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -62,6 +62,7 @@
                 <h3 class="recipedia-text shadow-text">Your Recipes in our database</h3>
                     {% if recipes|length >= 1 %}
                         {{ pagination.links }}
+                        {{ pagination.info }}
                     {% endif %}
                         <div class="row">
                                     <!-- Wanted to show recipes of each session user struggled withe the if statement foiund an answer here: https://stackoverflow.com/questions/42013067/how-to-access-session-variables-in-jinja-2-flask -->
@@ -80,24 +81,24 @@
                                                         <h4 class="recipedia-text shadow-text center-align underline-text">Ingredients:</h4>
                                                     </div>
                                                     <div class="card-action">
-                                                        <a href="{{ url_for('full_recipe', recipe_id=recipe._id)}}" class="btn btn-large green">See Full Recipe</a>
+                                                        <a href="{{ url_for('full_recipe', recipe_id=recipe._id)}}" class="btn btn-large full-recipe-btn">See Full Recipe</a>
                                                         <div class="card-btns">
                                                     <!-- buttons to allow user to edit or delete there recipes -->
-                                                            <a href="#modal1" class="waves-effect waves-light btn-small modal-trigger modal-trigger red" id="delete-btn"><i class="far fa-trash-alt right"></i>Delete</a>
-                                                            <a href="{{ url_for('edit_recipe', recipe_id=recipe._id )}}" class="waves-effect waves-light btn-small blue"id="edit-btn"><i class="far fa-edit right"></i>Edit</a>
+                                                            <a class="waves-effect waves-light btn-small modal-trigger modal-trigger delete-btn unsave-btn" data-toggle="modal" data-target="#deleteRecipes{{ loop.index }}"><i class="far fa-trash-alt"></i></a>
+                                                            <a href="{{ url_for('edit_recipe', recipe_id=recipe._id )}}" class="waves-effect waves-light btn-small edit-btn"><i class="far fa-edit"></i></a>
                                                         </div>
                                                         <small><em>Created by: {{ recipe.created_by  }}</em></small>
                                                     </div>
                                                 </div>
                                                 <!-- modal for defensive programming, delete confirmation before recipe is deleted -->
-                                                <div id="modal1" class="modal">
+                                                <div id="#deleteRecipes{{ loop.index }}" class="modal" tabindex="-1" aria-hidden="true">
                                                     <div class="modal-content delete-confirmation">
-                                                        <h4>Confirm Delete</h4>
-                                                        <p>Are you sure you want to delete this recipe?</p>
+                                                        <h4 class="recipedia-text shadow-text">Confirm Delete</h4>
+                                                        <p class="recipedia-text shadow-text delete-confirmation-msg">Are you sure you want to delete this recipe?</p>
                                                     </div>
-                                                    <div class="modal-footer">
-                                                        <a href="{{ url_for('profile', username=session['user'])}}" class="waves-effect waves-green btn-flat red"> Cancel <i class="far fa-window-close right"></i></a>
-                                                        <a href="{{ url_for('delete_recipe', recipe_id=recipe._id )}}" class="modal-close waves-effect waves-green btn-flat">Confirm</a>
+                                                    <div class="modal-footer delete-confirmation">
+                                                        <a href="{{ url_for('profile', username=session['user'])}}" class="waves-effect btn-flat recipedia-text unsave-btn"> Cancel <i class="far fa-window-close right"></i></a>
+                                                        <a href="{{ url_for('delete_recipe', recipe_id=recipe._id )}}" class="modal-close waves-effect btn-flat recipedia-text edit-btn">Confirm<i class="far far fa-check-square right"></i></a>
                                                     </div>
                                                 </div>
                                             </div>
