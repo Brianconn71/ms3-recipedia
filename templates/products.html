@@ -43,7 +43,7 @@
                         {% endif %}
                     <div class="card-action">
                         <p class="product-description truncate-text">{{ product.product_description }}</p>
-                        <a href="{{ url_for('full_product', product_id=product._id)}}" class="btn btn-large green see-product-btn">See Product Description</a>
+                        <a href="{{ url_for('full_product', product_id=product._id)}}" class="btn btn-large full-recipe-btn see-product-btn">See Product Description</a>
                         <div class="buy-now-text">
                             <h5 class="buy-now-head underline-text">Buy now by clicking on the link below</h5>
                             <div class="buy-now-icon">
@@ -53,21 +53,21 @@
                         <div class="control-btns">
                             {% if session.user|lower == session.user|lower == 'admin'|lower %}
                             <!-- i used a message that igor_ci had up on slack to create a delete modal that actually deleted the products i wanted to delete -->
-                                <a class="waves-effect waves-light btn-small modal-trigger modal-trigger red" id="delete-btn" data-toggle="modal" data-target="#deleteProduct{{ loop.index }}"><i class="far fa-trash-alt right"></i>Delete</a>
-                                <a href="{{ url_for('edit_product', product_id = product._id)}}" class="waves-effect waves-light btn-small blue" id="edit-btn"><i class="far fa-edit right"></i>Edit</a>
+                                <a class="waves-effect waves-light btn-small modal-trigger modal-trigger unsave-btn" id="delete-btn" data-toggle="modal" data-target="#deleteProduct{{ loop.index }}"><i class="far fa-trash-alt right"></i>Delete</a>
+                                <a href="{{ url_for('edit_product', product_id = product._id)}}" class="waves-effect waves-light btn-small edit-btn" id="edit-btn"><i class="far fa-edit right"></i>Edit</a>
                             {% endif %}
                         </div>
                     </div>
                 </div>
             </div>
             <div id="#deleteProduct{{ loop.index }}" class="modal" tabindex="-1" aria-hidden="true">
-                <div class="modal-content">
-                    <h4>Confirm Delete</h4>
-                    <p>Are you sure you want to delete this category?</p>
+                <div class="modal-content delete-confirmation">
+                    <h4 class="recipedia-text shadow-text">Confirm Delete</h4>
+                    <p class="recipedia-text shadow-text delete-confirmation-msg">Are you sure you want to delete this category?</p>
                 </div>
-                <div class="modal-footer">
-                    <a href="#" class="waves-effect waves-green btn-flat red"> Cancel <i class="far fa-window-close right"></i></a>
-                    <a href="{{ url_for('delete_product', product_id=product._id )}}" class="modal-close waves-effect waves-green btn-flat" aria-hidden="true">Confirm</a>
+                <div class="modal-footer delete-confirmation">
+                    <a href="{{url_for('get_products')}}" class="waves-effect btn-flat recipedia-text unsave-btn"> Cancel <i class="far fa-window-close right"></i></a>
+                    <a href="{{ url_for('delete_product', product_id=product._id )}}" class="modal-close waves-effect btn-flat recipedia-text edit-btn" aria-hidden="true">Confirm<i class="far far fa-check-square right"></i></a>
                 </div>
             </div>
         {% endfor %}

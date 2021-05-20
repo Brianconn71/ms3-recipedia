@@ -9,7 +9,7 @@
     --gold-rating: #ffd700;
     --bright-green: #AADB1E;
     --red-color: #910000;
-    --orange-color: #de781f;
+    --blue-color: #187bcd;
 }
 
 *{
@@ -55,13 +55,13 @@ button{
 }
 .save-btn:hover{
     background-color: var(--bright-green);
+    transition: background-color .4s ease-in-out;
 }
 .unsave-btn{
     background-color: var(--red-color);
 }
 .unsave-btn:hover{
     background-color: var(--red-color);
-    filter: brightness(110%);
 }
 .full-recipe-btn{
     background-color: var(--bright-green);
@@ -71,6 +71,19 @@ button{
     background-color: transparent;
     border: 2px solid var(--bright-green);
     transition: background-color .4s ease-in-out;
+}
+.edit-btn{
+    background-color: var(--blue-color);
+}
+.edit-btn:hover{
+    background-color: var(--blue-color);
+}
+.add-ingredient-btn{
+    background-color: var(--darkest-green);
+}
+.add-ingredient-btn:hover{
+    background-color: var(--darkest-green);
+    filter: brightness(110%);
 }
 /* icons */
 .icons{
@@ -120,6 +133,7 @@ p, h5{
 .capitalize{
     text-transform: capitalize;
 }
+/* Truncate-text was found on twitter from a tweet that I can't remember who tweeted it but it was very useful for me */
 .truncate-text{
     width: 100%;
     white-space: nowrap;
@@ -413,6 +427,7 @@ ul>li.list-decoration{
 }
 .see-product-btn{
     margin: 1rem 0;
+    padding: 0 1rem;
 }
 .thumb-up{
     color: var(--text-white);
@@ -443,6 +458,7 @@ ul>li.list-decoration{
     background-color: var(--darker-green);
     color: var(--text-white);
     font-family: 'Ubuntu', sans-serif;
+    text-align: center;
 }
 .modal .delete-confirmation-msg{
     color: var(--text-white);
