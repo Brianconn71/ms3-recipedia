@@ -70,8 +70,8 @@
                                 <a href="{{ url_for('full_recipe', recipe_id=recipe._id)}}" class="btn btn-large full-recipe-btn">See Full Recipe</a>
                                 <div class="card-btns">
                                 {% if session.user|lower == recipe.created_by|lower or session.user|lower == 'admin'|lower %}
-                                   <a class="waves-effect waves-light btn-small modal-trigger modal-trigger delete-btn unsave-btn" data-toggle="modal" data-target="#deleteRecipe{{ loop.index }}"><i class="far fa-trash-alt right"></i>Delete</a>
-                                    <a href="{{ url_for('edit_recipe', recipe_id=recipe._id )}}" class="waves-effect waves-light btn-small edit-btn" id="edit-btn"><i class="far fa-edit right"></i>Edit</a>
+                                   <a class="waves-effect waves-light btn-small modal-trigger modal-trigger delete-btn unsave-btn" data-toggle="modal" data-target="#deleteRecipe{{ loop.index }}"><i class="far fa-trash-alt"></i></a>
+                                    <a href="{{ url_for('edit_recipe', recipe_id=recipe._id )}}" class="waves-effect waves-light btn-small edit-btn" id="edit-btn"><i class="far fa-edit"></i></a>
                                 {% endif %}
                                 </div>
                                 <small><em>Created by: {{ recipe.created_by  }}</em></small>

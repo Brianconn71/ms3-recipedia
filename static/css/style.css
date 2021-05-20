@@ -7,7 +7,7 @@
     --darkest-green: #798777;
     --button-color: #7B6668;
     --gold-rating: #ffd700;
-    --bright-green: #AADB1E;
+    --bright-green: #55b113;
     --red-color: #910000;
     --blue-color: #187bcd;
 }
@@ -67,6 +67,7 @@ button{
 .full-recipe-btn{
     background-color: var(--bright-green);
     font-weight: bold;
+    font-size: 0.8rem;
 }
 .full-recipe-btn:hover{
     background-color: transparent;
@@ -126,6 +127,9 @@ h4,
 h5,
 h6{
     font-family: 'Ubuntu', sans-serif;
+}
+h4{
+    font-size: 1.6rem;
 }
 h5{
     font-size: 1.3rem;
@@ -202,7 +206,7 @@ p, h5{
 }
 /* Latest Recipes */
 .latest-recipes{
-    height: 40vh;
+    height: 100%;
     margin-top: 2rem;
 }
 .recipe-card{
@@ -295,14 +299,14 @@ form input[type="text"]{
 .footer-title{
     color: var(--text-white);
     font-family: 'Oxygen', sans-serif;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     letter-spacing: 2px;
 }
 .social-icons{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    font-size: 2rem;
+    font-size: 1.5rem;
     padding-top: 1.8rem;
 }
 #facebook:hover{
@@ -327,6 +331,7 @@ form input[type="text"]{
 }
 .copyright-text{
     font-family: 'Oxygen', sans-serif;
+    font-size: 0.8rem;
 }
 /* profile page */
 .user-profile{
@@ -387,7 +392,7 @@ ul>li.list-decoration{
 }
 .card .recipe-title{
     font-family: 'Ubuntu', sans-serif;
-    font-size: 2rem;
+    font-size: 1.1rem;
     color: var(--text-white);
     text-align: center;
     font-weight: bold;
@@ -470,6 +475,7 @@ ul>li.list-decoration{
 .pagination-page-info{
     color: var(--text-white);
     font-family: 'Oxygen', sans-serif;
+    text-transform: capitalize;
 }
 
 /* Had to use !important as it was the only way I could override materialize settings */
