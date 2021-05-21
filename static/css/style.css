@@ -40,6 +40,11 @@ main{
 button{
     cursor: pointer;
 }
+.control-btns{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 .submit-btn{
     background-color: var(--button-color);
 }
@@ -189,11 +194,6 @@ p, h5{
     justify-content: center;
     align-items: center;
 }
-.control-btns{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
 #search-label{
     color: var(--text-white)
 }
@@ -261,7 +261,6 @@ p, h5{
 /* User registration */
 .icon-size{
     line-height: 1.5;
-    color: var(--button-color);
     font-size: 2rem;
 }
 .register-container{
@@ -293,7 +292,7 @@ p, h5{
     margin-right: 0.6rem;
 }
 .register-user{
-    background-color: var(--pale-green);
+    background-color: rgba(0,0,0, 0.5);
     width: 100%;
     border-radius: 30px;
 }

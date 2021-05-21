@@ -5,7 +5,7 @@
 
     <section class="container add-recipe-container">
         <div class="row">
-            <form class="col s12" method="POST" action="{{ url_for('add_recipe')}}" enctype="multipart/form-data">
+            <form class="col s12" method="POST" action="{{ url_for('add_recipe')}}">
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-stream prefix shadow-text recipedia-text"></i>
@@ -42,7 +42,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="input-field col s12">
+                    <div class="input-field col s12 m6">
                         <i class="fas fa-exclamation prefix shadow-text recipedia-text"></i>
                         <select name="difficulty" id="difficulty" required>
                             <option value="" disabled selected>Choose a Difficulty</option>
@@ -52,19 +52,19 @@
                         </select>
                         <label for="difficulty">Difficulty</label>
                     </div>
-                    <div class="input-field col s12">
+                    <div class="input-field col s12 m6">
                         <i class="fas fa-calculator prefix shadow-text recipedia-text"></i>
                         <input id="servings" name="servings" type="number" class="validate" required>
                         <label for="servings">Servings</label>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="input-field col s12">
+                    <div class="input-field col s12 m6">
                         <i class="fas fa-clock prefix shadow-text recipedia-text"></i>
                         <input id="cook_time" name="cook_time" type="number" class="validate" required>
                         <label for="cook_time">Cook time (mins)</label>
                     </div>
-                    <div class="input-field col s12">
+                    <div class="input-field col s12 m6">
                         <i class="far fa-clock prefix shadow-text recipedia-text"></i>
                         <input id="prep_time" name="prep_time" type="number" class="validate" required>
                         <label for="prep_time">Prep Time (mins)</label>
@@ -104,7 +104,7 @@
                 <div class="row">
                     <div class="col s12 center-align">
                         <button class="btn-small waves-effect waves-light submit-btn" type="submit">Add Recipe
-                        <i class="fas fa-paper-plane submit-icon"></i>
+                        <i class="far fa-plus-square right"></i>
                         </button>
                     </div>
                 </div>
