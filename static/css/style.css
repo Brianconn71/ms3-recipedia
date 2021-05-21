@@ -125,8 +125,9 @@ p{
 .flash-msg-text{
     color: var(--text-white);
     font-family: 'Ubuntu', sans-serif;
-    font-size: 1rem;
+    font-size: 0.8rem;
     text-align: center;
+    padding: 0.8rem
 }
 h1,
 h2,
@@ -423,7 +424,7 @@ ul>li.list-decoration{
 /* products page */
 .product-description{
     color: var(--text-white);
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 #product-title{
     padding: 0.8rem 0;
@@ -441,7 +442,7 @@ ul>li.list-decoration{
 }
 .thumb-up{
     color: var(--text-white);
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 .icon-spacing{
     margin-right: 0.3rem;
@@ -450,7 +451,7 @@ ul>li.list-decoration{
 .buy-now-head{
     color: var(--text-white);
     font-family: 'Ubuntu', sans-serif;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 /* materialize had there own styling on a tags that was affecting the way my links were set up on the products page, the only way I could fix the issue was to copy the exact styling selector they used and change the margins manually */
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating){
@@ -547,6 +548,18 @@ select:-webkit-autofill {
     .flash-msg-text{
         font-size: 1.3rem;
     }
+    .thumb-up{
+        font-size: 1rem;
+    }
+    .product-description{
+        font-size: 1rem;
+    }
+    .buy-now-head{
+        font-size: 1rem;
+    }
+    .buy-now-icon{
+        font-size: 2rem;
+    }
 }
 @media only screen and (min-width: 450px){
     .col>.recipe-links{
@@ -560,6 +573,12 @@ select:-webkit-autofill {
     }
     .sidenav{
         width: 60%
+    }
+    .search-heading{
+        font-size: 2.2rem;
+    }
+    #product-title{
+        font-size: 1.4rem;
     }
 }
 @media only screen and (min-width: 600px){
@@ -595,5 +614,14 @@ select:-webkit-autofill {
     }
     .card .recipe-title{
         font-size: 1.8rem;
+    }
+    .thumb-up{
+        font-size: 1.2rem;
+    }
+    .product-description{
+        font-size: 1.2rem;
+    }
+    .buy-now-head{
+        font-size: 1.2rem;
     }
 }
