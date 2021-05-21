@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="recipedia-text shadow-text center-align">Add a recipe to our database</h3>
+    <h3 class="recipedia-text shadow-text center-align search-heading">Add a recipe to our database</h3>
 
     <section class="container add-recipe-container">
         <div class="row">
@@ -21,7 +21,7 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-pen prefix shadow-text recipedia-text"></i>
-                        <input id="recipe_name" name="recipe_name" minlength="3" maxlength="60"
+                        <input id="recipe_name" name="recipe_name" minlength="3" maxlength="50"
                         type="text" class="validate" required>
                         <label for="recipe_name">Recipe Name</label>
                     </div>
@@ -42,7 +42,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="input-field col s6">
+                    <div class="input-field col s12">
                         <i class="fas fa-exclamation prefix shadow-text recipedia-text"></i>
                         <select name="difficulty" id="difficulty" required>
                             <option value="" disabled selected>Choose a Difficulty</option>
@@ -52,28 +52,28 @@
                         </select>
                         <label for="difficulty">Difficulty</label>
                     </div>
-                    <div class="input-field col s6">
+                    <div class="input-field col s12">
                         <i class="fas fa-calculator prefix shadow-text recipedia-text"></i>
                         <input id="servings" name="servings" type="number" class="validate" required>
                         <label for="servings">Servings</label>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="input-field col s6">
+                    <div class="input-field col s12">
                         <i class="fas fa-clock prefix shadow-text recipedia-text"></i>
                         <input id="cook_time" name="cook_time" type="number" class="validate" required>
-                        <label for="cook_time">Cooking time (mins)</label>
+                        <label for="cook_time">Cook time (mins)</label>
                     </div>
-                    <div class="input-field col s6">
+                    <div class="input-field col s12">
                         <i class="far fa-clock prefix shadow-text recipedia-text"></i>
                         <input id="prep_time" name="prep_time" type="number" class="validate" required>
-                        <label for="prep_time">Preparation Time (mins)</label>
+                        <label for="prep_time">Prep Time (mins)</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <i class="fas fa-clipboard-list prefix shadow-text recipedia-text"></i>
-                        <input id="ingredients" name="ingredients" minlength="2" maxlength="60"
+                        <i class="fas fa-shopping-bag prefix shadow-text recipedia-text"></i>
+                        <input id="ingredients" name="ingredients" minlength="2" maxlength="50"
                         type="text" class="validate" required>
                         <label for="ingredients">Ingredient 1:</label>
                         <a type="button" class="btn add-ingredient-btn add_ingredient"><i class="far fa-plus-square submit-icon"></i>Add Ingredient</a>
@@ -103,8 +103,8 @@
                 </div>
                 <div class="row">
                     <div class="col s12 center-align">
-                        <button class="btn-large waves-effect waves-light submit-btn" type="submit">Add Recipe
-                        <i class="fas fa-paper-plane"></i>
+                        <button class="btn-small waves-effect waves-light submit-btn" type="submit">Add Recipe
+                        <i class="fas fa-paper-plane submit-icon"></i>
                         </button>
                     </div>
                 </div>
