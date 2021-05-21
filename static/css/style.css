@@ -177,25 +177,12 @@ p, h5{
     text-align: center;
     text-transform: capitalize;
 }
-.search-btn{
-    display: block;
-    margin-left: 0.8rem;
-}
-.search-btn-primary{
-    background-color: var(--button-color);
+.searchbox-container{
+    background-color: rgba(0,0,0, 0.5);
     border-radius: 30px;
 }
-.search-btn-primary:hover{
-    background-color: var(--button-color);
-    filter: brightness(110%)
-}
-.search-bar-and-btn{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 #search-label{
-    color: var(--text-white)
+    color: var(--text-white);
 }
 .col>.recipe-links{
     padding: 1rem 0;
@@ -498,13 +485,10 @@ ul>li.list-decoration{
 }
 
 /* Had to use !important as it was the only way I could override materialize settings */
-input[type=text]{
-    color: var(--text-white) !important;
-}
-input[type=url]{
-    color: var(--text-white) !important;
-}
-input[type=number]{
+input[type=text],
+input[type=url],
+input[type=number],
+input[type=password]{
     color: var(--text-white) !important;
 }
 
@@ -518,8 +502,8 @@ input[type=number]::-webkit-outer-spin-button {
 input:-webkit-autofill,
 textarea:-webkit-autofill,
 select:-webkit-autofill {
-    box-shadow: 0 0 0 1000px var(--pale-green) inset !important;
-    -webkit-box-shadow: 0 0 0 1000px var(--pale-green) inset !important;
+    box-shadow: 0 0 0 1000px rgba(0,0,0, 0.5) inset !important;
+    -webkit-box-shadow: 0 0 0 1000px rgba(0,0,0, 0.5) inset !important;
     -webkit-text-fill-color: var(--text-white) !important;
 }
 /* targetting the sidenav */
