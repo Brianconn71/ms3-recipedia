@@ -43,7 +43,7 @@ button{
 .control-btns{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 .submit-btn{
     background-color: var(--button-color);
@@ -73,6 +73,7 @@ button{
     background-color: var(--bright-green);
     font-weight: bold;
     font-size: 0.8rem;
+    padding: 0 1rem;
 }
 .full-recipe-btn:hover{
     background-color: transparent;
@@ -331,10 +332,10 @@ form input[type="text"]{
 }
 /* profile page */
 .user-profile{
-    height: 50vh;
+    height: 100%;
 }
 .user-recipe-section{
-    height: 50vh;
+    height: 100%;
 }
 /* add recipe page */
 .add-recipe-container{
@@ -405,6 +406,12 @@ ul>li.list-decoration{
 .recipe-btns{
     width: 100%;
     text-align: center;
+}
+
+/* category page */
+.category-heading{
+    font-family: 'Ubuntu', sans-serif;
+    height: 5rem;
 }
 
 /* products page */
@@ -525,9 +532,6 @@ select:-webkit-autofill {
     .card .recipe-title{
         font-size: 1.5rem;
     }
-    .full-recipe-btn{
-        font-size: 1rem;
-    }
     .flash-msg-text{
         font-size: 1.3rem;
     }
@@ -594,6 +598,9 @@ select:-webkit-autofill {
     .nav-wrapper .recipedia-logo{
         font-size: 2.5rem;
         padding-left: 1rem;
+    }
+    .full-recipe-btn{
+        font-size: 1rem;
     }
     .card .recipe-title{
         font-size: 1.8rem;

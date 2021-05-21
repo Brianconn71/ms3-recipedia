@@ -442,7 +442,7 @@ def remove_recipe(recipe_id):
         {"username": session["user"].lower()},
         {"$pull": {"saved_recipes": ObjectId(recipe_id)}})
     flash("Saved recipe has been removed")
-    return redirect(url_for("get_recipes"))
+    return redirect(url_for("profile", username=session["user"]))
 
 
 """

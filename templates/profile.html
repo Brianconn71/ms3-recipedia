@@ -5,15 +5,15 @@
     <section class="container center-placement user-profile">
         <div class="row">
             <div class="col s12">
-                    <h3 class="center-align recipedia-text shadow-text">{{ username.capitalize() }}'s Profile</h3><br>
-                    <p class="center-align recipedia-text shadow-text">Welcome {{ username.capitalize() }} to your profile page, see below for your saved recipes and recipes that you have added to our database!</p>
+                    <h3 class="center-align search-heading recipedia-text shadow-text">{{ username.capitalize() }}'s Profile</h3><br>
+                    <p class="center-align recipedia-text shadow-text low-font-weight">Welcome {{ username.capitalize() }} to your profile page, see below for your saved recipes and recipes that you have added to our database!</p>
                 </div>
             </div>
     </section>
     {% if result %}
     <div class="row">
             <div class="col s12 center-text">
-                <h3 class="recipedia-text shadow-text">Your Saved Recipes</h3>
+                <h3 class="recipedia-text search-heading shadow-text">Your Saved Recipes</h3>
                         <div class="row">
                             {% for save in result %}
                                 <div class="col s12 m6">
@@ -56,10 +56,10 @@
     </div>
     {% endif %}
     <!-- Section to show the user the recipes that they have added to the database -->
-    <section class="container user-recipe-section">
+    <section class="user-recipe-section">
         <div class="row">
             <div class="col s12 center-text">
-                <h3 class="recipedia-text shadow-text">Your Recipes in our database</h3>
+                <h3 class="recipedia-text search-heading shadow-text">Your Recipes in our database</h3>
                     {% if recipes|length >= 1 %}
                         {{ pagination.links }}
                         {{ pagination.info }}
