@@ -102,6 +102,10 @@ button{
 .btn .icons-size{
     font-size: 0.8rem;
 }
+/* low-font-weight */
+.low-font-weight{
+    font-weight: 200;
+}
 
 /* text color */
 .recipedia-text{
@@ -418,21 +422,26 @@ ul>li.list-decoration{
 
 /* products page */
 .product-description{
-    color: var(--text-white)
+    color: var(--text-white);
+    font-size: 0.9rem;
 }
 #product-title{
     padding: 0.8rem 0;
     font-weight: bold;
+    font-size: 1.1rem;
     text-transform: capitalize;
     height: 5rem;
     width: 100%;
+    margin-bottom: 0.8rem;
 }
 .see-product-btn{
     margin: 1rem 0;
     padding: 0 1rem;
+    font-size: 0.8rem;
 }
 .thumb-up{
     color: var(--text-white);
+    font-size: 0.9rem;
 }
 .icon-spacing{
     margin-right: 0.3rem;
@@ -441,6 +450,11 @@ ul>li.list-decoration{
 .buy-now-head{
     color: var(--text-white);
     font-family: 'Ubuntu', sans-serif;
+    font-size: 0.9rem;
+}
+/* materialize had there own styling on a tags that was affecting the way my links were set up on the products page, the only way I could fix the issue was to copy the exact styling selector they used and change the margins manually */
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating){
+    margin-right: 0;
 }
 .buy-now-text{
     padding: 1rem 0;

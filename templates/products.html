@@ -5,10 +5,10 @@
 
     <div class="row">
         <div class="col s12 center-align">
-            <h3 class="center-align recipedia-text shadow-text">Check out our recommended cooking utensils below!</h3>
+            <h2 class="search-heading center-align recipedia-text shadow-text">Check out our recommended cooking utensils</h2>
         </div>
         <div class="col s12">
-                <h5 class="recipedia-text shadow-text center-align">Filter products in our database by clicking the buttons below!</h5>
+                <h5 class="recipedia-text shadow-text low-font-weight center-align">Filter products in our database by clicking the buttons below!</h5>
             </div>
             <div class="col s12 recipe-links">
                 <div class="recipe-links">
@@ -51,7 +51,7 @@
                         {% endif %}
                     <div class="card-action">
                         <p class="product-description truncate-text">{{ product.product_description }}</p>
-                        <a href="{{ url_for('full_product', product_id=product._id)}}" class="btn btn-large full-recipe-btn see-product-btn">See Product Description</a>
+                        <a href="{{ url_for('full_product', product_id=product._id)}}" class="btn btn-large full-recipe-btn see-product-btn">See Description</a>
                         <div class="buy-now-text">
                             <h5 class="buy-now-head underline-text">Buy now by clicking on the link below</h5>
                             <div class="buy-now-icon">
