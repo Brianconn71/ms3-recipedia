@@ -96,6 +96,11 @@ button{
 .close-window-btn:active{
     background-color: transparent;
 }
+.search-btns{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 /* icons */
 .icons{
     color: var(--button-color);
@@ -343,6 +348,11 @@ form input[type="text"]{
     background-color: rgba(0,0,0, 0.5)
 }
 
+/* targetting the select text and dropdown */
+.select-wrapper input.select-dropdown{
+    font-size: 0.8rem;
+}
+
 /* card design */
 .recipedia-cards{
     background-color: var(--darkest-green);
@@ -567,6 +577,9 @@ select:-webkit-autofill {
     #product-title{
         font-size: 1.4rem;
     }
+    .select-wrapper input.select-dropdown{
+    font-size: 1rem;
+}
 }
 @media only screen and (min-width: 600px){
     .search-heading{
