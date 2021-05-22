@@ -371,7 +371,7 @@ form input[type="text"]{
 /* Full recipe page */
 .recipe-info{
     padding: 2rem 0.3rem;
-    margin-bottom: 1rem;
+    margin-bottom: 5rem;
 }
 .recipe-important-info{
     margin-right: 0.5rem;
@@ -389,6 +389,10 @@ form input[type="text"]{
 }
 .list-spacing{
     padding: 1rem 0.2rem;
+}
+.list-text{
+    font-family: 'Oxygen', sans-serif;
+    font-size: 0.8rem;
 }
 .underline-text{
     text-decoration: underline;
@@ -411,7 +415,7 @@ ul>li.list-decoration{
     filter: brightness(60%);
 }
 .full-img{
-    height: 40rem;
+    height: 20rem;
 }
 .recipe-btns{
     width: 100%;
@@ -465,7 +469,7 @@ ul>li.list-decoration{
 }
 .product-text{
     padding: 1rem 0;
-    font-size: 1.2rem;
+    font-size: 0.8rem;
     font-family: 'Oxygen', sans-serif;
 }
 /* targeting the first "thumb up", answer found here: https://stackoverflow.com/questions/2717480/css-selector-for-first-element-with-class */
@@ -593,6 +597,12 @@ select:-webkit-autofill {
     input[type=password]:not(.browser-default){
     font-size: 1rem;
     }
+    .list-text{
+        font-size: 1rem;
+    }
+    .buy-now-head{
+        font-size: 1.2rem;
+    }
 }
 @media only screen and (min-width: 600px){
     .search-heading{
@@ -618,6 +628,12 @@ select:-webkit-autofill {
     }
     .sidenav{
         width: 40%
+    }
+    .full-img{
+        height: 40rem;
+    }
+    .product-text{
+        font-size: 1.2rem;
     }
 }
 @media only screen and (min-width: 900px){

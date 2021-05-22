@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="recipedia-text shadow-text center-align">Edit a recipe category in our database</h3>
+    <h3 class="recipedia-text shadow-text center-align search-heading">Edit a recipe category in our database</h3>
 
     <section class="container add-recipe-container">
         <div class="row">
             <form class="col s12" method="POST" action="{{ url_for('edit_category', category_id=category._id)}}">
                 <div class="row">
                     <div class="input-field col s12">
-                        <i class="fas fa-stream prefix shadow-text recipedia-text"></i>
+                        <i class="fas fa-pen prefix shadow-text recipedia-text"></i>
                         <input id="category_name" name="category_name" minlength="3" maxlength="20"
                         type="text" value="{{ category.category_name }}" class="validate" required>
                         <label for="category_name">Category Name</label>
@@ -16,9 +16,9 @@
                 </div>
                 <div class="row">
                     <div class="col s12 center-align">
-                        <a href="{{ url_for('get_categories') }}" class="waves-effect waves-light btn-small unsave-btn"> Cancel <i class="far fa-window-close right"></i></a>
-                        <button class="waves-effect waves-light btn-small edit-btn" type="submit">Edit
-                        <i class="far fa-edit right"></i>
+                        <a href="{{ url_for('get_categories') }}" class="waves-effect waves-light btn-small unsave-btn"> <i class="far fa-window-close"></i></a>
+                        <button class="waves-effect waves-light btn-small edit-btn" type="submit">
+                        <i class="far fa-edit"></i>
                         </button>
                     </div>
                 </div>

@@ -22,7 +22,7 @@
                         {% else %}
                             <h5 class="thumb-up center-align">Rating: Product has no rating!</h5>
                         {% endif %}
-                    <h4 class="recipedia-text shadow-text center-align underline-text">Product Description</h4>
+                    <h4 class="recipedia-text center-align underline-text">Product Description</h4>
                     <p class="recipedia-text shadow-text product-text">{{product.product_description}}</p>
                         <div class="buy-now-text center-align">
                             <h5 class="buy-now-head">Buy now by clicking on the link below</h5>
@@ -30,10 +30,10 @@
                                 <a href="http://www.amazon.co.uk" target="_blank"><i class="fab fa-amazon recipedia-text" id="amazon"></i></a>
                             </div>
                         </div>
-                        <div class="control-btns">
+                        <div class="recipe-btns">
                             {% if session.user|lower == session.user|lower == 'admin'|lower %}
-                                <a href="#modal1" class="waves-effect waves-light btn-small modal-trigger modal-trigger red" id="delete-btn"><i class="far fa-trash-alt right"></i>Delete</a>
-                                <a href="{{ url_for('edit_product', product_id = product._id)}}" class="waves-effect waves-light btn-small blue" id="edit-btn"><i class="far fa-edit right"></i>Edit</a>
+                                <a href="#modal1" class="waves-effect waves-light btn-small modal-trigger modal-trigger unsave-btn"><i class="far fa-trash-alt"></i></a>
+                                <a href="{{ url_for('edit_product', product_id = product._id)}}" class="waves-effect waves-light btn-small edit-btn"><i class="far fa-edit"></i></a>
                             {% endif %}
                         </div>
                         <div id="modal1" class="modal">
