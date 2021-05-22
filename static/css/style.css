@@ -509,6 +509,13 @@ input[type=password]{
     color: var(--text-white) !important;
 }
 
+input[type=text]:not(.browser-default),
+input[type=url]:not(.browser-default),
+input[type=number]:not(.browser-default),
+input[type=password]:not(.browser-default){
+    font-size: 0.8rem;
+}
+
 /* Wanted to hide the next and prev number spinners on form, found a solution here https://css-tricks.com/snippets/css/turn-off-number-input-spinners/ */
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
@@ -579,7 +586,13 @@ select:-webkit-autofill {
     }
     .select-wrapper input.select-dropdown{
     font-size: 1rem;
-}
+    }
+    input[type=text]:not(.browser-default),
+    input[type=url]:not(.browser-default),
+    input[type=number]:not(.browser-default),
+    input[type=password]:not(.browser-default){
+    font-size: 1rem;
+    }
 }
 @media only screen and (min-width: 600px){
     .search-heading{

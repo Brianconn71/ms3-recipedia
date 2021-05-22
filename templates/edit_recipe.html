@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="recipedia-text shadow-text center-align">Edit a recipe in our database</h3>
+    <h3 class="recipedia-text shadow-text center-align search-heading">Edit a recipe in our database</h3>
 
     <section class="container add-recipe-container">
         <div class="row">
@@ -40,7 +40,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="input-field col s6">
+                    <div class="input-field col s12 m6">
                         <i class="fas fa-exclamation prefix shadow-text recipedia-text"></i>
                         <select name="difficulty" id="difficulty" required>
                             <option value="" disabled selected>Choose a Difficulty</option>
@@ -60,27 +60,27 @@
                         </select>
                         <label for="difficulty">Difficulty</label>
                     </div>
-                    <div class="input-field col s6">
+                    <div class="input-field col s12 m6">
                         <i class="fas fa-calculator prefix shadow-text recipedia-text"></i>
                         <input id="servings" name="servings" type="number" class="validate" value="{{recipe.servings}}" required>
                         <label for="servings">Servings</label>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="input-field col s6">
+                    <div class="input-field col s12 m6">
                         <i class="fas fa-clock prefix shadow-text recipedia-text"></i>
                         <input id="cook_time" name="cook_time" type="number" class="validate" value="{{recipe.cook_time}}" required>
                         <label for="cook_time">Cooking time (mins)</label>
                     </div>
-                    <div class="input-field col s6">
+                    <div class="input-field col s12 m6">
                         <i class="far fa-clock prefix shadow-text recipedia-text"></i>
                         <input id="prep_time" name="prep_time" type="number" class="validate" value="{{recipe.prep_time}}" required>
-                        <label for="prep_time">Preparation Time (mins)</label>
+                        <label for="prep_time">Prep Time (mins)</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col s12">
-                        <a type="button" class="btn green add_ingredient"><i class="far fa-plus-square submit-icon"></i>Add Ingredient</a>
+                        <a type="button" class="btn add_ingredient add-ingredient-btn"><i class="far fa-plus-square submit-icon"></i>Add Ingredient</a>
                     </div>
                 </div>
                 <!-- Jinja loop list method used -->
@@ -92,7 +92,7 @@
                             type="text" value="{{ ing }}" class="validate" required>
                             <!-- got help with numbering my ingredients in the loop here: https://stackoverflow.com/questions/20233721/how-do-you-index-on-a-jinja-template -->
                             <label for="ingredients">Ingredient {{loop.index}}:</label>
-                            <a type="button" class="btn red remove_ingredient"><i class="far fa-minus-square submit-icon"></i>Remove</a>
+                            <a type="button" class="btn unsave-btn remove_ingredient"><i class="far fa-minus-square submit-icon"></i>Remove</a>
                         </div>
                     </div>
                 {% endfor %}
@@ -100,7 +100,7 @@
                     </div>
                 <div class="row">
                     <div class="col s12">
-                        <a type="button" class="btn green add_step"><i class="far fa-plus-square submit-icon"></i>Add Step</a>
+                        <a type="button" class="btn add_step add-ingredient-btn"><i class="far fa-plus-square submit-icon"></i>Add Step</a>
                     </div>
                 </div>
                 {% for add_steps in recipe.steps%}
@@ -110,7 +110,7 @@
                             <input id="steps" name="steps" minlength="3" maxlength="500"
                             type="text" value="{{ add_steps }}" class="validate" required>
                             <label for="steps">Step {{ loop.index }}:</label>
-                            <a type="button" class="btn red remove_step"><i class="far fa-minus-square submit-icon"></i>Remove</a>
+                            <a type="button" class="btn unsave-btn remove_step"><i class="far fa-minus-square submit-icon"></i>Remove</a>
                         </div>
                     </div>
                 {% endfor %}
@@ -124,10 +124,10 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col s12 center-align">
+                    <div class="col s12 center-align control-btns">
                         <!-- Cancel and edit changes button -->
-                        <a href="{{ url_for('get_recipes') }}" class="btn-large red"> Cancel <i class="far fa-window-close right"></i>  </a>
-                        <button class="btn-large waves-effect waves-light submit-btn" type="submit">Edit Recipe
+                        <a href="{{ url_for('get_recipes') }}" class="btn-small unsave-btn"><i class="far fa-window-close"></i></a>
+                        <button class="btn-small waves-effect waves-light submit-btn" type="submit">Edit
                         <i class="far fa-edit right"></i>
                         </button>
                     </div>
