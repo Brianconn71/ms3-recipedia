@@ -48,11 +48,67 @@ I created this project
 * [HTML](https://html.com)
     * HTML was used to structure my project.
 
-* [CSS](hhttps://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+* [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
     * CSS was used to style my project.
 
-* [JavaScript](hhttps://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+* [JavaScript](https://www.javascript.com)
     * JavaScript was used to add logic and functionality to my site.
+
+* [jQuery](https://jquery.com/)
+    * jQuery was used in my project on the following parts:
+    Mobie side-Nav, delete confirmation Modal, for verification of the select form elements, datepicker on the forms, I also used jQuery for the add ingredient and add step buttons and remove buttons to add/remove ingredients and steps.
+
+* [Python](https://python.org)
+    * My project uses Python for the backend logic of the website and to run the website on Heroku. The following Python modules are used in my project:
+        * click==7.1.2 dnspython==2.1.0 Flask==1.1.2 flask-paginate==0.8.1 Flask-PyMongo==2.3.0 itsdangerous==1.1.0 pymongo==3.11.3 Werkzeug==1.0.1
+
+* [Flask-Paginate](https://flask-paginate.readthedocs.io/en/master/)
+    * Flask-Paginate was used in my project to paginate the recipes, products and profile page to account for recipes and products.
+
+* [MongoDB](https://www.mongodb.com/1)
+    * Mongo Db was used to create the database collection behind this project
+
+* [Flask](https://flask.palletsprojects.com/en/2.0.x/)
+    * Flask was the web app framework used in this project
+
+* [GitHub](https://github.com)
+    * Github was used to host and store the sourcfe code of the project
+
+* [Gitpod](https://gitpod.io)
+    * Gitpod was the IDE that I used to create the site and push the changes to Github.
+
+* [Git](https://git-scm.com/)
+    * Git is the version control software used on the site. it was used to add, commit and push the code changes to github.
+
+* [Figma](https://www.figma.com)
+    * Figma was used to create the wireframes of the site.
+
+* [Font Awesome](https://fontawesome.com)
+    * Font Awesome was used to source and find the icons used on the site.
+
+* [Favicon](https://favicon.io)
+    * Favicon was used to create and add a favicon to the site.
+
+* [Google Fonts](https://fonts.google.com)
+    * The two fonts that I used on the site, Ubuntu and Oxygen, were found using google fonts.
+
+* [Paletton](https://paletton.com)
+    * Paletton was used to source the colors that were used on the site.
+
+* [Materialize](https://materializecss.com/)
+    * Materialize was used to add html/css components to the site and to make the site more visually appealing to the user.
+
+* [Canva](https://canva.com)
+    * Canva was used to create the favicon design for the site.
+
+* [Google Chrome Dev Tools](https://www.google.com/chrome/dev/)
+    * Google chrome tools were used for debugging purposes and to test different css styles and layouts of features.
+
+* [W3](https://www.weschools.com)
+    * W3 Schools was used to troubleshoot issues regarding html css and python throughout the course of thye project.
+
+* [Autoprefixer](https:autoprefixer.github.io)
+    * Autoprefixer was used to parse my css file and add the vendor prefixes.
 
 ## Testing
 
@@ -182,16 +238,16 @@ GitHub ignores this env.py file and does not show it in your repository due secu
 
 * Product images and descriptions:
     * Hygiplas Colour Coded Chefs Knife Set with Wallet [image](https://media.nisbets.com/asset/core/prodimage/largezoom/s088_group.jpg) [description](https://www.nisbets.ie/hygiplas-colour-coded-chefs-knife-set-with-wallet/s088)
-    * Vogue Catering Tongs 10" [image](https://media.nisbets.com/asset/core/prodimage/largezoom/j608_vogue-catering-tongs.jpg)[description](https://www.nisbets.ie/vogue-catering-tongs-10in/j608)
-    * Vogue Round Cast Iron Skillet Pan 255mm [image](https://media.nisbets.com/asset/core/prodimage/largezoom/m655_roundskillet1.jpg)[description](https://www.nisbets.ie/vogue-round-cast-iron-skillet-pan-255mm/m655)
-    * Schneider Aluminium Baking Tray [image](https://media.nisbets.com/asset/core/prodimage/largezoom/228602.jpg)[description](https://www.nisbets.ie/schneider-aluminium-baking-tray/p_gt145)
-    * Vogue 6 Piece Soft Grip Knife Set [image](https://media.nisbets.com/asset/core/prodimage/largezoom/s725_softgrip_6piece.jpg)[description](https://www.nisbets.ie/vogue-6-piece-soft-grip-knife-set/s725)
-    * Hygiplas Colour Coded Chopping Mats Set [image](https://media.nisbets.com/asset/core/prodimage/largezoom/cp521_group.jpg)[description](https://www.nisbets.ie/hygiplas-colour-coded-chopping-mats-set/p_cp520)
-    * Vogue Stainless Steel Colander 9" [image](https://media.nisbets.com/asset/core/prodimage/largezoom/k331-colander.jpg)[description](https://www.nisbets.ie/vogue-stainless-steel-colander-9in/k331)
-    *  Vogue Orange Pate Terrine Mould 1.7Ltr [image](https://media.nisbets.com/asset/core/prodimage/largezoom/w456_pateterrineorange1.jpg)[description](https://www.nisbets.ie/vogue-orange-pate-terrine-mould-1700ml/w456)
-    * Vogue Stainless Steel Saucepan 900ml [image](https://media.nisbets.com/asset/core/prodimage/largezoom/m922_saucepan1new.jp)[description](https://www.nisbets.ie/vogue-stainless-steel-saucepan-900ml/m922)
-    * Vogue Stainless Steel Saucepan 3Ltr [image](https://media.nisbets.com/asset/core/prodimage/largezoom/230677.jpg)[description](https://www.nisbets.ie/vogue-stainless-steel-saucepan-3ltr/m944)
-    * Vogue Stainless Steel Saucepan 8Ltr [image](https://media.nisbets.com/asset/core/prodimage/largezoom/230677.jpg)[description](https://www.nisbets.ie/vogue-stainless-steel-saucepan-8ltr/m946)
+    * Vogue Catering Tongs 10" [image](https://media.nisbets.com/asset/core/prodimage/largezoom/j608_vogue-catering-tongs.jpg) [description](https://www.nisbets.ie/vogue-catering-tongs-10in/j608)
+    * Vogue Round Cast Iron Skillet Pan 255mm [image](https://media.nisbets.com/asset/core/prodimage/largezoom/m655_roundskillet1.jpg) [description](https://www.nisbets.ie/vogue-round-cast-iron-skillet-pan-255mm/m655)
+    * Schneider Aluminium Baking Tray [image](https://media.nisbets.com/asset/core/prodimage/largezoom/228602.jpg) [description](https://www.nisbets.ie/schneider-aluminium-baking-tray/p_gt145)
+    * Vogue 6 Piece Soft Grip Knife Set [image](https://media.nisbets.com/asset/core/prodimage/largezoom/s725_softgrip_6piece.jpg) [description](https://www.nisbets.ie/vogue-6-piece-soft-grip-knife-set/s725)
+    * Hygiplas Colour Coded Chopping Mats Set [image](https://media.nisbets.com/asset/core/prodimage/largezoom/cp521_group.jpg) [description](https://www.nisbets.ie/hygiplas-colour-coded-chopping-mats-set/p_cp520)
+    * Vogue Stainless Steel Colander 9" [image](https://media.nisbets.com/asset/core/prodimage/largezoom/k331-colander.jpg) [description](https://www.nisbets.ie/vogue-stainless-steel-colander-9in/k331)
+    *  Vogue Orange Pate Terrine Mould 1.7Ltr [image](https://media.nisbets.com/asset/core/prodimage/largezoom/w456_pateterrineorange1.jpg) [description](https://www.nisbets.ie/vogue-orange-pate-terrine-mould-1700ml/w456)
+    * Vogue Stainless Steel Saucepan 900ml [image](https://media.nisbets.com/asset/core/prodimage/largezoom/m922_saucepan1new.jp) [description](https://www.nisbets.ie/vogue-stainless-steel-saucepan-900ml/m922)
+    * Vogue Stainless Steel Saucepan 3Ltr [image](https://media.nisbets.com/asset/core/prodimage/largezoom/230677.jpg) [description](https://www.nisbets.ie/vogue-stainless-steel-saucepan-3ltr/m944)
+    * Vogue Stainless Steel Saucepan 8Ltr [image](https://media.nisbets.com/asset/core/prodimage/largezoom/230677.jpg) [description](https://www.nisbets.ie/vogue-stainless-steel-saucepan-8ltr/m946)
 
 * Recipe images and descriptions:
     * Chorizo & mozzarella gnocchi bake [image](https://images.immediate.co.uk/production/volatile/sites/30/2020/08/gnocchi-1d16725.jpg?quality=90&webp=true&resize=300,272) [description](https://www.bbcgoodfood.com/recipes/chorizo-mozzarella-gnocchi-bake)
