@@ -284,4 +284,14 @@ GitHub ignores this env.py file and does not show it in your repository due secu
 
 ### Code Snippets
 
+* I used Pagination in my project which I got help and guidance from using this [GitHub](https://gist.github.com/mozillazg/69fb40067ae6d80386e10e105e6803c9) project, I also used the documentation around [flask-paginate](https://flask-paginate.readthedocs.io/en/master/) to help with its functionality and getting it set up in my project.
+
+* I used the following [webpage](https://www.geeksforgeeks.org/python-ways-to-remove-duplicates-from-list/) to help to only show unique recipes to the user in their profile from the list of recipes they have saved.
+
+* Ran into some errors on my profile page functionality, an answer was found with [try and except](https://stackoverflow.com/questions/45155991/try-except-error-exception-keyerror)
+
+* Used the following [Documentation](https://www.askpython.com/python-modules/flask/flask-error-handling) to set up error handlers in the app.py file.
+
+* Validation of Select Form elements using Javascript in the script.js file was taken from the CI Walkthrough Task Manager Project.
+
 ### Acknowledgements

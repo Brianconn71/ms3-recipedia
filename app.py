@@ -24,7 +24,7 @@ mongo = PyMongo(app)
 @app.route("/get_recipes")
 def get_recipes():
     # got help and advice on pagination from here
-    # : https://gist.github.com/mozillazg/69fb40067ae6d80386e10e105e6803c9
+    # https://gist.github.com/mozillazg/69fb40067ae6d80386e10e105e6803c9
     page, per_page, offset = get_page_args(
         page_parameter='page', per_page_parameter='per_page',
         offset_parameter='offset')
@@ -43,6 +43,10 @@ def get_recipes():
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
+    """
+        This function uses the text index to search the DB
+        based on the recipe name and what the user types into the searchbar.
+    """
     search = request.form.get("search")
     page, per_page, offset = get_page_args(
         page_parameter='page', per_page_parameter='per_page',
@@ -65,6 +69,11 @@ def search():
 
 @app.route("/category_search/<id>")
 def category_search(id):
+    """
+        This function searches for the recipes various categories in the Db.
+        When the user then clicks on the filter button i.e "Breakfast"
+        The breakfast recipes are loaded and paginated on the page
+    """
     recipes = list(mongo.db.recipes.find({"category": id}))
     page, per_page, offset = get_page_args(
         page_parameter='page', per_page_parameter='per_page',
@@ -87,6 +96,10 @@ def category_search(id):
 # used CI project walkthrough for user authentication
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    """
+        This function follows the CI walkthrought project of Task Manager,
+        which allows users to register on the site
+    """
     # Check if a username exists
     if request.method == "POST":
         existing_user = mongo.db.users.find_one(
@@ -112,6 +125,10 @@ def register():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    """
+        This function follows the CI walkthrought project of Task Manager,
+        which allows users to login to the site and land on their profile page
+    """
     if request.method == "POST":
         # Check if a user exists
         existing_user = mongo.db.users.find_one(
@@ -127,7 +144,7 @@ def login():
                     return redirect(
                         url_for("profile", username=session["user"]))
             else:
-                # password doesn't match
+                # if password doesn't match
                 flash("Incorrect Username and/or Password, Please try again")
                 return redirect(url_for("login"))
         else:
@@ -136,6 +153,7 @@ def login():
             return redirect(url_for("login"))
 
     return render_template("login.html")
+
 
 """
     The below function displays a users profile
@@ -174,6 +192,13 @@ def profile(username):
     """
     if session['user']:
         try:
+            """
+            if session user is in session then try to find the saved_recipes
+            key in the users Db, if not there then ignore trying to find it,
+            and don't return the saved recipes section of profile page,
+            if the user has a saved_recipes key in the users Db then return,
+            the saved recipes from the array to display on the profile page.
+            """
             saved_recipes = mongo.db.users.find_one(
                 {"username": session["user"]})["saved_recipes"]
             if saved_recipes is not None:
@@ -205,6 +230,9 @@ def profile(username):
 
 @app.route("/logout")
 def logout():
+    """
+        Taken and modified from the CI walkthrough project
+    """
     # remove the user from their session - logout
     flash("You have been logged out.")
     session.pop("user")
@@ -213,6 +241,9 @@ def logout():
 
 @app.route("/add_recipe", methods=["POST", "GET"])
 def add_recipe():
+    """
+        adding a recipe to the database guidance sought from CI Walkthrough.
+    """
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     if request.method == 'POST':
@@ -247,6 +278,9 @@ def add_recipe():
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
+    """
+        This function will edit a chosen recipe
+    """
     if request.method == 'POST':
         steps = request.form.getlist("steps")
         step_list = []
@@ -282,6 +316,9 @@ def edit_recipe(recipe_id):
 
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
+    """
+        This function deletes a recipe from the recipes Db
+    """
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe has been deleted successfully")
     return redirect(url_for("get_recipes"))
@@ -289,6 +326,10 @@ def delete_recipe(recipe_id):
 
 @app.route("/full_recipe/<recipe_id>")
 def full_recipe(recipe_id):
+    """
+        This function will show a single recipe on a new page
+        and display all info.
+    """
     recipe = mongo.db.recipes.find_one(
         {"_id": ObjectId(recipe_id)})
     return render_template("full_recipe.html", recipe=recipe)
@@ -296,6 +337,9 @@ def full_recipe(recipe_id):
 
 @app.route("/get_categories")
 def get_categories():
+    """
+        This Function will get all categories from the categories Db
+    """
     categories = list(
         mongo.db.categories.find().sort("category_name", 1))
     return render_template("recipe_categories.html", categories=categories)
@@ -303,6 +347,9 @@ def get_categories():
 
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
+    """
+        This function will add another category to the db
+    """
     if request.method == "POST":
         category = {
             "category_name": request.form.get("category_name")
@@ -316,6 +363,9 @@ def add_category():
 
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
+    """
+        This function will edit a chosen category
+    """
     if request.method == "POST":
         submit_category = {
             "category_name": request.form.get("category_name")
@@ -331,6 +381,9 @@ def edit_category(category_id):
 
 @app.route("/delete_category/<category_id>")
 def delete_category(category_id):
+    """
+        This function will delete a chosen category from the Db
+    """
     mongo.db.categories.remove({"_id": ObjectId(category_id)})
     flash("Category has been deleted successfully")
     return redirect(url_for("get_categories"))
@@ -338,6 +391,10 @@ def delete_category(category_id):
 
 @app.route("/full_product/<product_id>")
 def full_product(product_id):
+    """
+        This function will display a product on its own page
+        and display all information
+    """
     product = mongo.db.products.find_one(
         {"_id": ObjectId(product_id)})
     return render_template("full_product.html", product=product)
@@ -345,6 +402,10 @@ def full_product(product_id):
 
 @app.route("/get_products")
 def get_products():
+    """
+        This function will search the products Db and return all products
+        in paginated format.
+    """
     products = list(
         mongo.db.products.find().sort("product_name", 1))
     page, per_page, offset = get_page_args(
@@ -364,6 +425,9 @@ def get_products():
 
 @app.route("/add_product", methods=["GET", "POST"])
 def add_product():
+    """
+        This function will add a product to the products Db
+    """
     if request.method == "POST":
         product = {
             "product_name": request.form.get("product_name"),
@@ -381,6 +445,9 @@ def add_product():
 
 @app.route("/edit_product/<product_id>", methods=["GET", "POST"])
 def edit_product(product_id):
+    """
+        This function will allow admin to edit a product
+    """
     if request.method == "POST":
         update_product = {
             "product_name": request.form.get("product_name"),
@@ -400,14 +467,21 @@ def edit_product(product_id):
 
 @app.route("/delete_product/<product_id>")
 def delete_product(product_id):
+    """
+        This function will allow admin to delete a product
+    """
     mongo.db.products.remove({"_id": ObjectId(product_id)})
     flash("Product has been deleted successfully")
     return redirect(url_for("get_products"))
 
 
-# below function filters the products based on rating
 @app.route("/product_search/<id>")
 def product_search(id):
+    """
+        This function will search the products db for all product types,
+        and return them based on which button a user chooses in paginated
+        format.
+    """
     products = list(mongo.db.products.find({"product_type": id}))
     page, per_page, offset = get_page_args(
         page_parameter='page', per_page_parameter='per_page',
@@ -429,6 +503,11 @@ def product_search(id):
 
 @app.route("/save_recipe/<recipe_id>", methods=["GET", "POST"])
 def save_recipe(recipe_id):
+    """
+        This function will allow users to save a recipe to their profile,
+        It will push the recipe id of the recipe to the saved_recipes
+        key in the users db and store it in an array
+    """
     mongo.db.users.find_one_and_update(
         {"username": session["user"].lower()},
         {"$push": {"saved_recipes": ObjectId(recipe_id)}})
@@ -438,6 +517,10 @@ def save_recipe(recipe_id):
 
 @app.route("/remove_recipe/<recipe_id>", methods=["GET", "POST"])
 def remove_recipe(recipe_id):
+    """
+        This function will allow users to remove a saved recipe from their
+        profile and remove it from the array in the users Db
+    """
     mongo.db.users.find_one_and_update(
         {"username": session["user"].lower()},
         {"$pull": {"saved_recipes": ObjectId(recipe_id)}})
