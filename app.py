@@ -343,7 +343,7 @@ def full_product(product_id):
     return render_template("full_product.html", product=product)
 
 
-@app.route("/get_products") 
+@app.route("/get_products")
 def get_products():
     products = list(
         mongo.db.products.find().sort("product_name", 1))
@@ -421,7 +421,7 @@ def product_search(id):
     if len(products) <= 0:
         flash(f"No product type of {id} were found in our database!")
     else:
-        flash(f"Your search for a product type of {id} returned {len(products)} result(s)!")
+        flash(f"Your search for {id} returned {len(products)} result(s)!")
     return render_template("products.html", products=products_paginated,
                            page=page, per_page=per_page,
                            pagination=pagination)

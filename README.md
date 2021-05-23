@@ -1,5 +1,7 @@
 # Recipedia
 
+![Mock-Up of the site]()
+
 This is my 3rd milestone project for the Code Institute Full-Stack developer programme. I have chosen to do my project based on a cooking recipe website.
 
 I decided to take inspiration from both the code institute student's handbook and my own interests to make a website dedicated to hosting recipes. it will allow users to log in and add their own recipes to the website and save other users recipes to their own profile for easy access and viewing.
@@ -107,8 +109,14 @@ I created this project
 * [W3](https://www.weschools.com)
     * W3 Schools was used to troubleshoot issues regarding html css and python throughout the course of thye project.
 
-* [Autoprefixer](https:autoprefixer.github.io)
+* [Autoprefixer](https://autoprefixer.github.io)
     * Autoprefixer was used to parse my css file and add the vendor prefixes.
+
+* [TingPNG](https://tinypng.com)
+    * TinyPNG was used to reduce the size of the background image of the site.
+
+* [Techsini](https://techsini.com/multi-mockup/)
+    * Techsini is a mockup generator and It was used to get the mock up image of the site in the Readme.
 
 ## Testing
 
@@ -271,6 +279,8 @@ GitHub ignores this env.py file and does not show it in your repository due secu
     * Two-minute breakfast smoothie [image](https://images.immediate.co.uk/production/volatile/sites/30/2020/08/two-minute-breakfast-smoothie-4a4722d.jpg?quality=90&webp=true&resize=375,341) [description](https://www.bbcgoodfood.com/recipes/two-minute-breakfast-smoothie)
     * Breakfast egg wraps [image](https://images.immediate.co.uk/production/volatile/sites/30/2020/05/breakfast-egg-wraps-c0880fe.jpg?quality=90&webp=true&resize=375,341) [description](https://www.bbcgoodfood.com/recipes/breakfast-egg-wraps)
     * Frappe [image]() [description]()
+
+* Background image for the site [here](https://images.unsplash.com/photo-1597362925123-77861d3fbac7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80)
 
 ### Code Snippets
 
