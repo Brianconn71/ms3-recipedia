@@ -59,8 +59,8 @@ def search():
     else:
         flash(f"Your search for {search} returned {len(recipes)} result(s)!")
     return render_template("recipes.html", recipes=recipes_paginated,
-                            page=page, per_page=per_page,
-                            pagination=pagination)
+                           page=page, per_page=per_page,
+                           pagination=pagination)
 
 
 @app.route("/category_search/<id>")
@@ -80,8 +80,8 @@ def category_search(id):
     else:
         flash(f"Your search for {id} returned {len(recipes)} result(s)!")
     return render_template("recipes.html", recipes=recipes_paginated,
-                            page=page, per_page=per_page,
-                            pagination=pagination)
+                           page=page, per_page=per_page,
+                           pagination=pagination)
 
 
 # used CI project walkthrough for user authentication
