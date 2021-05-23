@@ -42,6 +42,18 @@ I created this project
 
 ## Technologies Used
 
+* [Heroku](https://heroku.com)
+    * Heroku was used to host and deploy my project
+
+* [HTML](https://html.com)
+    * HTML was used to structure my project.
+
+* [CSS](hhttps://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+    * CSS was used to style my project.
+
+* [JavaScript](hhttps://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+    * JavaScript was used to add logic and functionality to my site.
+
 ## Testing
 
 ### Html
@@ -107,11 +119,11 @@ Now, we need to include the environment variables.
 1. Click on the settings tab on the dashboard.
 
 2. Click on Reveal Config Vars button and then add the following information.
-  1. key: IP, Value: 0.0.0.0
-  2. key: PORT, Value: 5000
-  3. key: MONGO_DBNAME, value: (Name of the database you are connecting too.)
-  4. key: MONGO_URI, value: (The Mongo Uri can be found in MongoDb by going to clusters then clicking on connect and connect to your application and then changing the password and the dbname to what you initially set up)
-  5. key: SECRET_KEY, value: (A custom secret key of your own choosing which is used to keep client-side sessions secure)
+    1. key: IP, Value: 0.0.0.0
+    2. key: PORT, Value: 5000
+    3. key: MONGO_DBNAME, value: (Name of the database you are connecting too.)
+    4. key: MONGO_URI, value: (The Mongo Uri can be found in MongoDb by going to clusters then clicking on connect and connect to your application and then changing the password and the dbname to what you initially set up)
+    5. key: SECRET_KEY, value: (A custom secret key of your own choosing which is used to keep client-side sessions secure)
 
 Now, We need to go back to the Deploy tab again to enable the automatic deployment feature.
 
@@ -156,7 +168,53 @@ GitHub ignores this env.py file and does not show it in your repository due secu
 
 ### Content
 
+* The idea for my project was a direct result of inspiration taken from the code institute student handbook which listed potential ideas for projects and as a result of my own passion for cooking. I wanted to make a site to appeal to users of all ages and make it easy for busy people to find recipes to suit their needs.
+
+* The products listed on the site and their relevant images are all taken from [Nisbets.ie](https://www.nisbets.ie/), the products used in the project are credited below in the media section.
+
+* The recipes listed on the site and their relevant images are all taken from [BBCGoodFood](https://www.bbcgoodfood.com/), which was found by means of a google search, the recipes used in the project are credited below in the media section.
+
+* [Materialize](https://materializecss.com/) was used for html/css components to make the site more visually appealing to the user.
+
+* Some of the backend Python code was taken and modified to suit the needs of my project from the walkthrough task manager project.
+
 ### Media
+
+* Product images and descriptions:
+    * Hygiplas Colour Coded Chefs Knife Set with Wallet [image](https://media.nisbets.com/asset/core/prodimage/largezoom/s088_group.jpg) [description](https://www.nisbets.ie/hygiplas-colour-coded-chefs-knife-set-with-wallet/s088)
+    * Vogue Catering Tongs 10" [image](https://media.nisbets.com/asset/core/prodimage/largezoom/j608_vogue-catering-tongs.jpg)[description](https://www.nisbets.ie/vogue-catering-tongs-10in/j608)
+    * Vogue Round Cast Iron Skillet Pan 255mm [image](https://media.nisbets.com/asset/core/prodimage/largezoom/m655_roundskillet1.jpg)[description](https://www.nisbets.ie/vogue-round-cast-iron-skillet-pan-255mm/m655)
+    * Schneider Aluminium Baking Tray [image](https://media.nisbets.com/asset/core/prodimage/largezoom/228602.jpg)[description](https://www.nisbets.ie/schneider-aluminium-baking-tray/p_gt145)
+    * Vogue 6 Piece Soft Grip Knife Set [image](https://media.nisbets.com/asset/core/prodimage/largezoom/s725_softgrip_6piece.jpg)[description](https://www.nisbets.ie/vogue-6-piece-soft-grip-knife-set/s725)
+    * Hygiplas Colour Coded Chopping Mats Set [image](https://media.nisbets.com/asset/core/prodimage/largezoom/cp521_group.jpg)[description](https://www.nisbets.ie/hygiplas-colour-coded-chopping-mats-set/p_cp520)
+    * Vogue Stainless Steel Colander 9" [image](https://media.nisbets.com/asset/core/prodimage/largezoom/k331-colander.jpg)[description](https://www.nisbets.ie/vogue-stainless-steel-colander-9in/k331)
+    *  Vogue Orange Pate Terrine Mould 1.7Ltr [image](https://media.nisbets.com/asset/core/prodimage/largezoom/w456_pateterrineorange1.jpg)[description](https://www.nisbets.ie/vogue-orange-pate-terrine-mould-1700ml/w456)
+    * Vogue Stainless Steel Saucepan 900ml [image](https://media.nisbets.com/asset/core/prodimage/largezoom/m922_saucepan1new.jp)[description](https://www.nisbets.ie/vogue-stainless-steel-saucepan-900ml/m922)
+    * Vogue Stainless Steel Saucepan 3Ltr [image](https://media.nisbets.com/asset/core/prodimage/largezoom/230677.jpg)[description](https://www.nisbets.ie/vogue-stainless-steel-saucepan-3ltr/m944)
+    * Vogue Stainless Steel Saucepan 8Ltr [image](https://media.nisbets.com/asset/core/prodimage/largezoom/230677.jpg)[description](https://www.nisbets.ie/vogue-stainless-steel-saucepan-8ltr/m946)
+
+* Recipe images and descriptions:
+    * Chorizo & mozzarella gnocchi bake [image](https://images.immediate.co.uk/production/volatile/sites/30/2020/08/gnocchi-1d16725.jpg?quality=90&webp=true&resize=300,272) [description](https://www.bbcgoodfood.com/recipes/chorizo-mozzarella-gnocchi-bake)
+    * Halloumi Burgers [image](https://images.immediate.co.uk/production/volatile/sites/30/2020/08/halloumi-burgers-cb38d14.jpg?quality=90&webp=true&resize=300,272) [description](https://www.bbcgoodfood.com/recipes/halloumi-burgers)
+    * Hearty lentil one pot [image](https://images.immediate.co.uk/production/volatile/sites/30/2020/08/hearty-lentil-one-pot-440-400-20ecfad.jpg?quality=90&webp=true&resize=300,272) [description](https://www.bbcgoodfood.com/recipes/hearty-lentil-one-pot)
+    * Sticky Chinese chicken traybake [image](https://images.immediate.co.uk/production/volatile/sites/30/2020/08/sticky-chinese-chicken-traybake-f28c3b7.jpg?quality=90&webp=true&resize=300,272) [description](https://www.bbcgoodfood.com/recipes/sticky-chinese-chicken-traybake)
+    * Creamy salmon, leek & potato traybake [image](https://images.immediate.co.uk/production/volatile/sites/30/2020/08/creamy-salmon-leek-potato-traybake-367b3ff.jpg?quality=90&webp=true&resize=300,272) [description](https://www.bbcgoodfood.com/recipes/creamy-salmon-leek-potato-traybake)
+    * Chicken & bean enchiladas [image](https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chickenbean-enchiladas-1044331.jpg?quality=90&webp=true&resize=300,272) [description](https://www.bbcgoodfood.com/recipes/chicken-bean-enchiladas)
+    * Quick chicken hummus bowl [image](https://images.immediate.co.uk/production/volatile/sites/30/2020/08/quick-chicken-and-hummus-bowl-3863168.jpg?quality=90&webp=true&resize=300,272) [description](https://www.bbcgoodfood.com/recipes/quick-chicken-hummus-bowl)
+    * Orzo & tomato soup [image](https://images.immediate.co.uk/production/volatile/sites/30/2020/08/tomato-and-orzo-soup-47fe2e7.jpg?quality=90&webp=true&resize=300,272) [description](https://www.bbcgoodfood.com/recipes/orzo-tomato-soup)
+    * Chipotle chicken & slaw [image](https://images.immediate.co.uk/production/volatile/sites/30/2020/08/hot-wings-and-slaw-1903ce0.jpg?quality=90&webp=true&resize=300,272) [description](https://www.bbcgoodfood.com/recipes/chipotle-chicken-slaw)
+    * Singapore sling [image](https://images.immediate.co.uk/production/volatile/sites/30/2020/08/singapore-sling-37315fa.jpg?quality=90&webp=true&resize=300,272) [description](https://www.bbcgoodfood.com/recipes/singapore-sling)
+    * Chicken skewers with tzatziki [image](https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chicken-skewers-with-tzatziki-f4698fa.jpg?quality=90&webp=true&resize=300,272) [description](https://www.bbcgoodfood.com/recipes/chicken-skewers-tzatziki)
+    * Minty griddled chicken & peach salad [image](https://images.immediate.co.uk/production/volatile/sites/30/2020/08/minty-griddled-chicken-peach-salad-2-440-400-9da5092.jpg?quality=90&webp=true&resize=300,272) [description](https://www.bbcgoodfood.com/recipes/minty-griddled-chicken-peach-salad)
+    * Toffee apple turnover puff pie [image](https://images.immediate.co.uk/production/volatile/sites/30/2021/03/Toffee-apple-turnover-puff-pie-4fd08c3.jpg?quality=90&webp=true&resize=300,272) [description](https://www.bbcgoodfood.com/recipes/toffee-apple-turnover-puff-pie)
+    * Pepper steak with noodles [image](https://images.immediate.co.uk/production/volatile/sites/30/2021/03/Pepper-steak-with-noodles-d582f5c.jpg?quality=90&webp=true&resize=300,272) [description](https://www.bbcgoodfood.com/recipes/pepper-steak-with-noodles)
+    * Coconut & squash dhansak [image](https://images.immediate.co.uk/production/volatile/sites/30/2020/08/coconut-squash-dhansak-a3a9133.jpg?quality=90&webp=true&resize=300,272) [description](https://www.bbcgoodfood.com/recipes/coconut-squash-dhansak)
+    * Thai fried prawn & pineapple rice [image](https://images.immediate.co.uk/production/volatile/sites/30/2020/08/thai-aea8468.jpg?quality=90&webp=true&resize=300,272) [description](https://www.bbcgoodfood.com/recipes/thai-fried-prawn-pineapple-rice)
+    * Sweet potato & chicken curry [image](https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-265673_11-439042b.jpg?quality=90&webp=true&resize=300,272) [description](https://www.bbcgoodfood.com/recipes/sweet-potato-chicken-curry)
+    * Aperol spritz [image](https://images.immediate.co.uk/production/volatile/sites/30/2020/08/aperol-spritz-0e58f7b.jpg?quality=90&webp=true&resize=300,272) [description](https://www.bbcgoodfood.com/recipes/aperol-spritz)
+    * Two-minute breakfast smoothie [image](https://images.immediate.co.uk/production/volatile/sites/30/2020/08/two-minute-breakfast-smoothie-4a4722d.jpg?quality=90&webp=true&resize=375,341) [description](https://www.bbcgoodfood.com/recipes/two-minute-breakfast-smoothie)
+    * Breakfast egg wraps [image](https://images.immediate.co.uk/production/volatile/sites/30/2020/05/breakfast-egg-wraps-c0880fe.jpg?quality=90&webp=true&resize=375,341) [description](https://www.bbcgoodfood.com/recipes/breakfast-egg-wraps)
+    * Frappe [image]() [description]()
 
 ### Code Snippets
 
