@@ -160,7 +160,7 @@ p, h5{
 .capitalize{
     text-transform: capitalize;
 }
-/* Truncate-text was found on twitter from a tweet that I can't remember who tweeted it but it was very useful for me */
+/* Truncate-text was found on Stack Overflow which I modified to suit my needs: https://stackoverflow.com/questions/43999129/truncate-text-with-css*/
 .truncate-text{
     width: 100%;
     white-space: nowrap;
@@ -290,7 +290,6 @@ p, h5{
     border-radius: 30px;
 }
 form input[type="text"]{
-    color: var(--button-color);
     font-family: 'Oxygen', sans-serif;
     font-size: 1.2rem;
 }

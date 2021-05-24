@@ -294,4 +294,28 @@ GitHub ignores this env.py file and does not show it in your repository due secu
 
 * Validation of Select Form elements using Javascript in the script.js file was taken from the CI Walkthrough Task Manager Project.
 
+* I used the following [link](https://stackoverflow.com/questions/37207668/how-do-i-open-a-materialize-sidenav-on-the-right-instead-of-the-left) to help me to get the sidenav menu to open on the right hand side of the screen.
+
+* Used the following [Stack Overflow](https://stackoverflow.com/questions/4915990/set-todays-date-as-default-date-in-jquery-ui-datepicker) post to help with setting a default date in my materialize datepicker form.
+
+* I used [Stack Overflow](https://stackoverflow.com/questions/36679649/how-to-add-a-color-overlay-to-a-background-image) to help with some issues I had with a background overlay.
+
+* [Truncate Text](https://stackoverflow.com/questions/43999129/truncate-text-with-css) - I modified and used this code to suit my own needs in the project with the product description.
+
+* I used the following [link](https://css-tricks.com/having-fun-with-link-hover-effects/) to help with hover effects on my logo.
+
+* I used the following [link](https://stackoverflow.com/questions/2717480/css-selector-for-first-element-with-class) to help to target the first thumb up rating.
+
+* The following [link](https://css-tricks.com/snippets/css/turn-off-number-input-spinners/) helped me to remove the number spinners on the right hand side of the numbers input box.
+
+* The following [link](https://dev.to/atndesign/a-trick-to-change-the-autocomplete-background-color-21ll ) helped me to change the autofill color of the input fields, but I still could not get it to work correctly.
+
+* I used the following [link](https://www.sanwebe.com/2013/03/addremove-input-fields-dynamically-with-jquery) to help to create a dynamic form that adds inputs to the array in the recipes database.
+
+* The following [link](https://www.bootstrapfriendly.com/blog/dynamically-add-or-remove-form-input-fields-using-jquery/) was used to help remove input fields from the form
+
+* I used the following [link](https://stackoverflow.com/questions/24597057/make-html-form-data-unchangeable-but-still-able-to-post#24597080) to add the session users to the input field automatically and not allow changes.
+
+* I used the following [link](https://stackoverflow.com/questions/20233721/how-do-you-index-on-a-jinja-template) to help me with numbering in the loop.
+
 ### Acknowledgements

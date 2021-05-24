@@ -1,4 +1,5 @@
 // got help and guidance on creating dynamic forms which I altered to suit my needs here: https://www.sanwebe.com/2013/03/addremove-input-fields-dynamically-with-jquery
+// The below functions add dynamic input fields to the forms
 let ingred = 1;
 let max_ingred = 20;
 

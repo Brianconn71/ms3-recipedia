@@ -1,15 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <!-- <h3 class="">Register as a new user with Recipedia</h3> -->
+    <!-- Register as a new user with Recipedia -->
     <section class="container register-container">
         <div class="row center-placement">
             <div class="col s12">
+                <!-- heading message to user -->
                 <h2 class="search-heading recipedia-text">Login to your Recipedia account</h2>
             </div>
         </div>
+        <!-- Container for form which checks the db for an existing user and allows logins -->
         <div class="row register-user z-depth-5">
             <form class="col s12 m8" method="POST" action="{{ url_for('login') }}">
+                <!-- username field -->
                 <div class="row center-placement">
                     <div class="input-field col s12 m8">
                     <i class="fas fa-user-cog icon-size submit-icon prefix"></i>
@@ -17,6 +20,7 @@
                     <label for="username">Username</label>
                     </div>
                 </div>
+                <!-- password field -->
                 <div class="row center-placement">
                     <div class="input-field col s12 m8">
                     <i class="fas fa-key icon-size submit-icon prefix"></i>
@@ -24,11 +28,13 @@
                     <label for="password" class="form-labels">Password</label>
                     </div>
                 </div>
+                <!-- login btn -->
                 <div class="row center-placement">
                     <div class="col s12 m8 center-align">
                         <button type="submit" class="btn btn-primary submit-btn"><i class="fas fa-user-plus submit-icon"></i>Log in</button>
                     </div>
                 </div>
+                <!-- displays information to new users and allows them to navigate to register page -->
                 <div class="row center-placement">
                     <div class="col s12 m8">
                         <p class="center-text recipedia-text">New here?</p>

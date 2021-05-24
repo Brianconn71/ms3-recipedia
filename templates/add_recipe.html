@@ -1,11 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
 
+    <!-- Heading message to user -->
     <h3 class="recipedia-text shadow-text center-align search-heading">Add a recipe to our database</h3>
 
+    <!-- Container for form which adds recipes to db -->
     <section class="container add-recipe-container">
         <div class="row">
             <form class="col s12" method="POST" action="{{ url_for('add_recipe')}}">
+                <!-- Select a category dropdown -->
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-stream prefix shadow-text recipedia-text"></i>
@@ -18,6 +21,7 @@
                         <label for="category">Category</label>
                     </div>
                 </div>
+                <!-- Recipe Name input field -->
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-pen prefix shadow-text recipedia-text"></i>
@@ -26,6 +30,7 @@
                         <label for="recipe_name">Recipe Name</label>
                     </div>
                 </div>
+                <!-- Created by input field -->
                 <div class="row">
                     <!-- Wanted to automatically add the session users username to the created by field and not allow it to be changed or tampered with, a solution I found here: https://stackoverflow.com/questions/24597057/make-html-form-data-unchangeable-but-still-able-to-post#24597080 -->
                     <div class="input-field col s12">
@@ -33,7 +38,8 @@
                         <input id="created_by" value="{{ session['user'] }}" name="created_by" type="text" readonly required>
                         <label for="created_by">Created By</label>
                     </div>
-                </div>
+                </div>                
+                <!-- Date Created datepicker -->
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="far fa-calendar-alt prefix shadow-text recipedia-text"></i>
@@ -41,6 +47,7 @@
                         <label for="date">Date Created</label>
                     </div>
                 </div>
+                <!-- Difficulty dropdown with three options -->
                 <div class="row">
                     <div class="input-field col s12 m6">
                         <i class="fas fa-exclamation prefix shadow-text recipedia-text"></i>
@@ -52,24 +59,28 @@
                         </select>
                         <label for="difficulty">Difficulty</label>
                     </div>
+                <!-- servings number field -->
                     <div class="input-field col s12 m6">
                         <i class="fas fa-calculator prefix shadow-text recipedia-text"></i>
                         <input id="servings" name="servings" type="number" class="validate" required>
                         <label for="servings">Servings</label>
                     </div>
                 </div>
+                <!-- cook time field -->
                 <div class="row">
                     <div class="input-field col s12 m6">
                         <i class="fas fa-clock prefix shadow-text recipedia-text"></i>
                         <input id="cook_time" name="cook_time" type="number" class="validate" required>
                         <label for="cook_time">Cook time (mins)</label>
                     </div>
+                <!-- prep time field -->
                     <div class="input-field col s12 m6">
                         <i class="far fa-clock prefix shadow-text recipedia-text"></i>
                         <input id="prep_time" name="prep_time" type="number" class="validate" required>
                         <label for="prep_time">Prep Time (mins)</label>
                     </div>
                 </div>
+                <!-- adding ingredients dynamically field -->
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-shopping-bag prefix shadow-text recipedia-text"></i>
@@ -82,6 +93,7 @@
                 <div class="row ingred_list">
     
                 </div>
+                <!-- adding steps dynamically field -->
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-list-ol prefix shadow-text recipedia-text"></i>
@@ -94,6 +106,7 @@
                 <div class="row step_list">
     
                 </div>
+                <!-- image url field -->
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-images prefix shadow-text recipedia-text"></i>
@@ -101,6 +114,7 @@
                         <label for="img_upload">Enter Image Url</label>
                     </div>
                 </div>
+                <!-- add recipes button -->
                 <div class="row">
                     <div class="col s12 center-align">
                         <button class="btn-small waves-effect waves-light submit-btn" type="submit">Add Recipe
