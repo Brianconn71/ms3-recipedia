@@ -12,9 +12,6 @@ $(document).ready(function(){
             done: "Select"
         },
         autoClose: true,
-        // setting the date to default as todays date help here: https://stackoverflow.com/questions/4915990/set-todays-date-as-default-date-in-jquery-ui-datepicker
-        defaultDate: new Date(),
-        setDefaultDate: true,
     });
     $('.modal').modal();
 

@@ -1,62 +1,87 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <div class="row row-padding">
-        <div class="col s12">
-            <div class="card recipedia-cards">
-                <div class="card-image">
-                    <img src="{{recipe.img_upload}}" class="recipe-img full-img" alt="an image of {{recipe.recipe_name}}">
-                    <span class="card-title recipe-title recipedia-text shadow-text">{{recipe.recipe_name}}</span>
-                    {% if session["user"] %}
-                        <a href="{{ url_for('save_recipe', recipe_id=recipe._id )}}" class="btn-floating halfway-fab waves-effect waves-light save-btn" title="Save recipe to your profile"><i class="far fa-save"></i></a>
+<!-- Card displaying each individual recipe -->
+<div class="row row-padding">
+    <div class="col s12">
+        <div class="card recipedia-cards">
+            <!-- Card image of individual recipe -->
+            <div class="card-image">
+                <img src="{{recipe.img_upload}}" class="recipe-img full-img" alt="an image of {{recipe.recipe_name}}">
+                <span class="card-title recipe-title recipedia-text shadow-text">{{recipe.recipe_name}}</span>
+                <!-- save button displayed for logged in users -->
+                {% if session["user"] %}
+                <a href="{{ url_for('save_recipe', recipe_id=recipe._id )}}"
+                    class="btn-floating halfway-fab waves-effect waves-light save-btn"
+                    title="Save recipe to your profile"><i class="far fa-save"></i></a>
+                {% endif %}
+            </div>
+            <!-- recipe info  -->
+            <div class="recipe-info">
+                <!-- cook time -->
+                <div class="col s6 m3 center-align">
+                    <span class="recipe-important-info recipedia-text shadow-text">Cook Time:<br></span><i
+                        class="fas fa-clock prefix shadow-text recipedia-text icons"></i><span
+                        class="recipedia-text shadow-text">{{recipe.cook_time}}</span>
+                </div>
+                <!-- prep time -->
+                <div class="col s6 m3 center-align">
+                    <span class="recipe-important-info recipedia-text shadow-text">Prep Time:<br></span><i
+                        class="far fa-clock prefix shadow-text recipedia-text icons"></i><span
+                        class="recipedia-text shadow-text">{{recipe.prep_time}}</span>
+                </div>
+                <!-- difficulty -->
+                <div class="col s6 m3 center-align">
+                    <span class="recipe-important-info recipedia-text shadow-text">Difficulty:<br></span><i
+                        class="fas fa-exclamation prefix shadow-text recipedia-text icons"></i><span
+                        class="recipedia-text shadow-text">{{recipe.difficulty.capitalize()}}</span>
+                </div>
+                <!-- created_by -->
+                <div class="col s6 m3 center-align">
+                    <span class="recipe-important-info recipedia-text shadow-text">Author:<br></span><i
+                        class="fas fa-user prefix shadow-text recipedia-text icons"></i><span
+                        class="recipedia-text shadow-text">{{recipe.created_by.capitalize()}}</span>
+                </div>
+            </div>
+            <!-- ingredients & steps -->
+            <div class="card-content recipe-content">
+                <h4 class="recipedia-text shadow-text center-align underline-text">Ingredients:</h4>
+                <ul class="recipe-ingredients">
+                    {% for ing in recipe.ingredients %}
+                    <li class="recipedia-text list-spacing list-text">{{ing}}</li>
+                    {% endfor %}
+                </ul>
+                <h4 class="recipedia-text shadow-text underline-text">Steps:</h4>
+                <ul class="recipe-steps">
+                    {% for step in recipe.steps %}
+                    <li class="recipedia-text list-spacing list-decoration list-text">{{step}}</li>
+                    {% endfor %}
+                </ul>
+                <!-- edit and delete btns -->
+                <div class="recipe-btns">
+                    {% if session.user|lower == recipe.created_by|lower or session.user|lower == 'admin'|lower %}
+                    <a href="#modal1" class="waves-effect waves-light btn-small modal-trigger modal-trigger unsave-btn"
+                        id="delete-btn"><i class="far fa-trash-alt"></i></a>
+                    <a href="{{ url_for('edit_recipe', recipe_id=recipe._id )}}"
+                        class="waves-effect waves-light btn-small edit-btn"><i class="far fa-edit"></i></a>
                     {% endif %}
                 </div>
-                <div class="recipe-info">
-                    <div class="col s6 m3 center-align">
-                        <span class="recipe-important-info recipedia-text shadow-text">Cook Time:<br></span><i class="fas fa-clock prefix shadow-text recipedia-text icons"></i><span class="recipedia-text shadow-text">{{recipe.cook_time}}</span>
+                <!-- delete confirmation modal -->
+                <div id="modal1" class="modal">
+                    <div class="modal-content delete-confirmation">
+                        <h4>Confirm Delete</h4>
+                        <p class="delete-confirmation-msg">Are you sure you want to delete this recipe?</p>
                     </div>
-                    <div class="col s6 m3 center-align">
-                        <span class="recipe-important-info recipedia-text shadow-text">Prep Time:<br></span><i class="far fa-clock prefix shadow-text recipedia-text icons"></i><span class="recipedia-text shadow-text">{{recipe.prep_time}}</span>
+                    <div class="modal-footer delete-confirmation">
+                        <a href="{{ url_for('get_recipes') }}" class="waves-effect waves-light btn-small red"> Cancel <i
+                                class="far fa-window-close right"></i></a>
+                        <a href="{{ url_for('delete_recipe', recipe_id=recipe._id )}}"
+                            class="modal-close waves-effect waves-green btn-flat">Confirm</a>
                     </div>
-                    <div class="col s6 m3 center-align">
-                        <span class="recipe-important-info recipedia-text shadow-text">Difficulty:<br></span><i class="fas fa-exclamation prefix shadow-text recipedia-text icons"></i><span class="recipedia-text shadow-text">{{recipe.difficulty.capitalize()}}</span>
-                    </div>
-                    <div class="col s6 m3 center-align">
-                        <span class="recipe-important-info recipedia-text shadow-text">Author:<br></span><i class="fas fa-user prefix shadow-text recipedia-text icons"></i><span class="recipedia-text shadow-text">{{recipe.created_by.capitalize()}}</span>
-                    </div>
-                </div>
-                <div class="card-content recipe-content">
-                    <h4 class="recipedia-text shadow-text center-align underline-text">Ingredients:</h4>
-                    <ul class="recipe-ingredients">
-                        {% for ing in recipe.ingredients %}
-                            <li class="recipedia-text list-spacing list-text">{{ing}}</li>
-                        {% endfor %}
-                    </ul>
-                    <h4 class="recipedia-text shadow-text underline-text">Steps:</h4>
-                    <ul class="recipe-steps">
-                        {% for step in recipe.steps %}
-                            <li class="recipedia-text list-spacing list-decoration list-text">{{step}}</li>
-                        {% endfor %}
-                    </ul>
-                    <div class="recipe-btns">
-                        {% if session.user|lower == recipe.created_by|lower or session.user|lower == 'admin'|lower %}
-                            <a href="#modal1" class="waves-effect waves-light btn-small modal-trigger modal-trigger unsave-btn" id="delete-btn"><i class="far fa-trash-alt"></i></a>
-                            <a href="{{ url_for('edit_recipe', recipe_id=recipe._id )}}" class="waves-effect waves-light btn-small edit-btn"><i class="far fa-edit"></i></a>
-                        {% endif %}
-                    </div>
-                    <div id="modal1" class="modal">
-                            <div class="modal-content delete-confirmation">
-                                <h4>Confirm Delete</h4>
-                                <p class="delete-confirmation-msg">Are you sure you want to delete this recipe?</p>
-                            </div>
-                            <div class="modal-footer delete-confirmation">
-                                <a href="{{ url_for('get_recipes') }}" class="waves-effect waves-light btn-small red"> Cancel <i class="far fa-window-close right"></i></a>
-                                <a href="{{ url_for('delete_recipe', recipe_id=recipe._id )}}" class="modal-close waves-effect waves-green btn-flat">Confirm</a>
-                            </div>
-                        </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
 {% endblock %}

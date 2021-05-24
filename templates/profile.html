@@ -1,9 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <!-- Section to display the users name on their profiel -->
+    <!-- Section to display the users name on their profile -->
     <section class="container center-placement user-profile">
         <div class="row">
+            <!-- username and welcome message -->
             <div class="col s12">
                     <h3 class="center-align search-heading recipedia-text shadow-text">{{ username.capitalize() }}'s Profile</h3><br>
                     <p class="center-align recipedia-text shadow-text low-font-weight">Welcome {{ username.capitalize() }} to your profile page, see below for your saved recipes and recipes that you have added to our database!</p>
@@ -13,19 +14,26 @@
     {% if result %}
     <div class="row">
             <div class="col s12 center-text">
+                <!-- Shows a users saved recipes -->
                 <h3 class="recipedia-text search-heading shadow-text">Your Saved Recipes</h3>
                         <div class="row">
+                            <!-- looping over all saved recipes and place them in a card -->
                             {% for save in result %}
                                 <div class="col s12 m6">
                                                 <div class="card recipedia-cards hoverable">
                                                     <div class="card-image">
+                                                        <!-- recipe image -->
                                                         <img src="{{ save.img_upload }}" class="recipe-img" alt="an image of {{save.recipe_name}}">
+                                                        <!-- recipe name -->
                                                         <span class="card-title recipe-title recipedia-text shadow-text">{{save.recipe_name}}</span>
+                                                        <!-- Remove save button- remove the saved recipe id from the array -->
                                                         <a href="{{ url_for('remove_recipe', recipe_id=save._id )}}" class="btn-floating halfway-fab waves-effect waves-light unsave-btn" title="Remove saved recipe from your profile"><i class="fas fa-minus-circle"></i></a>
                                                     </div>
                                                     <div class="card-content  hoverable">
+                                                        <!-- ingredients -->
                                                         <h4 class="recipedia-text shadow-text center-align underline-text">Ingredients:</h4>
                                                     </div>
+                                                    <!-- action buttons - edit, delete and see full recipe -->
                                                     <div class="card-action">
                                                         <a href="{{ url_for('full_recipe', recipe_id=save._id)}}" class="btn btn-large full-recipe-btn">See Full Recipe</a>
                                                         <div class="card-btns">
@@ -35,6 +43,7 @@
                                                             <a href="{{ url_for('edit_recipe', recipe_id=save._id )}}" class="waves-effect waves-light btn-small edit-btn"><i class="far fa-edit"></i></a>
                                                         {% endif %}
                                                         </div>
+                                                        <!-- created by -->
                                                         <small><em>Created by: {{ save.created_by  }}</em></small>
                                                     </div>
                                                 </div>
@@ -71,15 +80,20 @@
                                             <div class="col s12 m6">
                                                 <div class="card recipedia-cards hoverable">
                                                     <div class="card-image">
+                                                        <!-- recipe image -->
                                                         <img src="{{ recipe.img_upload }}" class="recipe-img" alt="an image of {{recipe.recipe_name}}">
+                                                        <!-- recipe name -->
                                                         <span class="card-title recipe-title recipedia-text shadow-text">{{recipe.recipe_name}}</span>
+                                                        <!-- save button  -->
                                                         {% if session["user"] %}
                                                             <a href="{{ url_for('save_recipe', recipe_id=recipe._id )}}" class="btn-floating halfway-fab waves-effect waves-light save-btn" title="Save recipe to your profile"><i class="far fa-save"></i></a>
                                                         {% endif %}
                                                     </div>
+                                                    <!-- ingredients -->
                                                     <div class="card-content  hoverable">
                                                         <h4 class="recipedia-text shadow-text center-align underline-text">Ingredients:</h4>
                                                     </div>
+                                                    <!-- action buttons, see full recipe, edit and delete -->
                                                     <div class="card-action">
                                                         <a href="{{ url_for('full_recipe', recipe_id=recipe._id)}}" class="btn btn-large full-recipe-btn">See Full Recipe</a>
                                                         <div class="card-btns">
@@ -104,6 +118,7 @@
                                             </div>
                                         {% endif %}
                                     {% else %}
+                                    <!-- below will display if a user has no recipes in the database -->
                                         <h4 class="recipedia-text shadow-text">You have no recipes in our database!</h4>
                                         <p class="recipedia-text shadow-text">To add a recipe to our database, <a href="{{ url_for('add_recipe') }}" class="underline-text link-color">Click here</a></p>
                                     {% endfor %}

@@ -296,8 +296,6 @@ GitHub ignores this env.py file and does not show it in your repository due secu
 
 * I used the following [link](https://stackoverflow.com/questions/37207668/how-do-i-open-a-materialize-sidenav-on-the-right-instead-of-the-left) to help me to get the sidenav menu to open on the right hand side of the screen.
 
-* Used the following [Stack Overflow](https://stackoverflow.com/questions/4915990/set-todays-date-as-default-date-in-jquery-ui-datepicker) post to help with setting a default date in my materialize datepicker form.
-
 * I used [Stack Overflow](https://stackoverflow.com/questions/36679649/how-to-add-a-color-overlay-to-a-background-image) to help with some issues I had with a background overlay.
 
 * [Truncate Text](https://stackoverflow.com/questions/43999129/truncate-text-with-css) - I modified and used this code to suit my own needs in the project with the product description.
@@ -320,4 +318,10 @@ GitHub ignores this env.py file and does not show it in your repository due secu
 
 * [input patterns](https://www.w3schools.com/TAGS/att_input_pattern.asp) were obtained and modified from here
 
+* [List slicing with jinja](https://stackoverflow.com/questions/31301627/how-to-slice-a-sorted-list-in-jinja) used this to only dhow the first three ingredients in a recipe
+
+* Needed help with displaying the correct recipes in the users profile using if statements and found guidance [here](https://stackoverflow.com/questions/42013067/how-to-access-session-variables-in-jinja-2-flask)
+
 ### Acknowledgements
+
+* Slack user Igor - for helping me to understand why my delete modal was not working and helping me to fix the problem.

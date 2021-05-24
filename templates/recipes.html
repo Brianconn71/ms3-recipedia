@@ -1,17 +1,22 @@
 {% extends "base.html" %}
 {% block content %}
 
+    <!-- Container for search bar and filter buttons -->
     <section class="container search-container">
+        <!-- Heading message to user -->
         <h2 class="search-heading recipedia-text">Search for a recipe from our Database</h2>
+        <!-- Search box -->
         <div class="row searchbox-container z-depth-5">
             <div class="col s12 w-100">
             <form action="{{ url_for('search')}}" method="POST" class="col s12">
                 <div class="row center-align">
+                    <!-- Search Bar -->
                     <div class="col s12 w-100 input-field">
                         <i class="fas fa-search recipedia-text shadow-text icons-size prefix"></i>
                         <input type="text" id="search" name="search" minlength="3" class="validate" required>
                         <label for="search" id="search-label">Search Recipedia</label>
                     </div>
+                    <!-- Search and reset btns -->
                     <div class="col s12 search-btns">
                         <a href="{{ url_for('get_recipes')}}" class="btn reset-btn">reset</a>
                         <button type="submit" class="btn submit-btn">
@@ -22,8 +27,10 @@
             </form>
             </div>
             <div class="col s12">
+                <!-- Filter heading -->
                 <h5 class="recipedia-text shadow-text center-align">Filter recipes in our database by clicking the buttons below!</h5>
             </div>
+            <!-- Filter buttons -->
             <div class="col s12 recipe-links">
                 <div class="recipe-links">
                 <a href="{{ url_for('category_search', id='Breakfast')}}" class="waves-effect waves-light btn recipe-link-btn">Breakfast</a>
@@ -36,6 +43,7 @@
                 <a href="{{ url_for('category_search', id='Gluten-free')}}" class="waves-effect waves-light btn recipe-link-btn">Gluten Free</a>
                 <a href="{{ url_for('category_search', id='Smoothie')}}" class="waves-effect waves-light btn recipe-link-btn">Smoothie</a>
                 </div>
+                <!-- Information and links to allow a user to sign in and register -->
                 <div class="col s12 center-align users-signin">
                     <h6 class="recipedia-text shadow-text">Want to add a recipe to our database?</h6>
                     <p class="recipedia-text shadow-text login-home-text"><a href="{{ url_for('login') }}" class="underline-text link-color">Login</a> here to add your recipe to our database and save recipes to your profile</p>
@@ -45,18 +53,25 @@
         </div>
     </section>
 
+    
+    <!-- Recipes section -->
     <section class="latest-recipes">
             <div class="row center-text">
                 <div class="col s12 m8 offset-m2">
+                <!-- for loop to display the recipes from the db -->
                     {% for recipe in recipes %}
                         <div class="card recipedia-cards hoverable">
                             <div class="card-image">
+                            <!-- recipe image -->
                             <img src="{{ recipe.img_upload }}" class="recipe-img" alt="an image of {{recipe.recipe_name}}">
+                            <!-- recipe name -->
                             <span class="card-title recipe-title recipedia-text shadow-text">{{recipe.recipe_name}}</span>
+                            <!-- save button for logged in users -->
                             {% if session["user"] %}
                                 <a href="{{ url_for('save_recipe', recipe_id=recipe._id )}}" class="btn-floating halfway-fab waves-effect waves-light save-btn" title="Save recipe to your profile"><i class="far fa-save"></i></a>
                             {% endif %}
                             </div>
+                            <!-- ingredients -->
                             <div class="card-content hoverable">
                             <h4 class="recipedia-text shadow-text center-align underline-text">Ingredients:</h4>
                             <!-- list slicing with jinja found here: https://stackoverflow.com/questions/31301627/how-to-slice-a-sorted-list-in-jinja -->
@@ -66,6 +81,7 @@
                                 </ul> 
                             {% endfor %}
                             </div>
+                            <!-- card action buttons edit, delete and see full recipe -->
                             <div class="card-action card-btns">
                                 <a href="{{ url_for('full_recipe', recipe_id=recipe._id)}}" class="btn btn-large full-recipe-btn">See Full Recipe</a>
                                 <div class="card-btns">
@@ -74,9 +90,11 @@
                                     <a href="{{ url_for('edit_recipe', recipe_id=recipe._id )}}" class="waves-effect waves-light btn-small edit-btn" id="edit-btn"><i class="far fa-edit"></i></a>
                                 {% endif %}
                                 </div>
+                                <!-- created by -->
                                 <small><em>Created by: {{ recipe.created_by  }}</em></small>
                             </div>
                         </div>
+                        <!-- delete confirmation modal -->
                         <div id="#deleteRecipe{{ loop.index }}" class="modal" tabindex="-1" aria-hidden="true">
                             <div class="modal-content delete-confirmation">
                                 <h4 class="recipedia-text shadow-text">Confirm Delete</h4>
@@ -88,11 +106,11 @@
                             </div>
                         </div>
                     {% endfor%}
-                    
+    <!-- pagination  -->
     {% if recipes|length >= 1 %}
-        {{ pagination.links }}
-        {{ pagination.info }}
-    {% endif %} 
+    {{ pagination.links }}
+    {{ pagination.info }}
+    {% endif %}
             </div>
         </div>
     </section>
