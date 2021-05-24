@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 
+    <!-- heading message to user -->
     <h3 class="center-align search-heading recipedia-text shadow-text">Add/Remove/Edit Recipe categories</h3>
 
+    <!-- add category button -->
     <div class="row">
         <div class="col s12 center-align">
             <a href="{{ url_for('add_category')}}" class="btn-large submit-btn">
@@ -10,19 +12,23 @@
             </a>
         </div>
     </div>
+    <!-- container with for loop displaying all categories in the categories db in card format -->
      <div class="row">
          {% for category in categories %}
             <div class="col s12 m6 l4">
                 <div class="card hoverable recipedia-cards recipedia-text shadow-text center-align">
                     <div class="card-content white-text">
+                    <!-- Category Name -->
                         <span class="card-title recipedia-text category-heading">{{ category.category_name.capitalize() }}</span>
                     </div>
+                    <!-- Delete and edit category buttons -->
                     <div class="card-action control-btns">
                         <a class="waves-effect waves-light btn-small modal-trigger modal-trigger unsave-btn" id="delete-btn" data-toggle="modal" data-target="#deleteCategory{{ loop.index }}"><i class="far fa-trash-alt"></i></a>
                         <a href="{{ url_for('edit_category', category_id=category._id)}}" class="waves-effect waves-light btn-small edit-btn" id="edit-btn"><i class="far fa-edit"></i></a>
                     </div>
                 </div>
             </div>
+            <!-- Delete confirmation modal -->
             <div id="#deleteCategory{{ loop.index }}" class="modal" tabindex="-1" aria-hidden="true">
                 <div class="modal-content delete-confirmation">
                     <h4 class="recipedia-text shadow-text">Confirm Delete</h4>

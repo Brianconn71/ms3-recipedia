@@ -318,4 +318,6 @@ GitHub ignores this env.py file and does not show it in your repository due secu
 
 * I used the following [link](https://stackoverflow.com/questions/20233721/how-do-you-index-on-a-jinja-template) to help me with numbering in the loop.
 
+* [input patterns](https://www.w3schools.com/TAGS/att_input_pattern.asp) were obtained and modified from here
+
 ### Acknowledgements
