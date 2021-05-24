@@ -506,7 +506,9 @@ def save_recipe(recipe_id):
     """
         This function will allow users to save a recipe to their profile,
         It will push the recipe id of the recipe to the saved_recipes
-        key in the users db and store it in an array
+        key in the users db and store it in an array.
+        also got some help on pushing to mongo here:
+        https://docs.mongodb.com/manual/reference/operator/update/push/
     """
     mongo.db.users.find_one_and_update(
         {"username": session["user"].lower()},

@@ -322,6 +322,16 @@ GitHub ignores this env.py file and does not show it in your repository due secu
 
 * Needed help with displaying the correct recipes in the users profile using if statements and found guidance [here](https://stackoverflow.com/questions/42013067/how-to-access-session-variables-in-jinja-2-flask)
 
+* Got some guidance and advice on pushing to mongoDb [here](https://docs.mongodb.com/manual/reference/operator/update/push/)
+
 ### Acknowledgements
 
 * Slack user Igor - for helping me to understand why my delete modal was not working and helping me to fix the problem.
+
+* My mentor Adegbenga adeye for his help and guidance throughout.
+
+* Daisy - slack user, who helped me with try and except keyerror to understand what was wrong.
+
+* Kenan - slack user, who helped me massively with pagination and implementing pagination on my site, he also provided guidance on the rating system I used.
+
+* Karen - another slack user, Who helped me massively with my saving recipes and removing save of the recipes as I was having issues.
