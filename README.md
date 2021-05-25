@@ -1,6 +1,6 @@
 # Recipedia
 
-![Mock-Up of the site]()
+![Mock-Up of the site](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/recipedia-responsive-view.JPG)
 
 This is my 3rd milestone project for the Code Institute Full-Stack developer programme. I have chosen to do my project based on a cooking recipe website.
 
@@ -77,7 +77,19 @@ I gave admin users the power to add categories, products and edit recipes mainly
 
 ### Features
 
-The website 
+Recipes (Home) page
+
+* Heading makes it clear to the user what it is that the site owner wants them to do on the site.
+
+* Navigation bar again makes it easy for the user to get around the site and makes the links obvious and easy to see.
+
+* Search bar allows users to find a recipe in the database based on the recipe name and will display relevant recipes below the search container, results will be displayed in paginated format with a max of six recipes per page
+
+* Buttons (links) allow a user to filter the recipes in the database based on the type of recipe they wish to search for e.g Breakfast, results will be displayed in paginated format with a max of six recipes per page
+
+* Heading and paragraphs below the filter buttons provide ease of use and navigation to the user and allows new users to click on register to create their own account and current users can click login to login to their profile.
+
+* Latest recipes section then shows all the recipes in the database in paginated format with six recipes displayed per page, these recipes are automatically generated using the jinja for loop to display the recipes in the mongoDb.
 
 ### future features
 

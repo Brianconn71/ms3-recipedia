@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta name="Description" content="Come and find all your favorite recipes and learn some new fun recipes to have fun cooking with the whole family"/>
-<!-- Favicon -->
-<link rel="apple-touch-icon" sizes="180x180" href="/static/imgs/favicon_io_recipedia/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/static/imgs/favicon_io_recipedia/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/static/imgs/favicon_io_recipedia/favicon-16x16.png">
-<link rel="manifest" href="static/imgs/favion_io_recipedia/site.webmanifest">
-<!-- links to external stylesheets and font awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
-<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
-{% block head %}
-{% endblock %}
-<title>Recipedia</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description"
+        content="Come and find all your favorite recipes and learn some new fun recipes to have fun cooking with the whole family" />
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/imgs/favicon_io_recipedia/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/imgs/favicon_io_recipedia/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/imgs/favicon_io_recipedia/favicon-16x16.png">
+    <link rel="manifest" href="static/imgs/favion_io_recipedia/site.webmanifest">
+    <!-- links to external stylesheets and font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+        type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+    {% block head %}
+    {% endblock %}
+    <title>Recipedia</title>
 </head>
+
 <body>
 
     <header>
@@ -25,21 +29,25 @@
         <nav class="nav-extended recipedia-text nav-design">
             <div class="nav-wrapper">
                 <a href="{{ url_for('get_recipes')}}" class="recipedia-logo brand-logo">Recipedia</a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars menu-icon recipedia-text"></i></a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i
+                        class="fas fa-bars menu-icon recipedia-text"></i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('get_recipes')}}" class="menu-items recipedia-text">Home</a></li>
-                    <li><a href="{{ url_for('get_products')}}" class="menu-items recipedia-text">Recipedia Utensils</a></li>
+                    <li><a href="{{ url_for('get_products')}}" class="menu-items recipedia-text">Recipedia Utensils</a>
+                    </li>
                     {% if session.user %}
-                        <li><a href="{{ url_for('add_recipe') }}" class="menu-items recipedia-text">Add a recipe</a></li>
-                        {% if session.user|lower == 'admin'|lower %}
-                            <li><a href="{{ url_for('get_categories')}}" class="menu-items recipedia-text">Manage Categories</a></li>
-                            <li><a href="{{ url_for('add_product') }}" class="menu-items recipedia-text">Add a product</a></li>
-                        {% endif %}
-                        <li><a href="{{ url_for('profile', username=session['user']) }}" class="menu-items recipedia-text">Profile</a></li>
-                        <li><a href="{{ url_for('logout') }}" class="menu-items recipedia-text">Logout</a></li>
+                    <li><a href="{{ url_for('add_recipe') }}" class="menu-items recipedia-text">Add a recipe</a></li>
+                    {% if session.user|lower == 'admin'|lower %}
+                    <li><a href="{{ url_for('get_categories')}}" class="menu-items recipedia-text">Manage Categories</a>
+                    </li>
+                    <li><a href="{{ url_for('add_product') }}" class="menu-items recipedia-text">Add a product</a></li>
+                    {% endif %}
+                    <li><a href="{{ url_for('profile', username=session['user']) }}"
+                            class="menu-items recipedia-text">Profile</a></li>
+                    <li><a href="{{ url_for('logout') }}" class="menu-items recipedia-text">Logout</a></li>
                     {% else %}
-                        <li><a href="{{ url_for('login') }}" class="menu-items recipedia-text">Log In</a></li>
-                        <li><a href="{{ url_for('register')}}" class="menu-items recipedia-text">Register</a></li>
+                    <li><a href="{{ url_for('login') }}" class="menu-items recipedia-text">Log In</a></li>
+                    <li><a href="{{ url_for('register')}}" class="menu-items recipedia-text">Register</a></li>
                     {% endif %}
                 </ul>
             </div>
@@ -48,20 +56,22 @@
         <!-- sidenav -->
         <ul class="sidenav" id="mobile-demo">
             <li><button class="sidenav-close left"><i class="fas fa-window-close close-window-btn"></i></button></li>
-            <li><h4 class="center-align">Recipedia</h4></li>
+            <li>
+                <h4 class="center-align">Recipedia</h4>
+            </li>
             <li><a href="{{ url_for('get_recipes')}}">Home</a></li>
             <li><a href="{{ url_for('get_products')}}">Recipedia Utensils</a></li>
             {% if session.user %}
-                <li><a href="{{ url_for('add_recipe') }}">Add a recipe</a></li>
-                {% if session.user|lower == 'admin'|lower %}
-                    <li><a href="{{ url_for('get_categories')}}">Manage Categories</a></li>
-                    <li><a href="{{ url_for('add_product') }}">Add a product</a></li>
-                {% endif %}
-                <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            <li><a href="{{ url_for('add_recipe') }}">Add a recipe</a></li>
+            {% if session.user|lower == 'admin'|lower %}
+            <li><a href="{{ url_for('get_categories')}}">Manage Categories</a></li>
+            <li><a href="{{ url_for('add_product') }}">Add a product</a></li>
+            {% endif %}
+            <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
             {% else %}
-                <li><a href="{{ url_for('login') }}">Log In</a></li>
-                <li><a href="{{ url_for('register')}}">Register</a></li>
+            <li><a href="{{ url_for('login') }}">Log In</a></li>
+            <li><a href="{{ url_for('register')}}">Register</a></li>
             {% endif %}
         </ul>
     </header>
@@ -69,13 +79,13 @@
     <section>
         <!-- Flash messages -->
         {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for message in messages %}
-                    <div class="row">
-                        <h4 class="center-placement flash-msg-text text-shadow">{{ message }}</h4>
-                    </div>
-                {% endfor %}
-            {% endif %}
+        {% if messages %}
+        {% for message in messages %}
+        <div class="row">
+            <h4 class="center-placement flash-msg-text text-shadow">{{ message }}</h4>
+        </div>
+        {% endfor %}
+        {% endif %}
         {% endwith %}
     </section>
 
@@ -91,27 +101,33 @@
                 <div class="col s12">
                     <h5 class="recipedia-text center-align footer-title">Follow us on Social Media!</h5>
                     <ul class="center-align social-icons">
-                        <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f recipedia-text" id="facebook" title="Facebook"></i></a></li>
-                        <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram recipedia-text" id="instagram" title="Instagram"></i></a></li>
-                        <li><a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter recipedia-text" id="twitter" title="Twitter"></i></a></li>
+                        <li><a href="https://www.facebook.com" target="_blank"><i
+                                    class="fab fa-facebook-f recipedia-text" id="facebook" title="Facebook"></i></a>
+                        </li>
+                        <li><a href="https://www.instagram.com" target="_blank"><i
+                                    class="fab fa-instagram recipedia-text" id="instagram" title="Instagram"></i></a>
+                        </li>
+                        <li><a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter recipedia-text"
+                                    id="twitter" title="Twitter"></i></a></li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="footer-copyright">
             <div class="container recipedia-text center-align copyright-text">
-            Copyright &copy; 2021 by Brian Connolly
+                Copyright &copy; 2021 by Brian Connolly
             </div>
         </div>
     </footer>
 
     <!-- Javascript links of project -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script src="{{ url_for('static', filename='js/script.js') }}"></script>
-<script src="{{ url_for('static', filename='js/add_recipe.js') }}"></script>
-{% block scripts %}
-{% endblock %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/add_recipe.js') }}"></script>
+    {% block scripts %}
+    {% endblock %}
 </body>
+
 </html>
