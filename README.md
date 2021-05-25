@@ -153,6 +153,54 @@ Recipedia Utensils
 
 * The products will display on cards, these cards will contain a button which a user can click to see the full product information and description on a page of its own, the cards will also contain a buy now link which a user can click on to attempt to buy the product, There will also be a rating out of five for each product which will provide the user with insight into how good or bad an item is depending on the site owners or "admins" views, Finally, the cards will also display edit and delete buttons only to the admin user as the admin user is the only person who can add products to the site for security reasons.
 
+Profile page
+
+* once logged in the user will be greeted with a welcome message.
+
+* Heading makes it clear to the user that they are on their profile page. A small introductory paragraph will be displayed below the main heading on the page.
+
+* the next section on the page will display all the recipes that a user has saved (This feature will only appear if the user has actually saved recipes and won't appear straight away) This section will allow users to see recipes that they have saved for easy viewing, It will include buttons to see the full recipe on its own page and edit and delete buttons but these will only be available to the user who created the recipe.
+
+* On the saved recipes cards there will be an unsave button which when clicked will remove the recipe from the saved_recipes field in the users table in the backend, the recipe will then be removed from the users profile and a message will appear at the top of the page telling the user that the recipe has been removed from their profile.
+
+* Below this section will be a section to show the user all the recipes that they have added to the database. If the user has no recipes in the database a paragraph will show explaining to the user that they have no recipes in the database and will encourage them to add a recipe by means of a link that will take the user to the add recipe page.
+
+* The recipes that a user has added to the database will appear in paginated format.
+
+Edit Button
+
+* Edit button is pretty self-explanatory, if a user clicks on the edit button it will allow them top make changes to their recipes and submit the new changes to the database. when submitted a message will display ot the user telling them that the recipe has been updated.
+
+* Admin users will be able to edit all recipes, products and product categories.
+
+Delete Button
+
+* Delete button will be available to users to delete any recipes that they have added to the database.
+
+* A delete confirmation modal will pop up on the screen to confirm with the user that they wish to delete will be deleted from the database should they choose confirm, if they choose cancel then they will be taken back to the recipes page.
+
+* Admin users will have full delete capabilites over recipes, products and categories
+
+* Add recipe page
+
+* Heading makes it clear to the user what it is that the site owner wants them to do.
+
+* The add recipe page has a form which a user can use to input data for a recipe that they wish to add to the database.
+
+* Jquery has been added to make the form dynamic and allow users to  add more ingredients and steps to the recipe, these will then get added to an array in the database. They can also remove a step or ingredient by clicking on the remove button below that input field. Loop index was also used here to ensure each label has the correct number when adding and removing.
+
+* when a user has entered the correct data into each input field and the click on the add recipe button then the python code in the backend will add the recipe to the database.
+
+* Edit a recipe page
+
+* When a user clicks on the edit button, it takes them to a page with a form that is pre-filled with the data of the recipe that they selected to edit. 
+
+* The user can change any data that they wish to change here. when they click on the edit button at the bottom of the form then the changes will be made on the recipe with that recipe id in the database.
+
+* The user can also cancel any changes by clicking the red x button at the bottom of the form. This will return them to the recipes home page.
+
+* After the user clicks on edit button, the python code in the backend will add the updated code to the database.
+
 ### future features
 
 ## structure

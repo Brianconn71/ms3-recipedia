@@ -565,6 +565,7 @@ ul>li.list-decoration{
     color: var(--text-white);
     font-family: 'Ubuntu', sans-serif;
     text-align: center;
+    height: 100%;
 }
 .modal .delete-confirmation-msg{
     color: var(--text-white);
