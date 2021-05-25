@@ -77,6 +77,22 @@ I gave admin users the power to add categories, products and edit recipes mainly
 
 ### Features
 
+Nav bar
+
+* The nav bar contains the links for all other pages on the site. It makes navigation much easier and straightforward for the user.
+
+* The Nav bar is mobile responsive and uses the materialize sidenav for smaller screen sizes to be responsive. The sidenave opens from the right of the page.
+
+* The logo gets centered when the screen gets to mobile view and the nav items move to the sidenav and are viewable when the menu icon is clicked.
+
+Footer
+
+* The footer contains the copyright and links to social media channels. These links will open on separate pages.
+
+* The footer is mobile responsive and will change depending on screen size.
+
+* The social media links have a .3s second transition and the color of the icons will change to the primary color of that particular social media channel
+
 Recipes (Home) page
 
 * Heading makes it clear to the user what it is that the site owner wants them to do on the site.
@@ -90,6 +106,52 @@ Recipes (Home) page
 * Heading and paragraphs below the filter buttons provide ease of use and navigation to the user and allows new users to click on register to create their own account and current users can click login to login to their profile.
 
 * Latest recipes section then shows all the recipes in the database in paginated format with six recipes displayed per page, these recipes are automatically generated using the jinja for loop to display the recipes in the mongoDb.
+
+Register page
+
+* The register page will allow a user to create an account with the site and utilize all the offerings of the site such as add a recipe and save a recipe.
+
+* The register container is mobile responsive and will change depending on the screen size.
+
+* The python code will test the data input into the form by the user to make sure all data is correct and that the username is viable.
+
+* To register a user will need to come up with a username and a password, the password field is stored as a hash in the mongoDb. There is a min and max input attribute that a user must satisfy along with a pattern of applicable characters, if a user hovers over the input fields more information is then given as to what is applicable for that input field.
+
+* The fields are validated using materialize css classes.
+
+* When the user successfully registers, they are put into session and redirected to their new profile page.
+
+* Underneath the form, is a paragraph of information for users and a link for current users to login to their account, by clicking on this the user is then redirected to the login page.
+
+Login page
+
+* The Login page will allow a user to login to their accouint with the correct credentialsand utilize all the offerings of the site such as add a recipe and save a recipe. They will be redirected to their profile page.
+
+* The login container is mobile responsive and will change depending on the screen size.
+
+* The python code will test the data input into the form by the user to make sure that the username exists and that they are using a correct password.
+
+* To Login a user will need to enter the correct account credentials for their account. If a user enters a wrong username or password a message will display at the top of the page informing them that they have entered an incorrect username or password and they will have to try again.
+
+* The fields are validated using materialize css classes.
+
+* When the user successfully enters the correct information, they will be put into session and redirected to their profile page.
+
+* Underneath the form, is a paragraph of information for users and a link for current users to register an account, by clicking on this the user is then redirected to the register page.
+
+Recipedia Utensils
+
+* Heading makes it clear to the user what it is that the site owner wants them to do on the site.
+
+* Filter buttons when clicked allow a user to filter the database and return in paginated form the results from that filter.
+
+* After the user clicks on one of the buttons to filter the database, a flash message appears at the top of the page to inform the user the results of their filter based on the button they clicked.
+
+* pagination info and pagination links will inform the user how many records were in their search and how many pages of search results their are.
+
+* The products will then be shown that are in the database in paginated format with six products displayed per page, these products are automatically generated using the jinja for loop to display the products in the mongoDb.
+
+* The products will display on cards, these cards will contain a button which a user can click to see the full product information and description on a page of its own, the cards will also contain a buy now link which a user can click on to attempt to buy the product, There will also be a rating out of five for each product which will provide the user with insight into how good or bad an item is depending on the site owners or "admins" views, Finally, the cards will also display edit and delete buttons only to the admin user as the admin user is the only person who can add products to the site for security reasons.
 
 ### future features
 
