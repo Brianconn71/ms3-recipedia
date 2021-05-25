@@ -181,7 +181,7 @@ Delete Button
 
 * Admin users will have full delete capabilites over recipes, products and categories
 
-* Add recipe page
+Add recipe page
 
 * Heading makes it clear to the user what it is that the site owner wants them to do.
 
@@ -191,7 +191,7 @@ Delete Button
 
 * when a user has entered the correct data into each input field and the click on the add recipe button then the python code in the backend will add the recipe to the database.
 
-* Edit a recipe page
+Edit a recipe page
 
 * When a user clicks on the edit button, it takes them to a page with a form that is pre-filled with the data of the recipe that they selected to edit. 
 
@@ -201,21 +201,66 @@ Delete Button
 
 * After the user clicks on edit button, the python code in the backend will add the updated code to the database.
 
+Error pages
+
+* All error pages (404, 403, 500) will display a very similar message to the user.
+
+* They will have a header informing the user on what the error they have encountered is and a paragraph underneath the header explaining to the user how they can get back on the right track and return to the homepage. A link will be visible and when a user clicks on the link they will return to the homepage.
+
+* All Error pages will respond to changes in screen size.
+
 ### future features
 
+* A "share to Social Media" button to integrate social media sharing of recipes.
+
+* Nutritional information of recipes e.g. protein, fat, Kcals - would be very beneficial to health conscious users.
+
+* Admin functionality to delete users - problematic users who cause issues may need to be deleted and this would be a good way to go about it.
+
+* A rating system to allow users to filter based on rating from kigh to low, other filters could be beneficial too in terms of easy recipes, pricing of ingredients etc.
+
+* upload files as images and not rely solely on urls for image uploads- I had planned to do this for this current project but I found it a bit too complicated.
+
 ## structure
+
+* The structure of the site will remain consistent throughout the site. The same background image will be the background to each page on the site. Navigation will remain consistent throughout, Links and buttons will allow for easier access throughout the 
 
 ## skeleton
 
 ### wireframes
 
+### Database design
+
+The backend python code adds entries into the databases. Below are images of entries into the database
+
 ## surface
 
-### colours
+### colors
 
-### images
+The colors used in this project were found using [Paletton](https://paletton.com/). I spent a great deal of time searching for the right color scheme. Initially, I had a different color scheme in mnd but I didn't like it so I changed it using similar colors on paletton. Below are the colors that were used throughout the project.
+* --text-white: #feffde - this is the text color which remains consistent throughout the site
+* --pale-green: #bdd2b6 - used as sidenav background color.
+* --darker-green: #a2b29f used as the background color of the delete modal
+* --darkest-green: #798777 - the color of the cards for recipes and products.
+* --button-color: #7B6668 - the color of the submit and search buttons
+* --gold-rating: #ffd700 - the color of the thums up rating icons
+* --bright-green: #55b113 - the color of the see description and see recipe button
+* --red-color: #910000 - the color of the selete and cancel buttons
+* --blue-color: #187bcd the color of the edit buttons
+* #3b5998 - Facebook icon hover color
+* #E1306C - Instagram icon hover color
+* #1DA1F2 - twitter icon hover color
+* #FF9900 - amazon icon hover color
 
-### fonts
+### Images
+
+Images are credited below in the media section.
+
+### Fonts
+
+Two fonts were used in the making of the site. The main-heading, logo font used on the site was Ubuntu and the paragraph, sub-heading text used was Oxygen. The default font is sans-serif.
+
+These fonts complement each other very well and have easy readibility which is key for visitors to my site. The compatibility of the fonts on my site was found using google fonts.
 
 ## Technologies Used
 
