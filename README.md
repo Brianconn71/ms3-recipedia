@@ -16,15 +16,68 @@ A live preview of my site can be found [here](http://ms3-recipedia.herokuapp.com
 
 ## Strategy
 
-I created this project 
+I created this project as a way for users that have an interest in cooking, recipes and sharing their own recipes have a place to come and do all of those things.
+I wanted to implement a social element to the site too, which I believe was achieved through the ability to save other users recipes for easy viewing on a users profile page.
+I also set up a "Recipedia Utensils" page which people can use to view any utensils and cookware that are highly rated and are recommended by Recipedia, It is also a great way to generate income for site owners too. 
+Admin users, are the select few in charge of the site and get freedom to do whatever they want with recipes including edit and delete recipes from anyone that adds a recipe to the site. Admin users can also add, remove and edit recipe categories and add, remove and edit products which normal users can not do.
+I gave admin users the power to add categories, products and edit recipes mainly for safety purposes and security reasons.
 
-### goals
 
-### user stories
+### Site goals
 
-## scope
+* I want the site to be easy to use and have consistent design and imagery.
 
-### features
+* I want the site to be responsive on all screen sizes .
+
+* I want a way to generate income for the site.
+
+* I want the site to be a one stop shop for everything cooking related.
+
+* I want the site to have seamless integration with the MongoDB database.
+
+* I want recipes and products to be automatically displayed on the site after a user attempts to add one to the site.
+
+* I want the navigation to be easy to understand and intuitive.
+
+* I want to allow users to create an account on the site.
+
+* I want users to be able to easily add recipes to the site.
+
+* I want to have an account that has full control over everything on the site for security reasons.
+
+* I want to be able to add recommeneded products and categories to the site but not allow regular users that ability.
+
+### User Stories
+
+* I want to find recipes quickly and easily
+
+* I want to be able to filter the recipes based on the type of recipe I want e.g Breakfast, Lunch and Dinner
+
+* I want to be able to easily login to the site.
+
+* I want to be able to easily Register an account on the site.
+
+* I want to be able to add my own recipes to the site.
+
+* I want to be to search the site based on a specific keyword in the recipe title.
+
+* I want to be able to edit and delete my own recipes.
+
+* I want to be able to view other members recipes easily.
+
+* I want to be able to save other recipes for easy access and viewing in my profile.
+
+* I want to be able to delete saved recipes that I no longer have a use for from my profile.
+
+* I want to be able to view recommended kitchen products and purchase the products.
+
+* I want to be able to easily view every recipe I have added to the site and make changes without having to look through every recipe on the site.
+
+## Scope
+
+### Features
+
+The website 
 
 ### future features
 
