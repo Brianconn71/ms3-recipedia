@@ -90,7 +90,48 @@ The HTML used in the site has to pass validation with [w3c online](https://valid
 
 * Recipedia Utensils page
 
-![Register](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/register%20html%20check.JPG)
+![products]()
+
+* add a product page
+
+![add a product]()
+
+* Edit Product page
+
+![edit products]()
+
+* Full Product page
+
+![full product]()
+
+* Add a recipe page
+
+![add recipe]()
+
+* edit recipe page
+
+![edit recipe]()
+
+* Full Recipe page
+
+![full recipe]()
+
+* categories page
+
+![categories]()
+
+* edit categories page
+
+![edit categories]()
+
+* profile page
+
+![profile]()
+
+* error pages
+
+![error]()
+
 
 ## User story Testing
 
