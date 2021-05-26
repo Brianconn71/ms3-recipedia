@@ -1,11 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 
-<!-- Heading message to user -->
-<h3 class="recipedia-text shadow-text center-align search-heading">Edit a recipe category in our database</h3>
-
 <!-- Container for form which updates categories to db -->
 <section class="container add-recipe-container">
+    <!-- Heading message to user -->
+    <h3 class="recipedia-text shadow-text center-align search-heading head-padding">Edit a recipe category in our database</h3>
     <div class="row">
         <form class="col s12" method="POST" action="{{ url_for('edit_category', category_id=category._id)}}">
             <!-- Category Name input field -->

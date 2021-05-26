@@ -78,7 +78,7 @@ The HTML used in the site has to pass validation with [w3c online](https://valid
 
 * Homepage
 
-![Homepage]()
+![Homepage](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/homepage-html-validation.JPG)
 
 * Login page
 
@@ -90,47 +90,47 @@ The HTML used in the site has to pass validation with [w3c online](https://valid
 
 * Recipedia Utensils page
 
-![products]()
+![products](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/products-page-html-validation.JPG)
 
 * add a product page
 
-![add a product]()
+![add a product](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/add-product-html-valid.JPG)
 
 * Edit Product page
 
-![edit products]()
+![edit products](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/edit-product-html-valid.JPG)
 
 * Full Product page
 
-![full product]()
+![full product](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/full-product-valid-html.JPG)
 
 * Add a recipe page
 
-![add recipe]()
+![add recipe](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/add-recipe-html-validation.JPG)
 
 * edit recipe page
 
-![edit recipe]()
+![edit recipe](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/edit-recipes-html-valid.JPG)
 
 * Full Recipe page
 
-![full recipe]()
+![full recipe](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/full-recipe-html-valid.JPG)
 
 * categories page
 
-![categories]()
+![categories](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/recipe-categories-html-valid.JPG)
 
 * edit categories page
 
-![edit categories]()
+![edit categories](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/recipe-categories-html-valid.JPG)
 
 * profile page
 
-![profile]()
+![profile](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/add-recipe-html-validation.JPG)
 
 * error pages
 
-![error]()
+![error](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/error-pages-html-valid.JPG)
 
 
 ## User story Testing
