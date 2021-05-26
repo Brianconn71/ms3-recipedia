@@ -60,9 +60,11 @@
                 <!-- edit and delete btns -->
                 <div class="recipe-btns">
                     {% if session.user|lower == recipe.created_by|lower or session.user|lower == 'admin'|lower %}
-                    <a href="#modal1" class="waves-effect waves-light btn-small modal-trigger modal-trigger unsave-btn" id="delete-btn" title="Delete"><i class="far fa-trash-alt"></i></a>
+                    <a href="#modal1" class="waves-effect waves-light btn-small modal-trigger modal-trigger unsave-btn"
+                        id="delete-btn" title="Delete"><i class="far fa-trash-alt"></i></a>
                     <a href="{{ url_for('edit_recipe', recipe_id=recipe._id )}}"
-                        class="waves-effect waves-light btn-small edit-btn"><i class="far fa-edit" title="Edit Recipe"></i></a>
+                        class="waves-effect waves-light btn-small edit-btn"><i class="far fa-edit"
+                            title="Edit Recipe"></i></a>
                     {% endif %}
                 </div>
                 <!-- delete confirmation modal -->
