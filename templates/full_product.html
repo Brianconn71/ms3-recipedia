@@ -39,8 +39,8 @@
                         <!-- delete and edit btns -->
                         <div class="recipe-btns">
                             {% if session.user|lower == session.user|lower == 'admin'|lower %}
-                                <a href="#modal1" class="waves-effect waves-light btn-small modal-trigger modal-trigger unsave-btn"><i class="far fa-trash-alt"></i></a>
-                                <a href="{{ url_for('edit_product', product_id = product._id)}}" class="waves-effect waves-light btn-small edit-btn"><i class="far fa-edit"></i></a>
+                                <a href="#modal1" class="waves-effect waves-light btn-small modal-trigger modal-trigger unsave-btn" title="Cancel"><i class="far fa-trash-alt"></i></a>
+                                <a href="{{ url_for('edit_product', product_id = product._id)}}" class="waves-effect waves-light btn-small edit-btn" title="Edit Product"><i class="far fa-edit"></i></a>
                             {% endif %}
                         </div>
                         <!-- modal for delete confirmation -->

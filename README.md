@@ -181,6 +181,8 @@ Delete Button
 
 * Admin users will have full delete capabilites over recipes, products and categories
 
+* A delete confirmation will pop up whenever a delete was successfully executed.
+
 Add recipe page
 
 * Heading makes it clear to the user what it is that the site owner wants them to do.
@@ -209,7 +211,73 @@ Error pages
 
 * All Error pages will respond to changes in screen size.
 
-### future features
+Recipe categories page (Admin users only)
+
+* Heading makes it clear to the user what it is that the site owner wants them to do.
+
+* This page will display to admin users all of the recipe categories currently listed in the categories Db. 
+
+* The page will be responsive and respond accordingly to changes in screen size.
+
+* The admin user will be able to add a new category, delete a category and edit a category name from this page.
+
+* if the admin users clicks on the blue edit button they will be taken to an edit category page, if a user clicks on the red delete button a delete confirmation modal will pop up allowing the user to confirm the deletion of the category from the database or cancel the deletion. if the user clicks on the brown add category button then the user will be redirected to a page allowing them to add a new category to the database.
+
+* Data (category names) are dynamically generated and displayed or removed from the page.
+
+Edit a Recipe category page (Admin users only)
+
+* Heading makes it clear to the user what it is that the site owner wants them to do.
+
+* This page displays a form to the user with the prefilled category name of the category they have chosen to edit.
+
+* Any changes made here will be added to the category db with that specific category id via the backend python code.
+
+* The page also displays a edit button which when the user has made the required changes will submit the data to the backend which pushes it to the database. The user will then be redirected back to the categories page and notified that the changes were updated successfully.
+
+* There is also a cancel changes button which when selected will cancel the new changes being made to the category and redirect thge user pack to the categories page.
+
+Add Product Page (Admin Users Only)
+
+* Heading makes it clear to the user what it is that the site owner wants them to do.
+
+* This page displays a form to the user which when filled in with data will add a new product to the products Db.
+
+* The page allows a user to enter a product name, description, type, image and rating out of 5, all fields are validated before the form is allowed to be sent and the user is then redirected back to the products page.
+
+* When a user has entered all of the correct data into the input fields and clicks on the brown add product button at the bottom of the form, the data will be added to the Products Db via the backend Python Code.
+
+Edit Product Page (Admin Users Only)
+
+* Heading makes it clear to the user what it is that the site owner wants them to do.
+
+* This page displays a form to the user with the prefilled product information of the product the user has chosen to edit.
+
+* Any changes made here will be added to the products db with that specific product id via the backend python code.
+
+* The page also displays a edit button which when the user has made the required changes will submit the data to the backend which pushes it to the database. The user will then be redirected back to the products page and notified that the changes were updated successfully.
+
+* There is also a cancel changes button which when selected will cancel the new changes being made to the product and redirect the user back to the products page.
+
+* This page like all other pages is fully mobile responsive.
+
+Full Product Page
+
+* This page will display the full information and description of a product on its own page.
+
+* It will display on a card with all of the information that was available to see on the products page with the added inclusion of the full product description.
+
+* The page will also display edit and delete buttons to the admin user only to edit or delete the product from the database.
+
+Full Recipe Page
+
+* This page will display the full information and description of a Recipe on its own page.
+
+* It will display on a card with all of the information that was available to see on the recipes page with the added inclusion of all of the ingredients, steps, cook and prep time etc.
+
+* The page will also display edit and delete buttons to the admin user and the user who created the recipe to allow for changes or the deletion of the recipe from the database.
+
+### Future Features
 
 * A "share to Social Media" button to integrate social media sharing of recipes.
 
