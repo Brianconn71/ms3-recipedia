@@ -291,17 +291,53 @@ Full Recipe Page
 
 ## structure
 
-* The structure of the site will remain consistent throughout the site. The same background image will be the background to each page on the site. Navigation will remain consistent throughout, Links and buttons will allow for easier access throughout the 
+The structure of the site will remain consistent throughout the site. The same background image will be the background to each page on the site. Navigation will remain consistent throughout, Links and buttons will allow for easier access throughout the site. 
 
 ## skeleton
 
-### wireframes
+### Wireframes
+
+[Click here]() to view my Wireframes for this project.
+
+![Recipedia Wireframes]()
 
 ### Database design
 
-The backend python code adds entries into the databases. Below are images of entries into the database
+The backend python code adds entries into the databases. Below are images of entries into the database.
 
-## surface
+#### Recipes Database
+
+Users may add recipes to the database and edit recipes that they have previously created. The backend python code will then insert the data into the mongodb table labelled recipes. I use Jinja templating to display recipes on the site. Below is an example of an entry into the database.
+
+![Recipe database entry]()
+
+#### Users Database
+
+The users database stores the users name and password that they used to register for the site. The password is salted in the database. The users database will also store an array of recipe ids for recipes the user has saved to siaplay on their profile. This field will not be added to the database until a user saves their first recipe and then the backend python code will push the new field to the correct user id in the database. Below are two images, the first image is a user who has no saved recipes and the second is for a user who has a saved recipe.
+
+![User with no saved recipes]()
+
+![User with saved recipes]()
+
+#### Categories Database
+
+Categories database stores the different types of categories available for a user to select when adding a recipe to the database. Only Admin users can add, edit or delete categories in the database. Below is an image of a category entry into the database
+
+![Category database entry]()
+
+#### Products Database
+
+Products database provides the content to the products page on the site. Admin users are the only ones that can add, update or delete products on the site in the database. Below is an  image of an entry in the products database.
+
+![Products database entry]()
+
+## Surface
+
+There are many differences between the wireframes and the actual site. The biggest difference is the background image which I initially liked but as the project developed I felt that the image used in the wireframes was not conveying the message of the site so I changed it to an image displaying a multitude of vegetables.
+
+I wanted to have a bright colored and easy to read and use site. Keeping consistency thoughout the project and maintaining consistent coloring on the buttons was important too. I had initally used a different buttons color early into the site but as the project developed I felt it was clashing with the other colors and images on the site so that got changed too.
+
+I started to wander off from the wireframes after a while in the poroject, I just felt that consistency was the most important thing and I wanted coloring, pages buttons etc to be easy to look at and enjoyable.
 
 ### colors
 
@@ -408,17 +444,7 @@ These fonts complement each other very well and have easy readibility which is k
 
 ## Testing
 
-### Html
-
-### css
-
-### javascript
-
-### python
-
-### user story Testing
-
-### features Testing
+The testing section can be found [here]()
 
 ## Deployment
 
