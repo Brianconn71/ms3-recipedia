@@ -297,9 +297,9 @@ The structure of the site will remain consistent throughout the site. The same b
 
 ### Wireframes
 
-[Click here]() to view my Wireframes for this project.
+[Click here](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/wireframes/recipedia%20wireframes.pdf) to view my Wireframes for this project.
 
-![Recipedia Wireframes]()
+![Recipedia Wireframes](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/recipedia-wireframes.png)
 
 ### Database design
 
@@ -309,27 +309,27 @@ The backend python code adds entries into the databases. Below are images of ent
 
 Users may add recipes to the database and edit recipes that they have previously created. The backend python code will then insert the data into the mongodb table labelled recipes. I use Jinja templating to display recipes on the site. Below is an example of an entry into the database.
 
-![Recipe database entry]()
+![Recipe database entry](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/recipes-db.JPG)
 
 #### Users Database
 
 The users database stores the users name and password that they used to register for the site. The password is salted in the database. The users database will also store an array of recipe ids for recipes the user has saved to siaplay on their profile. This field will not be added to the database until a user saves their first recipe and then the backend python code will push the new field to the correct user id in the database. Below are two images, the first image is a user who has no saved recipes and the second is for a user who has a saved recipe.
 
-![User with no saved recipes]()
+![User with no saved recipes](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/user-db-without%20array.JPG)
 
-![User with saved recipes]()
+![User with saved recipes](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/users-db-with%20array.JPG)
 
 #### Categories Database
 
 Categories database stores the different types of categories available for a user to select when adding a recipe to the database. Only Admin users can add, edit or delete categories in the database. Below is an image of a category entry into the database
 
-![Category database entry]()
+![Category database entry](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/categories-db.JPG)
 
 #### Products Database
 
 Products database provides the content to the products page on the site. Admin users are the only ones that can add, update or delete products on the site in the database. Below is an  image of an entry in the products database.
 
-![Products database entry]()
+![Products database entry](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/products%20-db.JPG)
 
 ## Surface
 
@@ -444,7 +444,7 @@ These fonts complement each other very well and have easy readibility which is k
 
 ## Testing
 
-The testing section can be found [here]()
+The testing section can be found [here](https://github.com/Brianconn71/ms3-recipedia/blob/master/testing.md)
 
 ## Deployment
 
