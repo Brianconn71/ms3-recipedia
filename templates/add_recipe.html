@@ -1,11 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 
-<!-- Heading message to user -->
-<h3 class="recipedia-text shadow-text center-align search-heading">Add a recipe to our database</h3>
-
 <!-- Container for form which adds recipes to db -->
 <section class="container add-recipe-container">
+    <!-- Heading message to user -->
+    <h3 class="recipedia-text shadow-text center-align search-heading head-padding">Add a recipe to our database</h3>
     <div class="row">
         <form class="col s12" method="POST" action="{{ url_for('add_recipe')}}">
             <!-- Select a category dropdown -->
@@ -15,8 +14,7 @@
                     <select name="category" id="category" class="validate" required>
                         <option value="" disabled selected>Choose a Category</option>
                         {% for category in categories %}
-                        <option value="{{ category.category_name.capitalize() }}">
-                            {{ category.category_name.capitalize() }}</option>
+                            <option value="{{ category.category_name.capitalize() }}">{{ category.category_name.capitalize() }}</option>
                         {% endfor %}
                     </select>
                     <label for="category">Category</label>
@@ -89,7 +87,7 @@
                     <input id="ingredients" name="ingredients" minlength="2" maxlength="50" type="text" class="validate"
                         required>
                     <label for="ingredients">Ingredient 1:</label>
-                    <a type="button" class="btn add-ingredient-btn add_ingredient"><i
+                    <a class="btn add-ingredient-btn add_ingredient"><i
                             class="far fa-plus-square submit-icon"></i>Add Ingredient</a>
                 </div>
             </div>
@@ -102,7 +100,7 @@
                     <i class="fas fa-list-ol prefix shadow-text recipedia-text"></i>
                     <input id="steps" name="steps" minlength="3" maxlength="500" type="text" class="validate" required>
                     <label for="steps">Step 1:</label>
-                    <a type="button" class="btn add-ingredient-btn add_step"><i
+                    <a class="btn add-ingredient-btn add_step"><i
                             class="far fa-plus-square submit-icon"></i>Add Step</a>
                 </div>
             </div>

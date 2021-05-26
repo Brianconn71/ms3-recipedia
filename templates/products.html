@@ -47,7 +47,7 @@
                         <img src="{{ product.product_img }}" alt="an image of {{product.product_name}}">
                     </div>
                     <!-- product name -->
-                    <span class="card-title" id="product-title">{{ product.product_name.capitalize() }}</span>
+                    <span class="card-title product-title">{{ product.product_name.capitalize() }}</span>
                 </div>
                 <!-- product rating showing thumbs up based on the rating out of 5 -->
                 {% if product.user_rating == '1' %}
@@ -78,8 +78,8 @@
                     <div class="buy-now-text">
                         <h5 class="buy-now-head underline-text">Buy now by clicking on the link below</h5>
                         <div class="buy-now-icon">
-                            <a href="http://www.amazon.co.uk" target="_blank"><i class="fab fa-amazon recipedia-text"
-                                    id="amazon"></i></a>
+                            <a href="http://www.amazon.co.uk" target="_blank"><i
+                                    class="fab fa-amazon recipedia-text amazon"></i></a>
                         </div>
                     </div>
                     <!-- control btns -->
@@ -107,12 +107,13 @@
             <div class="modal-footer delete-confirmation">
                 <a href="{{url_for('get_products')}}" class="waves-effect btn-flat recipedia-text unsave-btn"> Cancel <i
                         class="far fa-window-close right"></i></a>
-                <a href="{{ url_for('delete_product', product_id=product._id )}}" class="modal-close waves-effect btn-flat recipedia-text edit-btn" aria-hidden="true">Confirm<i
+                <a href="{{ url_for('delete_product', product_id=product._id )}}"
+                    class="modal-close waves-effect btn-flat recipedia-text edit-btn" aria-hidden="true">Confirm<i
                         class="far far fa-check-square right"></i></a>
             </div>
         </div>
         {% endfor %}
-
     </div>
+</div>
 
-    {% endblock %}
+{% endblock %}

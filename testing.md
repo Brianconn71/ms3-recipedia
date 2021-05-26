@@ -46,10 +46,212 @@ I also had family members and friends test out the site on their various devices
 
 ### Javascript Testing
 
-The Javascript used in the site hads to pass validation with [jshint.com](https://jshint.com/). Below are images displaying the javascript files used in the project passing the javascript validation test.
+The Javascript used in the site has to pass validation with [jshint.com](https://jshint.com/). Below are images displaying the javascript files used in the project passing the javascript validation test.
 
 * add_recipe.js
-    * ![Add_recipe.js Test ](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/add-recipe%20compliance.JPG)
+
+![Add_recipe.js Test ](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/add-recipe%20compliance.JPG)
 
 * script.js
-    * ![Script.js Test ](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/script%20js%20compliance.JPG)
+
+![Script.js Test ](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/script%20js%20compliance.JPG)
+
+### CSS Testing
+
+The CSS used in the site has to pass validation with [w3c.com](https://jigsaw.w3.org/css-validator/). Below is an image displaying the CSS file used in the project passing the CSS validation test.
+
+* CSS test
+
+![CSS Test](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/css%20compliance.JPG)
+
+### Python Testing
+
+The Python used in the site has to pass validation with [pep8 online](http://pep8online.com/). Below displays the python file used in the project passing the pep8 validation test.
+
+* Pep8 test
+
+![Pep8 Test](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/Pep8%20Compliance.JPG)
+
+### HTMLTesting
+
+The HTML used in the site has to pass validation with [w3c online](https://validator.w3.org/#validate_by_input). Below displays the HTML files used in the project passing the HTML validation test.
+
+* Homepage
+
+![Homepage]()
+
+* Login page
+
+![Login](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/login%20html%20check.JPG)
+
+* Register page
+
+![Register](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/register%20html%20check.JPG)
+
+* Recipedia Utensils page
+
+![Register](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/register%20html%20check.JPG)
+
+## User story Testing
+
+### User Story 1
+
+* I want to find recipes quickly and easily
+
+#### Action
+
+* Navigate to the website homepage either via the browser or by clicking on the logo or the home nav menu link
+
+#### Expectation
+
+* The recipes page to display a paginated list in groups of 6 of the recipes in the database
+
+#### Result
+
+* The page loads as it should regardless of through the browser it was searched or if the user clicked the logo or the home link in the nav bar or sidenav.
+
+### User Story 1
+
+* I want to find recipes quickly and easily
+
+#### Action
+
+
+#### Expectation
+
+
+#### Result
+
+### User Story 1
+
+* I want to find recipes quickly and easily
+
+#### Action
+
+
+#### Expectation
+
+
+#### Result
+
+### User Story 1
+
+* I want to find recipes quickly and easily
+
+#### Action
+
+
+#### Expectation
+
+
+#### Result
+
+### User Story 1
+
+* I want to find recipes quickly and easily
+
+#### Action
+
+
+#### Expectation
+
+
+#### Result
+
+### User Story 1
+
+* I want to find recipes quickly and easily
+
+#### Action
+
+
+#### Expectation
+
+
+#### Result
+
+### User Story 1
+
+* I want to find recipes quickly and easily
+
+#### Action
+
+
+#### Expectation
+
+
+#### Result
+
+### User Story 1
+
+* I want to find recipes quickly and easily
+
+#### Action
+
+
+#### Expectation
+
+
+#### Result
+
+### User Story 1
+
+* I want to find recipes quickly and easily
+
+#### Action
+
+
+#### Expectation
+
+
+#### Result
+
+### User Story 1
+
+* I want to find recipes quickly and easily
+
+#### Action
+
+
+#### Expectation
+
+
+#### Result
+
+### User Story 1
+
+* I want to find recipes quickly and easily
+
+#### Action
+
+
+#### Expectation
+
+
+#### Result
+
+### User Story 1
+
+* I want to find recipes quickly and easily
+
+#### Action
+
+
+#### Expectation
+
+
+#### Result
+
+### User Story 1
+
+* I want to find recipes quickly and easily
+
+#### Action
+
+
+#### Expectation
+
+
+#### Result
+
+

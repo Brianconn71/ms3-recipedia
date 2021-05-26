@@ -1,151 +1,160 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <!-- Heading message to user -->
-    <h3 class="recipedia-text shadow-text center-align search-heading">Edit a recipe in our database</h3>
 
-    <!-- Container for form which updates recipes -->
-    <section class="container add-recipe-container">
-        <div class="row">
-            <form class="col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id)}}">
-                <!-- Select a category dropdown -->
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="fas fa-stream prefix shadow-text recipedia-text"></i>
-                        <select name="category" id="category" class="validate" required>
-                            <option value="{{recipe.category}}" selected>{{recipe.category}}</option>
-                            {% for category in categories %}
-                                <option value="{{ category.category_name.capitalize() }}">{{ category.category_name.capitalize() }}</option>
-                            {% endfor %}
-                        </select>
-                        <label for="category">Category</label>
-                    </div>
-                    <!-- Recipe Name input field -->
-                    <div class="input-field col s12">
-                        <i class="fas fa-pen prefix shadow-text recipedia-text"></i>
-                        <input id="recipe_name" name="recipe_name" minlength="3" maxlength="60" value="{{recipe.recipe_name}}"
-                        type="text" class="validate" required>
-                        <label for="recipe_name">Recipe Name</label>
-                    </div>
+<!-- Container for form which updates recipes -->
+<section class="container add-recipe-container">
+    <!-- Heading message to user -->
+    <h3 class="recipedia-text shadow-text center-align search-heading head-padding">Edit a recipe in our database</h3>
+    <div class="row">
+        <form class="col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id)}}">
+            <!-- Select a category dropdown -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-stream prefix shadow-text recipedia-text"></i>
+                    <select name="category" id="category" class="validate" required>
+                        <option value="" disabled selected>Choose a Category</option>
+                        {% for category in categories %}
+                            <option value="{{ category.category_name.capitalize() }}">{{ category.category_name.capitalize() }}</option>
+                        {% endfor %}
+                    </select>
+                    <label for="category">Category</label>
                 </div>
-                <!-- Created by input field -->
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="fas fa-user prefix shadow-text recipedia-text"></i>
-                        <input id="created_by" name="created_by" value="{{recipe.created_by}}" type="text" readonly required>
-                        <label for="created_by">Created By</label>
-                    </div>
-                </div>                
-                <!-- Date Created datepicker -->
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="far fa-calendar-alt prefix shadow-text recipedia-text"></i>
-                        <input name="date" id="date" type="text" class="datepicker validate" value="{{recipe.date}}" required>
-                        <label for="date">Date created</label>
-                    </div>
+                <!-- Recipe Name input field -->
+                <div class="input-field col s12">
+                    <i class="fas fa-pen prefix shadow-text recipedia-text"></i>
+                    <input id="recipe_name" name="recipe_name" minlength="3" maxlength="60"
+                        value="{{recipe.recipe_name}}" type="text" class="validate" required>
+                    <label for="recipe_name">Recipe Name</label>
                 </div>
-                <!-- Difficulty dropdown with three options -->
-                <div class="row">
-                    <div class="input-field col s12 m6">
-                        <i class="fas fa-exclamation prefix shadow-text recipedia-text"></i>
-                        <select name="difficulty" id="difficulty" class="validate" required>
-                            <option value="" disabled selected>Choose a Difficulty</option>
-                            {% if recipe.difficulty == "easy" %}
-                                <option value="easy" selected>Easy</option>
-                                <option value="medium">Medium</option>
-                                <option value="difficult">Difficult</option>
-                            {% elif recipe.difficulty == "medium" %}
-                                <option value="easy">Easy</option>
-                                <option value="medium" selected>Medium</option>
-                                <option value="difficult">Difficult</option>
-                            {% elif recipe.difficulty == "difficult" %}
-                                <option value="easy">Easy</option>
-                                <option value="medium">Medium</option>
-                                <option value="difficult" selected>Difficult</option>
-                            {% endif %}
-                        </select>
-                        <label for="difficulty">Difficulty</label>
-                    </div>
-                    <!-- servings number field -->
-                    <div class="input-field col s12 m6">
-                        <i class="fas fa-calculator prefix shadow-text recipedia-text"></i>
-                        <input id="servings" name="servings" type="number" class="validate" value="{{recipe.servings}}" required>
-                        <label for="servings">Servings</label>
-                    </div>
+            </div>
+            <!-- Created by input field -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-user prefix shadow-text recipedia-text"></i>
+                    <input id="created_by" name="created_by" value="{{recipe.created_by}}" type="text" readonly
+                        required>
+                    <label for="created_by">Created By</label>
                 </div>
-                <!-- cook time field -->
-                <div class="row">
-                    <div class="input-field col s12 m6">
-                        <i class="fas fa-clock prefix shadow-text recipedia-text"></i>
-                        <input id="cook_time" name="cook_time" type="number" class="validate" value="{{recipe.cook_time}}" required>
-                        <label for="cook_time">Cooking time (mins)</label>
-                    </div>
+            </div>
+            <!-- Date Created datepicker -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="far fa-calendar-alt prefix shadow-text recipedia-text"></i>
+                    <input name="date" id="date" type="text" class="datepicker validate" value="{{recipe.date}}"
+                        required>
+                    <label for="date">Date created</label>
+                </div>
+            </div>
+            <!-- Difficulty dropdown with three options -->
+            <div class="row">
+                <div class="input-field col s12 m6">
+                    <i class="fas fa-exclamation prefix shadow-text recipedia-text"></i>
+                    <select name="difficulty" id="difficulty" class="validate" required>
+                        <option value="" disabled>Choose a Difficulty</option>
+                        {% if recipe.difficulty == "easy" %}
+                            <option value="easy" selected>Easy</option>
+                            <option value="medium">Medium</option>
+                            <option value="difficult">Difficult</option>
+                        {% elif recipe.difficulty == "medium" %}
+                            <option value="easy">Easy</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="difficult">Difficult</option>
+                        {% elif recipe.difficulty == "difficult" %}
+                            <option value="easy">Easy</option>
+                            <option value="medium">Medium</option>
+                            <option value="difficult" selected>Difficult</option>
+                        {% endif %}
+                    </select>
+                    <label for="difficulty">Difficulty</label>
+                </div>
+                <!-- servings number field -->
+                <div class="input-field col s12 m6">
+                    <i class="fas fa-calculator prefix shadow-text recipedia-text"></i>
+                    <input id="servings" name="servings" type="number" class="validate" value="{{recipe.servings}}"
+                        required>
+                    <label for="servings">Servings</label>
+                </div>
+            </div>
+            <!-- cook time field -->
+            <div class="row">
+                <div class="input-field col s12 m6">
+                    <i class="fas fa-clock prefix shadow-text recipedia-text"></i>
+                    <input id="cook_time" name="cook_time" type="number" class="validate" value="{{recipe.cook_time}}"
+                        required>
+                    <label for="cook_time">Cooking time (mins)</label>
+                </div>
                 <!-- prep time field -->
-                    <div class="input-field col s12 m6">
-                        <i class="far fa-clock prefix shadow-text recipedia-text"></i>
-                        <input id="prep_time" name="prep_time" type="number" class="validate" value="{{recipe.prep_time}}" required>
-                        <label for="prep_time">Prep Time (mins)</label>
-                    </div>
+                <div class="input-field col s12 m6">
+                    <i class="far fa-clock prefix shadow-text recipedia-text"></i>
+                    <input id="prep_time" name="prep_time" type="number" class="validate" value="{{recipe.prep_time}}"
+                        required>
+                    <label for="prep_time">Prep Time (mins)</label>
                 </div>
-                <!-- adding ingredients dynamically field -->
-                <div class="row">
-                    <div class="col s12">
-                        <a type="button" class="btn add_ingredient add-ingredient-btn"><i class="far fa-plus-square submit-icon"></i>Add Ingredient</a>
-                    </div>
+            </div>
+            <!-- adding ingredients dynamically field -->
+            <div class="row">
+                <div class="col s12">
+                    <a class="btn add_ingredient add-ingredient-btn"><i class="far fa-plus-square submit-icon"></i>Add
+                        Ingredient</a>
                 </div>
-                <!-- Jinja loop list method used -->
-                {% for ing in recipe.ingredients|list %}
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <i class="fas fa-shopping-bag prefix shadow-text recipedia-text"></i>
-                            <input id="ingredients" name="ingredients" minlength="2" maxlength="60"
-                            type="text" value="{{ ing }}" class="validate" required>
-                            <!-- got help with numbering my ingredients in the loop here: https://stackoverflow.com/questions/20233721/how-do-you-index-on-a-jinja-template -->
-                            <label for="ingredients">Ingredient {{loop.index}}:</label>
-                            <a type="button" class="btn unsave-btn remove_ingredient"><i class="far fa-minus-square submit-icon"></i>Remove</a>
-                        </div>
-                    </div>
-                {% endfor %}
-                    <div class="row ingred_list">
-                    </div>
-                <!-- adding steps dynamically field -->
-                <div class="row">
-                    <div class="col s12">
-                        <a type="button" class="btn add_step add-ingredient-btn"><i class="far fa-plus-square submit-icon"></i>Add Step</a>
-                    </div>
+            </div>
+            <!-- Jinja loop list method used -->
+            {% for ing in recipe.ingredients|list %}
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-shopping-bag prefix shadow-text recipedia-text"></i>
+                    <input id="ingredients{{loop.index}}" name="ingredients" minlength="2" maxlength="60" type="text"
+                        value="{{ ing }}" class="validate" required>
+                    <!-- got help with numbering my ingredients in the loop here: https://stackoverflow.com/questions/20233721/how-do-you-index-on-a-jinja-template -->
+                    <label for="ingredients{{loop.index}}">Ingredient {{loop.index}}:</label>
+                    <a class="btn unsave-btn remove_ingredient"><i class="far fa-minus-square submit-icon"></i>Remove</a>
                 </div>
-                {% for add_steps in recipe.steps%}
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <i class="fas fa-list-ol prefix shadow-text recipedia-text"></i>
-                            <input id="steps" name="steps" minlength="3" maxlength="500"
-                            type="text" value="{{ add_steps }}" class="validate" required>
-                            <label for="steps">Step {{ loop.index }}:</label>
-                            <a type="button" class="btn unsave-btn remove_step"><i class="far fa-minus-square submit-icon"></i>Remove</a>
-                        </div>
-                    </div>
-                {% endfor %}
-                    <div class="row step_list">
-                    </div>
-                <!-- image url field -->
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="fas fa-images prefix shadow-text recipedia-text"></i>
-                        <input id="img_upload" name="img_upload" type="url" class="validate" value="{{recipe.img_upload}}" required>
-                        <label for="img_upload">Enter Image Url</label>
-                    </div>
+            </div>
+            {% endfor %}
+            <div class="row ingred_list">
+            </div>
+            <!-- adding steps dynamically field -->
+            <div class="row">
+                <div class="col s12">
+                    <a class="btn add_step add-ingredient-btn"><i class="far fa-plus-square submit-icon"></i>Add
+                        Step</a>
                 </div>
-                <div class="row">
-                    <div class="col s12 center-align">
-                        <!-- Cancel and edit changes button -->
-                        <a href="{{ url_for('get_recipes') }}" class="btn-small unsave-btn" title="Cancel"><i class="far fa-window-close"></i></a>
-                        <button class="btn-small waves-effect waves-light edit-btn" type="submit" title="Edit Recipe">
+            </div>
+            {% for add_steps in recipe.steps%}
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-list-ol prefix shadow-text recipedia-text"></i>
+                    <input id="steps{{loop.index}}" name="steps" minlength="3" maxlength="500" type="text" value="{{ add_steps }}"
+                        class="validate" required>
+                    <label for="steps{{loop.index}}">Step {{ loop.index }}:</label>
+                    <a class="btn unsave-btn remove_step"><i class="far fa-minus-square submit-icon"></i>Remove</a>
+                </div>
+            </div>
+            {% endfor %}
+            <div class="row step_list">
+            </div>
+            <!-- image url field -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-images prefix shadow-text recipedia-text"></i>
+                    <input id="img_upload" name="img_upload" type="url" class="validate" value="{{recipe.img_upload}}"
+                        required>
+                    <label for="img_upload">Enter Image Url</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 center-align">
+                    <!-- Cancel and edit changes button -->
+                    <a href="{{ url_for('get_recipes') }}" class="btn-small unsave-btn" title="Cancel"><i
+                            class="far fa-window-close"></i></a>
+                    <button class="btn-small waves-effect waves-light edit-btn" type="submit" title="Edit Recipe">
                         <i class="far fa-edit"></i>
-                        </button>
-                    </div>
+                    </button>
                 </div>
-            </form>
-        </div>
-    </section>
+            </div>
+        </form>
+    </div>
+</section>
 
 {% endblock %}

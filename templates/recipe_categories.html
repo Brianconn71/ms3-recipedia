@@ -23,8 +23,8 @@
                     </div>
                     <!-- Delete and edit category buttons -->
                     <div class="card-action control-btns">
-                        <a class="waves-effect waves-light btn-small modal-trigger modal-trigger unsave-btn" id="delete-btn" data-toggle="modal" data-target="#deleteCategory{{ loop.index }}"><i class="far fa-trash-alt"></i></a>
-                        <a href="{{ url_for('edit_category', category_id=category._id)}}" class="waves-effect waves-light btn-small edit-btn" id="edit-btn"><i class="far fa-edit"></i></a>
+                        <a class="waves-effect waves-light btn-small modal-trigger modal-trigger unsave-btn" data-toggle="modal" data-target="#deleteCategory{{ loop.index }}"><i class="far fa-trash-alt"></i></a>
+                        <a href="{{ url_for('edit_category', category_id=category._id)}}" class="waves-effect waves-light btn-small edit-btn"><i class="far fa-edit"></i></a>
                     </div>
                 </div>
             </div>

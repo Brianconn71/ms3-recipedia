@@ -404,7 +404,7 @@ form input[type="text"]{
     padding: 1rem 0;
     font-size: 1.5rem;
 }
-#amazon:hover{
+.amazon:hover{
     color: #FF9900;
     -webkit-transition: color .3s ease-in-out;
     -o-transition: color .3s ease-in-out;
@@ -422,6 +422,9 @@ form input[type="text"]{
     height: 100%;
 }
 /* add recipe page */
+.head-padding{
+    padding: 1.5rem;
+}
 .add-recipe-container{
     height: 100%;
     background-color: rgba(0,0,0, 0.5)
@@ -515,7 +518,7 @@ ul>li.list-decoration{
     color: var(--text-white);
     font-size: 0.8rem;
 }
-#product-title{
+.card .product-title{
     padding: 0.8rem 0;
     font-weight: bold;
     font-size: 1rem;
@@ -677,7 +680,7 @@ select:-webkit-autofill {
     .search-heading{
         font-size: 2.2rem;
     }
-    #product-title{
+    .card .product-title{
         font-size: 1.4rem;
     }
     .select-wrapper input.select-dropdown{
