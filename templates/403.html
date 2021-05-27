@@ -1,13 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
 <!-- 404 error page displaying an error message and a return to home link  -->
-    <div class="container">
-        <div class="row">
-            <div class="col s12 center-align recipedia-text">
-                <h2 class="search-heading">403 Forbidden - Access Denied</h2>
-                <p class="recipedia-text shadow-text">We're sorry but you do not have permission to access this page. <a href="{{ url_for('login') }}" class="underline-text link-color">Click here</a> to login to your account.</p>
-            </div>
+<div class="container">
+    <div class="row">
+        <div class="col s12 center-align recipedia-text">
+            <h2 class="search-heading">403 Forbidden - Access Denied</h2>
+            <p class="recipedia-text shadow-text">We're sorry but you do not have permission to access this page. <a
+                    href="{{ url_for('login') }}" class="underline-text link-color">Click here</a> to login to your
+                account.</p>
         </div>
     </div>
+</div>
 
 {% endblock %}

@@ -15,23 +15,17 @@
             <!-- jinja if statement showing thumbs up as a rating out of 5 for whatever rsating admin gives the product -->
             <div class="card-content recipe-content">
                 {% if product.user_rating == '1' %}
-                <h5 class="thumb-up center-align">Rating: <i class="fas fa-thumbs-up icon-spacing"></i></h5>
+                    <h5 class="thumb-up center-align">Rating: <i class="fas fa-thumbs-up icon-spacing"></i></h5>
                 {% elif product.user_rating == '2' %}
-                <h5 class="thumb-up center-align">Rating: <i class="fas fa-thumbs-up icon-spacing"></i><i
-                        class="fas fa-thumbs-up icon-spacing"></i></h5>
+                    <h5 class="thumb-up center-align">Rating: <i class="fas fa-thumbs-up icon-spacing"></i><i class="fas fa-thumbs-up icon-spacing"></i></h5>
                 {% elif product.user_rating == '3' %}
-                <h5 class="thumb-up center-align">Rating: <i class="fas fa-thumbs-up icon-spacing"></i><i
-                        class="fas fa-thumbs-up icon-spacing"></i><i class="fas fa-thumbs-up icon-spacing"></i></h5>
+                    <h5 class="thumb-up center-align">Rating: <i class="fas fa-thumbs-up icon-spacing"></i><i class="fas fa-thumbs-up icon-spacing"></i><i class="fas fa-thumbs-up icon-spacing"></i></h5>
                 {% elif product.user_rating == '4' %}
-                <h5 class="thumb-up center-align">Rating: <i class="fas fa-thumbs-up icon-spacing"></i><i
-                        class="fas fa-thumbs-up icon-spacing"></i><i class="fas fa-thumbs-up icon-spacing"></i><i
-                        class="fas fa-thumbs-up icon-spacing"></i></h5>
+                    <h5 class="thumb-up center-align">Rating: <i class="fas fa-thumbs-up icon-spacing"></i><i class="fas fa-thumbs-up icon-spacing"></i><i class="fas fa-thumbs-up icon-spacing"></i><i class="fas fa-thumbs-up icon-spacing"></i></h5>
                 {% elif product.user_rating == '5' %}
-                <h5 class="thumb-up">Rating: <i class="fas fa-thumbs-up icon-spacing"></i><i
-                        class="fas fa-thumbs-up icon-spacing"></i><i class="fas fa-thumbs-up icon-spacing"></i><i
-                        class="fas fa-thumbs-up icon-spacing"></i><i class="fas fa-thumbs-up icon-spacing"></i></h5>
+                    <h5 class="thumb-up">Rating: <i class="fas fa-thumbs-up icon-spacing"></i><i class="fas fa-thumbs-up icon-spacing"></i><i class="fas fa-thumbs-up icon-spacing"></i><i class="fas fa-thumbs-up icon-spacing"></i><i class="fas fa-thumbs-up icon-spacing"></i></h5>
                 {% else %}
-                <h5 class="thumb-up center-align">Rating: Product has no rating!</h5>
+                    <h5 class="thumb-up center-align">Rating: Product has no rating!</h5>
                 {% endif %}
                 <!-- Card description of each product -->
                 <h4 class="recipedia-text center-align underline-text">Product Description</h4>
@@ -47,11 +41,11 @@
                 <!-- delete and edit btns -->
                 <div class="recipe-btns">
                     {% if session.user|lower == session.user|lower == 'admin'|lower %}
-                    <a href="#modal1" class="waves-effect waves-light btn-small modal-trigger modal-trigger unsave-btn"
-                        title="Cancel"><i class="far fa-trash-alt"></i></a>
-                    <a href="{{ url_for('edit_product', product_id = product._id)}}"
-                        class="waves-effect waves-light btn-small edit-btn" title="Edit Product"><i
-                            class="far fa-edit"></i></a>
+                        <a href="#modal1" class="waves-effect waves-light btn-small modal-trigger modal-trigger unsave-btn"
+                            title="Cancel"><i class="far fa-trash-alt"></i></a>
+                        <a href="{{ url_for('edit_product', product_id = product._id)}}"
+                            class="waves-effect waves-light btn-small edit-btn" title="Edit Product"><i
+                                class="far fa-edit"></i></a>
                     {% endif %}
                 </div>
                 <!-- modal for delete confirmation -->

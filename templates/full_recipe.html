@@ -11,9 +11,8 @@
                 <span class="card-title recipe-title recipedia-text shadow-text">{{recipe.recipe_name}}</span>
                 <!-- save button displayed for logged in users -->
                 {% if session["user"] %}
-                <a href="{{ url_for('save_recipe', recipe_id=recipe._id )}}"
-                    class="btn-floating halfway-fab waves-effect waves-light save-btn"
-                    title="Save recipe to your profile"><i class="far fa-save"></i></a>
+                    <a href="{{ url_for('save_recipe', recipe_id=recipe._id )}}"
+                    class="btn-floating halfway-fab waves-effect waves-light save-btn" title="Save recipe to your profile"><i class="far fa-save"></i></a>
                 {% endif %}
             </div>
             <!-- recipe info  -->
@@ -48,21 +47,21 @@
                 <h4 class="recipedia-text shadow-text center-align underline-text">Ingredients:</h4>
                 <ul class="recipe-ingredients">
                     {% for ing in recipe.ingredients %}
-                    <li class="recipedia-text list-spacing list-text">{{ing}}</li>
+                        <li class="recipedia-text list-spacing list-text">{{ing}}</li>
                     {% endfor %}
                 </ul>
                 <h4 class="recipedia-text shadow-text underline-text">Steps:</h4>
                 <ul class="recipe-steps">
                     {% for step in recipe.steps %}
-                    <li class="recipedia-text list-spacing list-decoration list-text">{{step}}</li>
+                        <li class="recipedia-text list-spacing list-decoration list-text">{{step}}</li>
                     {% endfor %}
                 </ul>
                 <!-- edit and delete btns -->
                 <div class="recipe-btns">
                     {% if session.user|lower == recipe.created_by|lower or session.user|lower == 'admin'|lower %}
-                    <a href="#modal1" class="waves-effect waves-light btn-small modal-trigger modal-trigger unsave-btn"
+                        <a href="#modal1" class="waves-effect waves-light btn-small modal-trigger modal-trigger unsave-btn"
                         id="delete-btn" title="Delete"><i class="far fa-trash-alt"></i></a>
-                    <a href="{{ url_for('edit_recipe', recipe_id=recipe._id )}}"
+                        <a href="{{ url_for('edit_recipe', recipe_id=recipe._id )}}"
                         class="waves-effect waves-light btn-small edit-btn"><i class="far fa-edit"
                             title="Edit Recipe"></i></a>
                     {% endif %}

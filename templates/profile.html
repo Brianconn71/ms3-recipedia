@@ -44,10 +44,10 @@
                         <div class="card-btns">
                             <!-- buttons to allow user to edit or delete there recipes -->
                             {% if session.user|lower == save.created_by|lower or session.user|lower == 'admin'|lower %}
-                            <a class="waves-effect waves-light btn-small modal-trigger modal-trigger delete-btn unsave-btn"
+                                <a class="waves-effect waves-light btn-small modal-trigger modal-trigger delete-btn unsave-btn"
                                 data-toggle="modal" data-target="#deleteRecipe{{ loop.index }}"><i
                                     class="far fa-trash-alt"></i></a>
-                            <a href="{{ url_for('edit_recipe', recipe_id=save._id )}}"
+                                <a href="{{ url_for('edit_recipe', recipe_id=save._id )}}"
                                 class="waves-effect waves-light btn-small edit-btn"><i class="far fa-edit"></i></a>
                             {% endif %}
                         </div>

@@ -15,7 +15,8 @@
                     <select name="category" id="category" class="validate" required>
                         <option value="" disabled selected>Choose a Category</option>
                         {% for category in categories %}
-                            <option value="{{ category.category_name.capitalize() }}">{{ category.category_name.capitalize() }}</option>
+                            <option value="{{ category.category_name.capitalize() }}">
+                            {{ category.category_name.capitalize() }}</option>
                         {% endfor %}
                     </select>
                     <label for="category">Category</label>
@@ -101,16 +102,17 @@
             </div>
             <!-- Jinja loop list method used -->
             {% for ing in recipe.ingredients|list %}
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-shopping-bag prefix shadow-text recipedia-text"></i>
-                    <input id="ingredients{{loop.index}}" name="ingredients" minlength="2" maxlength="60" type="text"
-                        value="{{ ing }}" class="validate" required>
-                    <!-- got help with numbering my ingredients in the loop here: https://stackoverflow.com/questions/20233721/how-do-you-index-on-a-jinja-template -->
-                    <label for="ingredients{{loop.index}}">Ingredient {{loop.index}}:</label>
-                    <a class="btn unsave-btn remove_ingredient"><i class="far fa-minus-square submit-icon"></i>Remove</a>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-shopping-bag prefix shadow-text recipedia-text"></i>
+                        <input id="ingredients{{loop.index}}" name="ingredients" minlength="2" maxlength="60" type="text"
+                            value="{{ ing }}" class="validate" required>
+                        <!-- got help with numbering my ingredients in the loop here: https://stackoverflow.com/questions/20233721/how-do-you-index-on-a-jinja-template -->
+                        <label for="ingredients{{loop.index}}">Ingredient {{loop.index}}:</label>
+                        <a class="btn unsave-btn remove_ingredient"><i
+                                class="far fa-minus-square submit-icon"></i>Remove</a>
+                    </div>
                 </div>
-            </div>
             {% endfor %}
             <div class="row ingred_list">
             </div>
@@ -122,15 +124,15 @@
                 </div>
             </div>
             {% for add_steps in recipe.steps%}
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-list-ol prefix shadow-text recipedia-text"></i>
-                    <input id="steps{{loop.index}}" name="steps" minlength="3" maxlength="500" type="text" value="{{ add_steps }}"
-                        class="validate" required>
-                    <label for="steps{{loop.index}}">Step {{ loop.index }}:</label>
-                    <a class="btn unsave-btn remove_step"><i class="far fa-minus-square submit-icon"></i>Remove</a>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-list-ol prefix shadow-text recipedia-text"></i>
+                        <input id="steps{{loop.index}}" name="steps" minlength="3" maxlength="500" type="text"
+                            value="{{ add_steps }}" class="validate" required>
+                        <label for="steps{{loop.index}}">Step {{ loop.index }}:</label>
+                        <a class="btn unsave-btn remove_step"><i class="far fa-minus-square submit-icon"></i>Remove</a>
+                    </div>
                 </div>
-            </div>
             {% endfor %}
             <div class="row step_list">
             </div>
