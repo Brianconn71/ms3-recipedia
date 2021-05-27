@@ -514,11 +514,11 @@ I had planned on testing features but I feel in testing for user stories and sit
 
 Buy Now link
 
-![]()
+![Buy Now link](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/buy%20now%20link.JPG)
 
 click on link result
 
-![]()
+![click on link result]()
 
 ### Site Goal 4
 
