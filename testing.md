@@ -264,7 +264,7 @@ blank field register
 
 #### Result
 
-* Once the user has filled out everything required the recipe gets added to the database and is searchable on the site. If a usert fails to enter data into an input field then they will be prompted to do so. User can add and remove ingredients and steps on the form.
+* Once the user has filled out everything required the recipe gets added to the database and is searchable on the site. If a user fails to enter data into an input field then they will be prompted to do so. User can add and remove ingredients and steps on the form.
 
 successful add recipe
 
@@ -284,87 +284,181 @@ remove steps and ingredients
 
 ### User Story 6
 
-* I want to find recipes quickly and easily
+* I want to be to search the site based on a specific keyword in the recipe title.
 
 #### Action
 
+* the user can click onto the search bar input firld on the home recipes page and enter a specific key wrod and search for that keyword in the recipe names of the recipes in the recipes database.
 
 #### Expectation
+
+* That the keyword will be searched throughout the recipe names in the recipes database. It should return recipe names where even one word matches the recipe name. A search will not be permitted and users will get a prompt to enter a search term. A flash message will appear at the top of the page informing the user of the results of their search and the amount of results returned.
+
+#### Result
+
+* The user will see a flash message at the top of the screen informing them of the amount of results in their search, the results will be displayed below the search container in paginated format. A prompt will display to the user if they search with a blank search bar and if a users search has no results the flash message at the top of the page will inform them of such.
+
+successful search
+
+![]()
+
+unsuccessful search
+
+![]()
+
+empty search prompt
+![]()
+
+### User Story 7
+
+* I want to be able to edit and delete my own recipes.
+
+#### Action
+
+* A user should see delete and edit buttons underneath each recipe card that they have created and not underneath recipes they did not create. The delete and edit buttons should also display under recipes they have created in their profile and full recipe page. A user should be able to edit a recipe by clicking the edit button and taken to the edit recipe page where changes will be reflected in the recipe in the database and on the site. When a user clicks to delete a recipe a delete confirmation modal should appear asking the user if they wish to confirm the deletion, if they choose confirm the recipe will then be deleted from the site and database and a flash confirmation message will appear to the user to confirm deletion.
+
+#### Expectation
+
+* A user should only see edit and delete buttons on their own created recipes. when a user selects edit, it should take them to the edit recipe page to make changes and when the user selects delete a delete confirmation modal should be present to ask if they wish to confirm the deletion.
 
 
 #### Result
 
-### User Story 1
+* The user will be able to edit and make changes to their own recipes and delete their own recipes from the database but not edit or delete recipes for other users.
 
-* I want to find recipes quickly and easily
+delete and edit buttons
+![]()
 
-#### Action
+edit recipe button taking to edit recipe page
+![]()
 
+edit recipe confirmation
+![]()
 
-#### Expectation
+delete recipe confirmation
+![]()
 
+delete recipe modal
+![]()
 
-#### Result
+### User Story 8
 
-### User Story 1
-
-* I want to find recipes quickly and easily
-
-#### Action
-
-
-#### Expectation
-
-
-#### Result
-
-### User Story 1
-
-* I want to find recipes quickly and easily
+* I want to be able to view other members recipes easily.
 
 #### Action
 
+* The user can see all recipes on the homepage and by searching and filtering the database.
 
 #### Expectation
 
+* that the user can find and view any recipes they wish
 
 #### Result
 
-### User Story 1
+* The user can find all recipes on the home page and view full recipes by clicking on the see full recipe button on the recipe cards.
 
-* I want to find recipes quickly and easily
+See full recipe
+![]()
+
+full recipe page
+![]()
+
+### User Story 9
+
+* I want to be able to save other recipes for easy access and viewing in my profile.
 
 #### Action
 
+* When a logged in user finds a recipe they like and want to save for easy viewing that they click on the save button on the recipe card and that recipe then gets displayed in their profile.
 
 #### Expectation
 
+* The user clicks on the save button, a flash message will then appear to the user saying a recipe has been saved to their profile. The recipe will then be displayed in their profile.
 
 #### Result
 
-### User Story 1
+* The user clicks on the save button which saves the recipe to their profile and a message appears informing the user the recipe was saved to their profile. The recipe is then displayed on their profile.
 
-* I want to find recipes quickly and easily
+save button
+[]()
+
+Flash message
+[]()
+
+recipe saved to the users profile
+[]()
+
+### User Story 10
+
+* I want to be able to delete saved recipes that I no longer have a use for from my profile.
 
 #### Action
 
+* When a logged in user wants to delete a saved recipe from their profile they can click on the remove saved recipe button displayed on the recipe card in the users profile page.
 
 #### Expectation
 
+* The user clicks on the remove saved recipe button, and the recipe will be removed from their profile with a flash message confirming the deletion.
 
 #### Result
 
-### User Story 1
+* the user clicks on the remove saved recipe button on the recipe card and the recipe is removed from their saved recipes field in the database, the python backend code will remove the recipe id from the array, a flash message then appears to confirm the recipe is no longer saved.
 
-* I want to find recipes quickly and easily
+delete save button
+[]()
+
+delete save Flash message
+[]()
+
+recipe removed from saved recipes
+[]()
+
+### User Story 11
+
+* I want to be able to view recommended kitchen products and purchase the products.
 
 #### Action
 
+* By clicking on the recipedia Utensils link in the top nav and side nav bars, the user will be prought to the products page where the products are displayed.
 
 #### Expectation
 
+* When the user lands on the recipedia utensils page they will be able to view all products in paginated format with six products listed per page. They can also filter the products based on the type of product that they wish to search for. The users can also follow the link on the products cards to buy the products from the recommended sellers. The cards will also show the product rating out of five which will provide peace of mind when purchasing.
 
 #### Result
+
+* The user can find products based on the filter buttons and a flash message will display how many results their are per search. The results are in paginated format with six results per page. Users can esily purchase these products by clicking on the link at the bottom of the card.
+
+products page with filter
+[]()
+
+products Flash message
+[]()
+
+buy now link
+[]()
+
+product rating
+[]()
+
+### User Story 12
+
+* I want to be able to easily view every recipe I have added to the site and make changes without having to look through every recipe on the site.
+
+#### Action
+
+* by clicking on the profile link in the top and side nav the user will be transported to their own profile page where they can easily view the recipes they have added to the site and see the delete and edit buttons to make changes to their recipes.
+
+#### Expectation
+
+* The user clicks on the profile link and they get to their profile where they can make edit and delete changes to their recipes.
+
+#### Result
+
+* The user will be able to edit and make changes to their own recipes and delete their own recipes from the database but not edit or delete recipes for other users, they will be able to find all their own recipes on their profile page
+
+profile page
+[]()
 
 ### User Story 1
 
