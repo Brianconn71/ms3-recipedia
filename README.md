@@ -13,11 +13,23 @@ A live preview of my site can be found [here](http://ms3-recipedia.herokuapp.com
 # Table of Contents
 
 * [UX](#ux)
+    * [strategy](#strategy)
+        * [user stories](#user)
+        * [site goals](#site)
+    * [scope](#scope)    
+        * [features](#features)
+        * [future features](#future)
+    * [structure](#structure)
+    * [skeleton](#skeleton)
+    * [surface](#surface)
+* [Technologies used](#tech)
+* [Testing](#testing)
+* [Deployment](#deployment)
+* [credits](#credits)
 
+# UX <a name="ux">
 
-# UX <a name="ux>
-
-## Strategy
+## Strategy <a name="strategy">
 
 I created this project as a way for users that have an interest in cooking, recipes and sharing their own recipes have a place to come and do all of those things.
 I wanted to implement a social element to the site too, which I believe was achieved through the ability to save other users recipes for easy viewing on a users profile page.
@@ -26,7 +38,7 @@ Admin users, are the select few in charge of the site and get freedom to do what
 I gave admin users the power to add categories, products and edit recipes mainly for safety purposes and security reasons.
 
 
-### Site goals
+### Site goals <a name="site">
 
 * I want the site to be easy to use and have consistent design and imagery.
 
@@ -46,7 +58,7 @@ I gave admin users the power to add categories, products and edit recipes mainly
 
 * I want to be able to add recommeneded products and categories to the site but not allow regular users that ability.
 
-### User Stories
+### User Stories <a name="user">
 
 * I want to find recipes quickly and easily
 
@@ -72,9 +84,9 @@ I gave admin users the power to add categories, products and edit recipes mainly
 
 * I want to be able to easily view every recipe I have added to the site and make changes without having to look through every recipe on the site.
 
-## Scope
+## Scope <a name="scope">
 
-### Features
+### Features <a name="features">
 
 Nav bar
 
@@ -276,7 +288,7 @@ Full Recipe Page
 
 * The page will also display edit and delete buttons to the admin user and the user who created the recipe to allow for changes or the deletion of the recipe from the database.
 
-### Future Features
+### Future Features <a name="future">
 
 * A "share to Social Media" button to integrate social media sharing of recipes.
 
@@ -288,11 +300,11 @@ Full Recipe Page
 
 * upload files as images and not rely solely on urls for image uploads- I had planned to do this for this current project but I found it a bit too complicated.
 
-## structure
+## structure <a name="structure">
 
 The structure of the site will remain consistent throughout the site. The same background image will be the background to each page on the site. Navigation will remain consistent throughout, Links and buttons will allow for easier access throughout the site. 
 
-## skeleton
+## skeleton <a name="skeleton">
 
 ### Wireframes
 
@@ -330,7 +342,7 @@ Products database provides the content to the products page on the site. Admin u
 
 ![Products database entry](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/products%20-db.JPG)
 
-## Surface
+## Surface <a name="surface">
 
 There are many differences between the wireframes and the actual site. The biggest difference is the background image which I initially liked but as the project developed I felt that the image used in the wireframes was not conveying the message of the site so I changed it to an image displaying a multitude of vegetables.
 
@@ -365,7 +377,7 @@ Two fonts were used in the making of the site. The main-heading, logo font used 
 
 These fonts complement each other very well and have easy readibility which is key for visitors to my site. The compatibility of the fonts on my site was found using google fonts.
 
-## Technologies Used
+## Technologies Used <a name="tech">
 
 * [Heroku](https://heroku.com)
     * Heroku was used to host and deploy my project
@@ -441,11 +453,11 @@ These fonts complement each other very well and have easy readibility which is k
 * [Techsini](https://techsini.com/multi-mockup/)
     * Techsini is a mockup generator and It was used to get the mock up image of the site in the Readme.
 
-## Testing
+## Testing <a name="testing">
 
 The testing section can be found [here](https://github.com/Brianconn71/ms3-recipedia/blob/master/testing.md)
 
-## Deployment
+## Deployment <a name="deployment">
 
 This project was deployed on [Heroku](https://heroku.com).
 
@@ -541,7 +553,7 @@ GitHub ignores this env.py file and does not show it in your repository due secu
 4. By clicking the Fork button, a complete duplicate of the project will now be available in your GitHub repository.
 
 
-## Credits
+## Credits <a name="credits">
 
 ### Content
 
