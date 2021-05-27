@@ -21,6 +21,7 @@ A live preview of my site can be found [here](http://ms3-recipedia.herokuapp.com
         * [future features](#future)
     * [structure](#structure)
     * [skeleton](#skeleton)
+        * [wireframes](#wireframes)
     * [surface](#surface)
 * [Technologies used](#tech)
 * [Testing](#testing)
@@ -149,6 +150,14 @@ Login page
 * When the user successfully enters the correct information, they will be put into session and redirected to their profile page.
 
 * Underneath the form, is a paragraph of information for users and a link for current users to register an account, by clicking on this the user is then redirected to the register page.
+
+Logout page
+
+* When a user clicks on the logout button, the user is removed from the session cookie using the ,pop method.
+
+* Browser is redirected back to the login page.
+
+* A flash message telling they have successfully logged out will appear at the top of the page to inform the user of successfully logging out of the site.
 
 Recipedia Utensils
 
@@ -306,7 +315,7 @@ The structure of the site will remain consistent throughout the site. The same b
 
 ## skeleton <a name="skeleton">
 
-### Wireframes
+### Wireframes <a name="wireframes">
 
 [Click here](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/wireframes/recipedia%20wireframes.pdf) to view my Wireframes for this project.
 

@@ -518,7 +518,7 @@ Buy Now link
 
 click on link result
 
-![click on link result]()
+![click on link result](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/click%20on%20link%20result.JPG)
 
 ### Site Goal 4
 
