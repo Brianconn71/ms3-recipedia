@@ -27,7 +27,7 @@ I gave admin users the power to add categories, products and edit recipes mainly
 
 * I want the site to be easy to use and have consistent design and imagery.
 
-* I want the site to be responsive on all screen sizes .
+* I want the site to be responsive on all screen sizes.
 
 * I want a way to generate income for the site.
 
@@ -35,13 +35,9 @@ I gave admin users the power to add categories, products and edit recipes mainly
 
 * I want the site to have seamless integration with the MongoDB database.
 
-* I want recipes and products to be automatically displayed on the site after a user attempts to add one to the site.
-
 * I want the navigation to be easy to understand and intuitive.
 
 * I want to allow users to create an account on the site.
-
-* I want users to be able to easily add recipes to the site.
 
 * I want to have an account that has full control over everything on the site for security reasons.
 

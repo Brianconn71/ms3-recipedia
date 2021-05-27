@@ -460,17 +460,233 @@ product rating
 profile page
 ![profile page](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/profile%20page.JPG)
 
-### User Story 1
+## Site Goals testing
 
-* I want to find recipes quickly and easily
+I had planned on testing features but I feel in testing for user stories and site goals all of the features have been tested and shown here.
+
+### Site Goal 1
+
+* I want the site to be easy to use and have consistent design and imagery.
 
 #### Action
 
+* The site has a consistent background image throughout, Navigation is via top nav bar and side nav opening from the right of the screen on mobile devices. The user will notice the consistent imagery throughout
 
 #### Expectation
 
+* The user will have a good user experience and likely to use the site again. The site flows, easy to navigate and the layouts appeal to a user.
 
 #### Result
+
+* Having spoken with friends, family and my peers on the slack peer code review channel, I am confident That I have achieved a good looking site.
+
+### Site Goal 2
+
+* I want the site to be responsive on all screen sizes.
+
+#### Action
+
+* That the website behaves the same way on each screen size
+
+#### Expectation
+
+* That the website remains consistent throughout screen size changes and respons to users at each screen size
+
+#### Result
+
+* Please see above for images of the site at different screen sizes on different devices.
+
+### Site Goal 3
+
+* I want a way to generate income for the site.
+
+#### Action
+
+* Site acts as an affiliate for utensils and cookware by having a link that opens on a new page for the products listed on the site.
+
+#### Expectation
+
+* Users can click on the buy now links underneath the products card and full products page to be taken to a third party seller of the product which opens on a new tab, The site would then receive a percentage of the sale acting as an affiliate.
+
+#### Result
+
+* Users click on the link and are taken to the third party site where they purchase the product and the site will tehn recieve a pertcentage of the sale.
+
+Buy Now link
+
+![]()
+
+click on link result
+
+![]()
+
+### Site Goal 4
+
+* I want the site to be a one stop shop for everything cooking related.
+
+#### Action
+
+* The user will be able to see recipes, save recipes and add recipes to the site, they will be able to filter recipes based on their needs. Users will be able to see products and see the rating of products to get a sense of trust in how good or bad a product is and then make up their mind on if they want to make a purchase, then click the buy now link and make a purchase.
+
+#### Expectation
+
+* That the user sees the site as being a one stop shop for all their recipe needs and continue to come back to the site in the future. The buy now links work and the user has a pleasant user experience.
+
+#### Result
+
+* Again, based on the feedback that I have received from the people that have viewed my site, I am confident that I have achieved this goal.
+
+### Site Goal 5
+
+* I want the site to have seamless integration with the MongoDB database.
+
+#### Action
+
+* a user adds a recipe to the site and it works, recipe gets added to the site and flash message displays telling them that the recipe was successfully added.
+
+#### Expectation
+
+* That when a user adds a recipe to the site that it gets displayed in the paginated results, it also is searchable through the search bar and the filter buttons.
+
+#### Result
+
+* The user receives a flash message informng them that a recipe/ product has been added to the site successfully and so is searchable on the site.
+
+products page
+
+![]()
+
+recipes page
+
+!()
+
+### Site Goal 6
+
+* I want the navigation to be easy to understand and intuitive.
+
+#### Action
+
+* That the user can easily navigate throughout the site, links open correctly on the right page.
+
+#### Expectation
+
+* The user is freely able to manouever the site, they dont struggle with content or features used on the site.
+
+#### Result
+
+* Based on the feedback that I have received from the people that have viewed my site, the site is easy to navigate and they understand how to get from a to b.
+
+### Site Goal 7
+
+* I want to allow users to create an account on the site.
+
+#### Action
+
+* That a user can find the register nav link, can click on it and get to the register page. Once they get their they understand what they have to do and find the helper text useful
+
+#### Expectation
+
+* That a user can easily register an account on the site.
+
+#### Result
+
+* That a user creates an account and are redirected to their new profile page where they can use all the features on the site.
+
+successful register
+
+![successful register](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/successful%20register.JPG)
+
+unique helper text if data enters meets requirements
+
+![unique helper text if data enters meets requirements](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/unique%20helper%20text%20good.JPG)
+
+unique helper text if data entered doesn't meet requirements
+
+![unique helper text if data entered doesn't meet requirements](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/unique%20helper%20text%20bad.JPG)
+
+unsuccessful register
+
+![unsuccessful register](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/unsuccessful%20register.JPG)
+
+blank field register
+
+![blank field register](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/blank%20field%20register.JPG)
+
+### Site Goal 8
+
+* I want to have an account that has full control over everything on the site for security reasons.
+
+#### Action
+
+* an admin user account for high level employees/owners of the site that have full edit and delete capabilites over everything on the site. 
+
+#### Expectation
+
+* That when logged in as user the admin should see some new navigation links, manage categories and add products, they should have the ability to add and edit recipes and products and categories.
+
+#### Result
+
+* That an admin user has full power over products recipes and categories. Manage categories and add product appear in the navigation and edit and delete capabilites and edit and delete buttons appearing on every recipe card and product card.
+
+admin nav
+
+![]()
+
+recipe cards
+
+![]()
+
+products cards
+
+![]()
+
+category page
+
+![]()
+
+add category
+
+![]()
+
+### Site Goal 9
+
+* I want to be able to add recommeneded products and categories to the site but not allow regular users that ability.
+
+#### Action
+
+* an admin user account for high level employees/owners of the site that can add new products and recipe categories to the site. 
+
+#### Expectation
+
+* That when logged in as user the admin is able to add a new product to the database and new categories. also, able to edit and delete same
+
+#### Result
+
+* A user adds new products and categories to the site and a flash message appears to inform them of what they did. i.e edit add or delete. the resulting category is then abler to be chosen in the recipe type drop down form and product is seen on the products page and filterable by choosing the buttons.
+
+Add product flash
+
+![]()
+
+edit product flash
+
+![]()
+
+delete product flash
+
+![]()
+
+Add category flash
+
+![]()
+
+edit category flash
+
+![]()
+
+delete category flash
+
+![]()
 
 ## Issues and Bugs
 
@@ -497,4 +713,7 @@ Unfortunately, I ran out of time and know how to fix some bugs that remain.
 
 * I had to manually enter the ids for the filter recipe buttons, I tried to use jinja templating to get the category name from the category database but unfortunately It would not work correctly so I had to manually add the ids to the get recipes html page.
 
+* I couldn't get the select dropdowns to have the correct value in editing a form, I tried many different ways but it wouldn't work as I wanted it too. Therefore, when editing a user must choose an option from the dropdown which isn't ideal.
+
+* There is an issue with saved recipes being deleted but the cards still being shown on the profile page, unfortunately I ran out of time to come up with an adequate solution to this problem.
 
