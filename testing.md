@@ -630,7 +630,7 @@ blank field register
 
 admin nav
 
-![]()
+![admin nav](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/admin%20nav.JPG)
 
 recipe cards
 
