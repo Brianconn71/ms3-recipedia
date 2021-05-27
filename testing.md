@@ -151,7 +151,7 @@ The HTML used in the site has to pass validation with [w3c online](https://valid
 
 * The page loads as it should regardless of through the browser it was searched or if the user clicked the logo or the home link in the nav bar or sidenav.
 
-![user story 1 result]()
+![user story 1 result](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/user-story-1-test.JPG)
 
 ### User Story 2
 
@@ -172,19 +172,19 @@ The HTML used in the site has to pass validation with [w3c online](https://valid
 
 Search results
 
-![]()
+![search results](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/search%20results.JPG)
 
 No Search results
 
-![]()
+![No Search results](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/no%20search%20results.JPG)
 
 Filter Search results
 
-![]()
+![Filter Search results](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/filter%20search%20results.JPG)
 
 No text in searchbar results
 
-![]()
+![No text in searchbar results](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/no%20text%20in%20searchbar%20results.JPG)
 
 ### User Story 3
 
@@ -204,15 +204,15 @@ If a credential is wrong then a flash message will tell them username/password i
 
 successful login
 
-![]()
+![successful login](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/successful%20login.JPG)
 
 unsuccessful
 
-![]()
+![unsuccessful](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/unsuccessful%20login.JPG)
 
 blank field
 
-![]()
+![blank field](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/blank%20field.JPG)
 
 ### User Story 4
 
@@ -232,23 +232,23 @@ blank field
 
 successful register
 
-![]()
+![successful register](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/successful%20register.JPG)
 
 unique helper text if data enters meets requirements
 
-![]()
+![unique helper text if data enters meets requirements](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/unique%20helper%20text%20good.JPG)
 
 unique helper text if data entered doesn't meet requirements
 
-![]()
+![unique helper text if data entered doesn't meet requirements](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/unique%20helper%20text%20bad.JPG)
 
 unsuccessful register
 
-![]()
+![unsuccessful register](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/unsuccessful%20register.JPG)
 
 blank field register
 
-![]()
+![blank field register](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/blank%20field%20register.JPG)
 
 ### User Story 5
 
@@ -268,19 +268,19 @@ blank field register
 
 successful add recipe
 
-![]()
+![successful add recipe](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/successful%20add%20recipe.JPG)
 
 Missing data
 
-![]()
+![Missing data](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/missing%20data%20add%20recipe.JPG)
 
 add steps and ingredients
 
-![]()
+![add steps and ingredients](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/add%20ings%20and%20steps.JPG)
 
 remove steps and ingredients
 
-![]()
+![remove steps and ingredients](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/remove%20steps%20and%20ingredients.JPG)
 
 ### User Story 6
 
@@ -300,14 +300,14 @@ remove steps and ingredients
 
 successful search
 
-![]()
+![successful search](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/search%20results.JPG)
 
 unsuccessful search
 
-![]()
+![unsuccessful search](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/no%20search%20results.JPG)
 
 empty search prompt
-![]()
+![empty search prompt](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/no%20text%20in%20searchbar%20results.JPG)
 
 ### User Story 7
 
@@ -327,19 +327,19 @@ empty search prompt
 * The user will be able to edit and make changes to their own recipes and delete their own recipes from the database but not edit or delete recipes for other users.
 
 delete and edit buttons
-![]()
+![delete and edit buttons](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/delete%20and%20edit%20buttons.JPG)
 
 edit recipe button taking to edit recipe page
-![]()
+![edit recipe button taking to edit recipe page](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/edit%20recipe%20page.JPG)
 
 edit recipe confirmation
-![]()
+![edit recipe confirmation](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/edit%20recipe%20confirmation.JPG)
 
 delete recipe confirmation
-![]()
+![delete recipe confirmation](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/delete%20recipe%20confirmation.JPG)
 
 delete recipe modal
-![]()
+![delete recipe modal](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/delete%20confirmation%20modal.JPG)
 
 ### User Story 8
 
@@ -358,10 +358,10 @@ delete recipe modal
 * The user can find all recipes on the home page and view full recipes by clicking on the see full recipe button on the recipe cards.
 
 See full recipe
-![]()
+![See full recipe](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/see%20full%20recipe%20btn.JPG)
 
 full recipe page
-![]()
+![full recipe page](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/full%20recipe%20page.JPG)
 
 ### User Story 9
 
@@ -380,13 +380,13 @@ full recipe page
 * The user clicks on the save button which saves the recipe to their profile and a message appears informing the user the recipe was saved to their profile. The recipe is then displayed on their profile.
 
 save button
-[]()
+![save button](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/save%20button.JPG)
 
 Flash message
-[]()
+![Flash message](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/flash%20message.JPG)
 
 recipe saved to the users profile
-[]()
+![recipe saved to the users profile](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/saved%20recipes.JPG)
 
 ### User Story 10
 
@@ -405,13 +405,13 @@ recipe saved to the users profile
 * the user clicks on the remove saved recipe button on the recipe card and the recipe is removed from their saved recipes field in the database, the python backend code will remove the recipe id from the array, a flash message then appears to confirm the recipe is no longer saved.
 
 delete save button
-[]()
+![delete save button](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/delete%20save%20button.JPG)
 
 delete save Flash message
-[]()
+![delete save Flash message](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/delete%20save%20flash%20message.JPG)
 
 recipe removed from saved recipes
-[]()
+![recipe removed from saved recipes](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/recipe%20removed%20from%20saved%20recipes.JPG)
 
 ### User Story 11
 
@@ -430,16 +430,16 @@ recipe removed from saved recipes
 * The user can find products based on the filter buttons and a flash message will display how many results their are per search. The results are in paginated format with six results per page. Users can esily purchase these products by clicking on the link at the bottom of the card.
 
 products page with filter
-[]()
+![products page with filter](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/products%20page%20with%20filter.JPG)
 
 products Flash message
-[]()
+![products Flash message](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/products%20flash%20message.JPG)
 
 buy now link
-[]()
+![buy now link](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/buy%20now%20link.JPG)
 
 product rating
-[]()
+![product rating](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/product%20rating.JPG)
 
 ### User Story 12
 
@@ -458,7 +458,7 @@ product rating
 * The user will be able to edit and make changes to their own recipes and delete their own recipes from the database but not edit or delete recipes for other users, they will be able to find all their own recipes on their profile page
 
 profile page
-[]()
+![profile page](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/profile%20page.JPG)
 
 ### User Story 1
 
