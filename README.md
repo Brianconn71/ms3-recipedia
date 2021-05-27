@@ -12,7 +12,10 @@ A live preview of my site can be found [here](http://ms3-recipedia.herokuapp.com
 
 # Table of Contents
 
-# UX
+* [UX](#ux)
+
+
+# UX <a name="ux>
 
 ## Strategy
 

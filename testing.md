@@ -554,11 +554,11 @@ click on link result
 
 products page
 
-![]()
+![products page](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/products%20page%20with%20filter.JPG)
 
 recipes page
 
-!()
+![recipes page](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/recipe%20cards.JPG)
 
 ### Site Goal 6
 
@@ -634,19 +634,19 @@ admin nav
 
 recipe cards
 
-![]()
+![recipe cards](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/recipe%20cards.JPG)
 
 products cards
 
-![]()
+![products cards](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/products%20page%20with%20filter.JPG)
 
 category page
 
-![]()
+![category page](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/category%20page.JPG)
 
 add category
 
-![]()
+![add category](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/add%20category%20flash.JPG)
 
 ### Site Goal 9
 
@@ -666,27 +666,27 @@ add category
 
 Add product flash
 
-![]()
+![Add product flash](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/add%20product%20flash.JPG)
 
 edit product flash
 
-![]()
+![edit product flash](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/edit%20product%20flash.JPG)
 
 delete product flash
 
-![]()
+![delete product flash](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/delete%20product%20flash.JPG)
 
 Add category flash
 
-![]()
+![Add category flash](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/add%20category%20flash.JPG)
 
 edit category flash
 
-![]()
+![edit category flash](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/edit%20category%20flash.JPG)
 
 delete category flash
 
-![]()
+![delete category flash](https://github.com/Brianconn71/ms3-recipedia/blob/master/static/imgs/readme_imgs/testing/delete%20category%20flash.JPG)
 
 ## Issues and Bugs
 
